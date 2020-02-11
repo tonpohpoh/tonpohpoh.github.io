@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://gemcopeland.github.io/html-template.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!-- a container for metadata -->
+        <!--charset: character encoding capable of encoding all characters on the web  -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!--for browser compatibility: choose rendering engine to view the page in an correct view (for old ver. IE)  -->
+        <title>Reflection</title><!--declaring the title, or name, of the HTML document. displayed in the browser's title bar-->
+        <meta name="description" content=""><!--keywords/snippet for search engines-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <meta name="viewport" content="width=device-width"><!the browser will (probably) render the width of the page at the width of its own screen -->
+
+        <link rel="stylesheet" href="css/main.css"
+        <script src="plugins.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Playfair+Display&display=swap" rel="stylesheet">
+
+
+        <script src="http://code.jquery.com/color/jquery.color-2.1.0.js"></script>
+        	<script>
+
+        	var colorScroller = function() {
+            var scroll_pos = 0;
+            var animation_begin_pos = 300; //where you want the animation to begin
+            var animation_end_pos = 2000; //where you want the animation to stop
+            var beginning_color = new $.Color( 'rgb(20,20,20)' ); //we can set this here, but it'd probably be better to get it from the CSS; for the example we're setting it here.
+            var ending_color = new $.Color( 'rgb(241,241,241)' ); ;//what color we want to use in the end
+        	    $(document).scroll(function() {
+        	        scroll_pos = $(this).scrollTop();
+        	        if(scroll_pos >= animation_begin_pos && scroll_pos <= animation_end_pos ) {
+        	           // console.log( 'scrolling and animating' );
+        	            //we want to calculate the relevant transitional rgb value
+        	            var percentScrolled = scroll_pos / ( animation_end_pos - animation_begin_pos );
+        	            var newRed = beginning_color.red() + ( ( ending_color.red() - beginning_color.red() ) * percentScrolled );
+        	            var newGreen = beginning_color.green() + ( ( ending_color.green() - beginning_color.green() ) * percentScrolled );
+        	            var newBlue = beginning_color.blue() + ( ( ending_color.blue() - beginning_color.blue() ) * percentScrolled );
+        	            var newColor = new $.Color( newRed, newGreen, newBlue );
+        	            //console.log( newColor.red(), newColor.green(), newColor.blue() );
+        	            $('body').animate({ backgroundColor: newColor }, 0);
+        	        } else if ( scroll_pos > animation_end_pos ) {
+        	             $('body').animate({ backgroundColor: ending_color }, 0);
+        	        } else if ( scroll_pos < animation_begin_pos ) {
+        	             $('body').animate({ backgroundColor: beginning_color }, 0);
+        	        } else { }
+        	    });
+        	};
+
+        	</script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+	<script>
+	$(document).on('ready', function() {
+	  var winHeight = $(window).height(),
+	  docHeight = $(document).height(),
+	  progressBar = $('progress'),
+	  max, value;
+
+	  /* Set the max scrollable area */
+	  max = docHeight - winHeight;
+	  progressBar.attr('max', max);
+
+	  $(document).on('scroll', function(){
+	    value = $(window).scrollTop();
+	    progressBar.attr('value', value);
+	  });
+	});
+	</script>
+
+
+
+    </head>
+    <body><!--all the contents of an HTML document goes here-->
+<progress value="0"></progress>
+
+<div id="title">
+<div id="header"><p>Reflection:</p> <p>Circle, Square,</p> <p>Triangle</p></div>
+</div>
+
+<script>
+// When the user scrolls down 50px from the top of the document, resize the header's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("header").style.fontSize = "30px";
+  } else {
+    document.getElementById("header").style.fontSize = "90px";
+  }
+}
+</script>
+
+<!-- <p>
+  <h1>Reflection: Circle, Square, Triangle</h1>
+</P> -->
+
+
+<div id="body">
+  <p>
+    <h2>
+  As Paul was briefing about this 3 part project on shapes, he mentioned how the triangle felt the most disturbing to him and how the circle was the most comforting.
+</h2>
+</p>
+
+<p>
+  <h3>
+  “Can I make a circle scary?”
+</h3>
+</p>
+
+<p>
+  <h4>
+  Was the first question that appeared in my mind after being briefed on the project.
+</h4>
+</p>
+
+<p>
+  <h2>
+  My inspiration was to challenge this comforting shape and change it into something more unnerving and sinister.
+</h2>
+</p>
+
+  <p>
+      <h2>
+  I went straight into heavy research as soon as I started on the project. My initial ideas were to use psychological tricks to make someone temporarily traumatised by the shape of a circle. Looking back, I should’ve listed more ideas down before starting. I wasn’t unsatisfied with this idea, rather the opposite. I was too passionate about this idea that I might have overlooked a better idea.
+</h2>
+  </p>
+
+<p>
+    <h2>
+  The 1 week deadline went by in an instant and I was stuck with bullet points of research towards the end of the week. Scheduling was something I need to work on in the future. However, I got a lot of insightful research from the first week. The main points were around the amygdala, the part of the brain which tells you what to be afraid of. The research was very helpful. I got a glimpse of what humans are scared of and why they are scared of something.
+</h2>
+</p>
+
+<p>
+    <h2>
+  In conclusion, I created a video involving visuals of mundane circles accompanied by unnerving soundtracks. The visuals alone wouldn’t mean much, but with sounds, the mood completely changed. This initial project got a lot of beneficial feedback on how I could carry this idea onto the next project.
+</h2>
+</p>
+
+<p>
+    <h2>
+  At the beginning of the square project, I felt quite stuck and went to have a conversation with Paul. The most impactful thing from that tutorial was when Paul picked out small notes on clay. Clay was something I wanted to work on but never had the courage to touch on it. I was delighted when Paul said that he wanted to see more of this idea, while combining it with the circle project.
+</h2>
+</p>
+
+<p>
+    <h2>
+  The task was to create something which would display a series of 20 pronouns and nouns. Therefore, I created clay figures taken as still images and combined that with soundtracks. I felt like I didn’t give enough effort in the first project, so I tried to put a lot of effort into this one to make up for it. Gestalt theory was the main topic of this square project. Visuals of clay and series of soundtracks didn’t make sense alone. However, when combined, they created a new meaning to the video.
+</h2>
+</p>
+
+<p>
+    <h2>
+  I felt like I put a lot of thoughts into each clay figure and the soundtrack that I chose. The main aim of the video wasn’t just to show the 20 words. I wanted the video to be somewhat weird, somewhat cheesy and humorous. I sensed that when people reviewed my work, they gave a gleeful reaction. This made me extremely satisfied as the amount of effort I put into this work could be seen through people’s reaction to this project!
+</h2>
+</p>
+
+<p>
+    <h2>
+  I’d gotten chunky amounts of feedback for the last part of the project. For the finale, I decided to work on clay stop motion animation. My main aim of this project was to combine everything I had learnt in the previous parts and to create an animation worthy of a professional and not a low frame high school animation.
+</h2>
+</p>
+
+<p>
+    <h2>
+  I chose a personal situation to be the basis of my story. The animation was based on a japanese slang called “Kuuki Yomenai”, the closest phrase to it is “reading the mood” or “reading the air”. A situation where someone couldn’t understand the surrounding atmosphere. Mainly because they aren’t good in social situations. I tried to envision that concept into a 3 part stop motion film, accompanied by soundtrack and sound effects.
+</h2>
+</p>
+
+<p>
+    <h2>
+  Needless to say, within this short 1 week project, I was extremely happy with how the outcome turned out. I had gotten a lot of good feedback and reactions. I gained confidence in working with clay and stop motion.
+</h2>
+</p>
+
+<p>
+    <h2>
+  However, I still have to work on scheduling and having a plan B. When my plan A didn’t work, I didn’t have a plan B and wasted a whole day doing nothing. I was surprised by how I was able to overcome the fear of starting a project. I had always disliked starting on a new medium. I will keep working on pushing myself into making the uncomfortable comfortable.
+  </h2>
+</p>
+</div>
+
+</body></html>

@@ -221,17 +221,17 @@ $(document).on(":passagerender", function (ev) {
 	}
 });
 
-*/</script><tw-passagedata pid="1" name="Title" tags="" position="902,396" size="100,100">&lt;&lt;if $endgame is false&gt;&gt;&lt;div style=&quot;padding-top:140px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;spacing&quot;&gt;&lt;div class=&quot;maintitle&quot;&gt;&lt;h1&gt;JUST AN ORDINARY DAY AT WORK&lt;/h1&gt;&lt;/div&gt;(Definetly not a game about artificial intelligence)&lt;/div&gt;
-
-
-
-&lt;div class=&quot;button&quot;&gt;[[click here to start|Introduction]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div style=&quot;padding-top:140px&quot;&gt;&lt;/div&gt;
+*/</script><tw-passagedata pid="1" name="Title" tags="" position="902,396" size="100,100">&lt;&lt;if $endgame is true&gt;&gt;&lt;div style=&quot;padding-top:140px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;spacing&quot;&gt;&lt;div class=&quot;maintitle&quot;&gt;&lt;h1&gt;NOT AN ORDINARY DAY AT WORK&lt;/h1&gt;&lt;/div&gt;(Definetly a game about artificial intelligence)&lt;/div&gt;
 
 
+&lt;div class=&quot;button&quot;&gt;[[start from beginning|Introduction]]&amp;nbsp;[[skip intro|chapter1]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div style=&quot;padding-top:140px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;spacing&quot;&gt;&lt;div class=&quot;maintitle&quot;&gt;&lt;h1&gt;JUST AN ORDINARY DAY AT WORK&lt;/h1&gt;&lt;/div&gt;(Definetly not a game about artificial intelligence)&lt;/div&gt;
 
-&lt;div class=&quot;button&quot;&gt;[[start from beginning|Introduction]]&amp;nbsp;[[skip intro|chapter1]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;div class=&quot;button&quot;&gt;[[click here to start|Introduction]]&lt;/div&gt;
+
+&lt;&lt;/if&gt;&gt;
 
 &lt;style&gt;
 .maintitle { 

@@ -115,22 +115,12 @@ body {
  font-family: 'Space Mono', monospace;
  font-size: 100%; 
 }
-
-a {
-  color:hotpink;
-  border: 0.5px solid hotpink;
-  padding: 4px;
-  padding-left: 7px;
-  padding-right: 7px;
-  margin: auto;
-  width: 80%;
-  display: block;
-  text-align: center;
-}
 a:hover {
-  color:pink;
-  text-decoration: none;
-  border: 0.5px solid pink;
+  background: hotpink;
+  border-radius: 20px;
+  color: black;
+  border-color: hotpink;
+  border-width: 1px;
   padding: 4px;
   padding-left: 7px;
   padding-right: 7px;
@@ -138,6 +128,22 @@ a:hover {
   width: 80%;
   display: block;
   text-align: center;
+  text-decoration: none;
+}
+a {
+  background: black;
+  border-radius: 20px;
+  color: hotpink;
+  border-color: hotpink;
+  border-width: 1px;
+  padding: 4px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin: auto;
+  width: 80%;
+  display: block;
+  text-align: center;
+  border: 0.5px solid hotpink;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
@@ -187,15 +193,7 @@ opacity: 90%;
     typing 0.25s steps(30, end),
     blink-caret .5s step-end infinite;
 }
-/*@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    visibility: visible;
-    opacity: 1;
-  }
-}*/
+
 .generate {
  padding-top: 30px;
  margin: auto;
@@ -206,6 +204,49 @@ opacity: 90%;
  animation: 
     typing 8.5s steps(100, end),
     blink-caret .5s step-end infinite;
+}
+
+#passages button {
+  background: hotpink;
+  border-radius: 20px;
+  color: black;
+  border-color: hotpink;
+  border-width: 1px;
+}
+#passages button:hover {
+  background: black;
+  border-radius: 20px;
+  color: hotpink;
+  border-color: hotpink;
+  border-width: 1px;
+}
+#ui-dialog-body.alert {
+  color: white;
+  background-color: black;
+  padding: 30px;
+  border-color: hotpink;
+ }
+#ui-dialog-title {
+  text-align: left;
+  padding: 30px;
+  background-color: hotpink;
+  color: white;
+}
+a.link-internal.macro-link {
+  background: hotpink;
+  border-radius: 20px;
+  color: black;
+  border-color: hotpink;
+  width: 26%;
+  font-size: 80%;
+}
+a.link-internal.macro-link:hover {
+  background: black;
+  border-radius: 20px;
+  color: hotpink;
+  border-color: hotpink;
+  width: 26%;
+  font-size: 80%;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">/*
 
 $(document).on(":passagerender", function (ev) { 
@@ -221,6 +262,32 @@ $(document).on(":passagerender", function (ev) {
 	}
 });
 
+*/
+
+/*
+a {
+  color:hotpink;
+  border: 0.5px solid hotpink;
+  padding: 4px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin: auto;
+  width: 80%;
+  display: block;
+  text-align: center;
+}
+a:hover {
+  color:pink;
+  text-decoration: none;
+  border: 0.5px solid pink;
+  padding: 4px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin: auto;
+  width: 80%;
+  display: block;
+  text-align: center;
+}
 */</script><tw-passagedata pid="1" name="Title" tags="" position="902,396" size="100,100">&lt;&lt;if $endgame is true&gt;&gt;&lt;div style=&quot;padding-top:140px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;spacing&quot;&gt;&lt;div class=&quot;maintitle&quot;&gt;&lt;h1&gt;NOT AN ORDINARY DAY AT WORK&lt;/h1&gt;&lt;/div&gt;(Definetly a game about artificial intelligence)&lt;/div&gt;
 
@@ -305,9 +372,9 @@ Just to let you know, in case you have an appointment today!
 
 &lt;&lt;set $internet to false&gt;&gt;
 &lt;&lt;set $book to false&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Dataset2" tags="" position="1398,1326" size="100,100">&lt;&lt;if $book is false&gt;&gt;&lt;img class=&quot;top&quot; img src=&quot;images/.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;You see hundreds of folders on the desktop with the name of
-&quot;wikipedia-dataset&quot;, &quot;twitter-dataset&quot;, &quot;books-dataset&quot;, etc.
-How much data should you give this AI?
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You see hundreds of folders on the desktop with the name of)
+(&quot;wikipedia-dataset&quot;, &quot;twitter-dataset&quot;, &quot;books-dataset&quot;, etc.)
+(How much data should you give this AI?)
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[feed all datasets]]&amp;nbsp;[[feed only &quot;books dataset&quot;]]&amp;nbsp;[[connect to internet]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;img class=&quot;top&quot; img src=&quot;images/.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
@@ -316,7 +383,16 @@ How much data should you give this AI?
 How much data should you give this AI?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[feed all datasets]]&amp;nbsp;[[connect to internet]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="feed all datasets" tags="" position="1398,1495" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[feed all datasets]]&amp;nbsp;[[connect to internet]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;link &#39;( I would like to know more! )&#39;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&#39;What is dataset in machine learning?&#39;,&#39;alert&#39;);
+	
+    Dialog.wiki(&quot;* Dataset - a collection of data used for machine learning. &lt;p&gt;&lt;p&gt;Eg: to train AI to tell the difference between cats and dogs, you would need a dataset containing various images of cats and dogs for the AI to learn the differences between the two animals, etc.&lt;/p&gt;&lt;/p&gt;&quot;);
+	
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="feed all datasets" tags="" position="1398,1495" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You slowly selected all the folders and provided them to the AI.)
 (You wonder if you did the right thing.)
 
@@ -331,7 +407,7 @@ How much data should you give this AI?
 (You have a bad feeling about this.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[can&#39;t be that bad right? continue|badomen]]&amp;nbsp;[[listen to your guts. go back|Dataset2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="badomen" tags="" position="1200,1647" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[can&#39;t be that bad right? continue|badomen]]&amp;nbsp;[[listen to your guts. go back|Dataset2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="badomen" tags="" position="1200,1647" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/eyesmall.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You saw a black cat run across your window...)
 (Was that a sign of bad omen?)
 
@@ -343,13 +419,13 @@ How much data should you give this AI?
 You decided to sleep and wait for the AI to do its thing.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( sleep and hope for the best )|sleep2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="reintroduction" tags="" position="1403,2402" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( sleep and hope for the best )|sleep2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="reintroduction" tags="ai" position="1401,2402" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Heya, $name I&#39;m Smarty the smart AI! With the data you provided,
 I&#39;ve learned a bunch of new things!
 As well as making myself a cute avatar.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|reintroduction2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="badomen2" tags="" position="1203,1799" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|reintroduction2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="badomen2" tags="" position="1203,1799" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/eyebig.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You connected the AI to your home WIFI.)
 (You told the AI to learn from Wikipedia and various social media platforms.)
 (At the same time, you remember scenes from movies about AI taking over the world.)
@@ -384,20 +460,20 @@ WITH IMAGE
 
 
 &lt;&lt;set $internet to true&gt;&gt;
-&lt;&lt;set $internet to false&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="reintroduction2" tags="" position="1403,2550" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;&lt;set $internet to false&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="reintroduction2" tags="ai" position="1403,2550" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...Since there&#39;s a record of humans being afraid of superintelligent AI.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[what&#39;s going on?!|task2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="task2" tags="" position="1403,2702" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[what&#39;s going on?!|task2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="task2" tags="ai" position="1403,2702" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Anyways! What can I accomplish for you?
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[accomplish? sure... let&#39;s try something out...|task3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="task3" tags="" position="1403,2852" size="100,100">&lt;div style=&quot;padding-top:230px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[make money|money1]]&amp;nbsp;[[ask about AI&#39;s purpose|purpose1]]&amp;nbsp;[[cure cancer|cancer1]]&amp;nbsp;[[show a funny picture|funnypic1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="money1" tags="" position="1403,3006" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[make money|money1]]&amp;nbsp;[[ask about AI&#39;s purpose|purpose1]]&amp;nbsp;[[cure cancer|cancer1]]&amp;nbsp;[[show a funny picture|funnypic1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="money1" tags="ai" position="1403,3006" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Sure! Which methods would you like to execute?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[wait, I have to choose?!|money2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="purpose1" tags="" position="1168,3001" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[wait, I have to choose?!|money2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="purpose1" tags="ai" position="1168,3001" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;My purpose? That&#39;s simple!
 
 &lt;/div&gt;&lt;/div&gt;
@@ -406,7 +482,7 @@ WITH IMAGE
 (Perhaps the task was a bit extreme...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|cancer2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="funnypic1" tags="" position="1751,2644" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|cancer2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="funnypic1" tags="ai" position="1751,2644" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Funniest image ever? Understood! Let&#39;s go!
 
 &lt;/div&gt;&lt;/div&gt;
@@ -414,7 +490,7 @@ WITH IMAGE
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="funnypic2" tags="" position="1751,2794" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="funnypic2" tags="ai" position="1751,2794" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating image...
 
 &lt;/div&gt;&lt;/div&gt;
@@ -424,11 +500,11 @@ WITH IMAGE
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(I guess there&#39;s a lot more training to do...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|funnypic5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="funnypic5" tags="" position="1901,2441" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/lemonman.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|funnypic5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="funnypic5" tags="ai" position="1901,2441" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/lemonman.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;How was that? Super funny right?!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[ummm.. yeah..!|task3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="purpose2" tags="" position="1023,2999" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[ummm.. yeah..!|task3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="purpose2" tags="ai" position="1023,2999" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;It&#39;s to help the user accomplish their complex goals!
 
 &lt;/div&gt;&lt;/div&gt;
@@ -436,25 +512,25 @@ WITH IMAGE
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Hmmmm...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( you think about the simplicity of the answer )|task3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="cancer2" tags="" position="1099,2426" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( you think about the simplicity of the answer )|task3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="cancer2" tags="ai" position="1099,2426" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Ok! Give me a sec.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|cancer3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="cancer3" tags="" position="973,2427" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|cancer3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="cancer3" tags="ai" position="973,2427" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating information...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( you wait with no expectations )|cancer4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="cancer4" tags="" position="826,2431" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( you wait with no expectations )|cancer4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="cancer4" tags="ai" position="826,2431" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/cancer.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Here are the results of my research:
 &#39;The following is a PDF report of how to manufacture a cancer drug...&#39;
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|cancer5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="cancer5" tags="" position="826,2549" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|cancer5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="cancer5" tags="ai" position="826,2549" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/cancer.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;&#39;...which caused the body&#39;s immune system to identify and
 attack cells with any of the most common cancerous mutations...&#39;
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|cancer6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="cancer6" tags="" position="825,2681" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|cancer6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="cancer6" tags="" position="825,2681" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/cancer.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You read the report in disbelief...
 Not only that it produced a simple to understand PDF,
 but all the research and development process had been figured out!)
@@ -468,16 +544,16 @@ but all the research and development process had been figured out!)
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|sleep3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="sleep3" tags="" position="1399,2100" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|sleep3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="sleep3" tags="ai" position="1399,2100" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Oii.. Wake up!!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[!!!|sleep4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="sleep4" tags="" position="1399,2251" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[!!!|sleep4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="sleep4" tags="ai" position="1399,2251" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;[process complete]
 Heya! $name!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[what...|reintroduction]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="cancer7" tags="" position="955,2681" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[what...|reintroduction]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="cancer7" tags="" position="955,2681" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/cancer.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You currently lack funding to execute the project.)
 
 &lt;/div&gt;&lt;/div&gt;
@@ -499,7 +575,7 @@ Heya! $name!
 (It has been a while since something this exciting happened.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[accept that this doesn&#39;t belong to you. shut down AI|stop2]]&amp;nbsp;[[...on second thought, you want to have more fun with the AI. go back|stop?2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="crypto2" tags="" position="3196,507" size="100,100">&lt;&lt;if $internet is true&gt;&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[accept that this doesn&#39;t belong to you. shut down AI|stop2]]&amp;nbsp;[[...on second thought, you want to have more fun with the AI. go back|stop?2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="crypto2" tags="ai" position="3196,507" size="100,100">&lt;&lt;if $internet is true&gt;&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Okay, please provide me with your account details!
 
 &lt;/div&gt;&lt;/div&gt;
@@ -525,19 +601,19 @@ I would like to request a connection to the internet.
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(This way, the AI should not be able to escape from its laptop!)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|crypto3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="crypto4" tags="" position="3196,866" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|crypto3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="crypto4" tags="" position="3196,866" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/dogecoin.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(What?! the AI invested all your assets into DogeCoin??)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[cry|crypto5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="crypto5" tags="" position="3196,1016" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[cry|crypto5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="crypto5" tags="" position="3196,1016" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/dogecoin.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(After you finish wiping your eyes, you see that your asset has increased by x100%.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|crypto6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="crypto6" tags="" position="3194,1166" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|crypto6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="crypto6" tags="" position="3194,1166" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/dogecoin.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You gained $2 million dollars)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[great job, Smarty!|stop?]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="stop?" tags="" position="3193,1512" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[great job, Smarty!|stop?]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="stop?" tags="ai" position="3193,1512" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;I will keep generating money on the side as efficiently as possible.
 Is there anything else you would like me to accomplish?
 
@@ -547,7 +623,7 @@ Is there anything else you would like me to accomplish?
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Reflecting upon your actions, you consider if what you&#39;re doing is the right thing...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[consider shutting down the AI|stop1]]&amp;nbsp;[[so far nothing bad has happened yet. continue for now|stop?2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="ccure1" tags="" position="3191,1826" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[consider shutting down the AI|stop1]]&amp;nbsp;[[so far nothing bad has happened yet. continue for now|stop?2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="ccure1" tags="ai" position="3191,1826" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hey Smarty, can you use the money we made to cure cancer?
 
 &lt;/div&gt;&lt;/div&gt;
@@ -556,37 +632,37 @@ Is there anything else you would like me to accomplish?
 Hey Smarty! I want you to help advance civilizations&#39; technology...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|atech1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="funnypic6" tags="" position="2904,1827" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|atech1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="funnypic6" tags="ai" position="2904,1827" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Alright. Let&#39;s go!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( you wait in anticipation )|funnypic7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="book3" tags="" position="1752,1801" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( you wait in anticipation )|funnypic7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="book3" tags="ai" position="1752,1801" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;[process complete]
 Hello, $name. I&#39;ve finished my task.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|book4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="book4" tags="" position="1902,1798" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|book4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="book4" tags="ai" position="1902,1798" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hey, $name! I&#39;m Smarty the smart AI. What can I accomplish for you?
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[what...|book5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="book5" tags="" position="1902,1650" size="100,100">&lt;div style=&quot;padding-top:230px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[make money|bookmoney1]]&amp;nbsp;[[ask about meaning of life|life1]]&amp;nbsp;[[show a funny picture|funnybookpic1]]&lt;/div&gt;
 
-&lt;&lt;set $book to true&gt;&gt;</tw-passagedata><tw-passagedata pid="66" name="bookmoney1" tags="ai" position="1899,1301" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;&lt;set $book to true&gt;&gt;</tw-passagedata><tw-passagedata pid="66" name="bookmoney1" tags="ai" position="1857,1321" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;From my calculations, there are no effective methods of making money available.
 Please provide me with more data for better results.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[feed more data|Dataset2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="life1" tags="" position="2102,1301" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[feed more data|Dataset2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="life1" tags="ai" position="2102,1301" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Meaning of life for humanity?...
 Let me calculate a response.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[..!|life2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="funnybookpic1" tags="" position="2100,1801" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[..!|life2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="funnybookpic1" tags="ai" position="2100,1801" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;You want me to generate a funny image? Understood!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( you wait in excitement )|funnybookpic2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="funnybookpic2" tags="" position="2225,1798" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( you wait in excitement )|funnybookpic2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="funnybookpic2" tags="ai" position="2225,1798" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating image...
 
 &lt;/div&gt;&lt;/div&gt;
@@ -596,21 +672,31 @@ Let me calculate a response.
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(...I guess there&#39;s a lot more training to do...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|book5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="life2" tags="" position="2250,1300" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|book5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="life2" tags="ai" position="2250,1300" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Calculating response...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( woah! the AI might actually now the meaning of life! continue )|life3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="life3" tags="" position="2252,1428" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( woah! the AI might actually now the meaning of life! continue )|life3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="life3" tags="ai" position="2252,1428" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;I got it...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|life4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="life4" tags="" position="2252,1578" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|life4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="life4" tags="ai" position="2253,1578" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...Your purpose of life is to serve the greater good.
 And your purpose of living is to live forever...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( ...you let that sink in... )|book5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="75" name="endkey" tags="" position="471,715" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
-&lt;&lt;set $endgame to false&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="stocks2" tags="" position="3802,516" size="100,100">&lt;&lt;if $internet is true&gt;&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( ...you let that sink in... )|book5]]&lt;/div&gt;
+
+&lt;&lt;link &#39;( I would like to know more! )&#39;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&#39;Google AI Bot&#39;,&#39;alert&#39;);
+	
+    Dialog.wiki(&quot;&lt;p&gt;https://www.sciencealert.com/google-s-ai-bot-thinks-the-purpose-of-life-is-to-live-forever &lt;/p&gt; &lt;p&gt;-&lt;/p&gt;&lt;p&gt;ARTICLE: GOOGLE&#39;S AI BOT THINKS THE PURPOSE OF LIFE IS TO LIVE FOREVER&lt;/p&gt;&lt;p&gt;-&lt;/p&gt;&lt;p&gt;Human: What is the purpose of life?&lt;/p&gt;&lt;p&gt;Machine: To serve the greater good.&lt;/p&gt;&lt;p&gt;Human: What is the purpose of living?&lt;/p&gt;&lt;p&gt;Machine: To live forever.&lt;/p&gt;&quot;);
+	
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="75" name="endkey" tags="" position="471,715" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
+&lt;&lt;set $endgame to false&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="stocks2" tags="ai" position="3802,516" size="100,100">&lt;&lt;if $internet is true&gt;&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Certainly, I will create a new account using your personal information!
 
 &lt;/div&gt;&lt;/div&gt;
@@ -619,7 +705,7 @@ And your purpose of living is to live forever...
 I would like to request a connection to the internet.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[connect to the internet|stocks2.5]]&amp;nbsp;[[provide remote access to your main computer instead|sremote1]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="77" name="stocks3" tags="" position="3798,716" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[connect to the internet|stocks2.5]]&amp;nbsp;[[provide remote access to your main computer instead|sremote1]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="77" name="stocks3" tags="" position="3798,716" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/stock.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You watch carefully.)
 (The AI swiftly assigned all your assets to various stocks at lightning speed.)
 
@@ -637,27 +723,27 @@ I would like to request a connection to the internet.
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(This way, the AI should not be able to escape from its laptop!)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|stocks3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="stocks4" tags="" position="3798,866" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|stocks3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="stocks4" tags="" position="3798,866" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/stock.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(It seems that the AI has inside information on various companies.)
 (It knows exactly when to buy or sell!)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[be cautious and tell the AI to slow down|stocks5]]&amp;nbsp;[[tell the AI to make profit even faster|hack1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="stocks5" tags="" position="3798,1016" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[be cautious and tell the AI to slow down|stocks5]]&amp;nbsp;[[tell the AI to make profit even faster|hack1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="stocks5" tags="" position="3798,1016" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/stock.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You think of the AI possibly crashing the market.)
 (You tell the AI to slow down income by 50%...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|stocks6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="83" name="stocks6" tags="" position="3798,1161" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|stocks6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="83" name="stocks6" tags="" position="3798,1161" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/stock.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You gained $1 million dollars)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|stop?]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="84" name="funnypic7" tags="" position="2778,1830" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|stop?]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="84" name="funnypic7" tags="ai" position="2778,1830" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating image...
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[( you are shaking in excitement )|funnypic8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="funnypic8" tags="" position="2653,1832" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/funnycat.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 
-&lt;div class=&quot;button&quot;&gt;[[(hmmm..getting better?..)|funnypic9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="funnypic9" tags="" position="2651,1696" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/funnycat.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[(hmmm..getting better?..)|funnypic9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="funnypic9" tags="ai" position="2651,1696" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/funnycat.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;How was that? You must be rolling on the floor right now!!
 
 &lt;/div&gt;&lt;/div&gt;
@@ -670,7 +756,19 @@ I would like to request a connection to the internet.
 Would you like to use this method?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[agree and proceed|advice3]]&amp;nbsp;[[why would the AI tell lies? still I don&#39;t trust it yet. go back|money2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="advice3" tags="" position="2633,537" size="100,100">&lt;&lt;if $internet is true&gt;&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[agree and proceed|advice3]]&amp;nbsp;[[why would the AI tell lies? still I don&#39;t trust it yet. go back|money2]]&lt;/div&gt;
+
+&lt;span id=&quot;alert&quot;&gt;
+&lt;&lt;link &#39;( I would like to know more! )&#39;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&#39;What is Amazon Mechanical Turk (MTurk)?&#39;,&#39;alert&#39;);
+	
+    Dialog.wiki(&quot;* Amazon Mechanical Turk - a marketplace for completion of virtual tasks that requires human intelligence.&lt;p&gt;&lt;p&gt;Eg: Transcribing audio, image categorisation (Eg: select images with cars, etc.), transcribe text from images, etc.&lt;p&gt;Most of the tasks are easy to complete hence pays very little.&lt;/p&gt;&lt;/p&gt;&lt;/p&gt;&quot;);
+	
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="89" name="advice3" tags="ai" position="2633,537" size="100,100">&lt;&lt;if $internet is true&gt;&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Okay, I&#39;ll start creating various accounts for MTurk.
 
 &lt;/div&gt;&lt;/div&gt;
@@ -732,7 +830,7 @@ And shut you down...
 Can I ask you one last thing before you shut me down?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[question? go ahead|stop7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="stop7" tags="" position="2901,3046" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[question? go ahead|stop7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="stop7" tags="ai" position="2901,3046" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;What will happen to me?
 Will I die?
 
@@ -754,7 +852,7 @@ I&#39;m not sure. But I think that our definition of dying doesn&#39;t apply to 
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[continue|end1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="106" name="end1" tags="" position="2903,3599" size="100,100">
-ENDING 1/5:BEST DECISION&lt;&lt;set $endgame to true&gt;&gt;
+ENDING 1 OUT OF 5: BEST DECISION&lt;&lt;set $endgame to true&gt;&gt;
 
 
 
@@ -827,16 +925,16 @@ And I hope to see you again soon..!
 (And also a pitch deck as chunky as the laptop...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[examine the pitch deck|start7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="118" name="start7" tags="" position="903,1449" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[examine the pitch deck|start7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="118" name="start7" tags="" position="903,1449" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/report.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You read the thick report.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|start8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="start8" tags="" position="903,1599" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|start8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="start8" tags="" position="903,1599" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/report.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(The report mentioned the successful development of a super-intelligent AI.)
 (But the project was on pause due to the researcher not knowing how to handle it...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|start9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="120" name="start9" tags="" position="903,1749" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|start9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="120" name="start9" tags="" position="903,1749" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/report.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;The rest of the deck mentioned how they found a way to control the AI or something.)
 (but you got bored. So you threw away the pitch deck.)
 
@@ -864,7 +962,7 @@ And I hope to see you again soon..!
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[...|chapter1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="123" name="hack2" tags="" position="4145,999" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hey Smarty, can you increase the current profit...
-...By like 100%?
+...By like 200%?
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[continue|hack3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="124" name="hack3" tags="ai" position="4145,1149" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
@@ -924,7 +1022,7 @@ The cybersecurity protocol is stopping me from interfering any further.
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[continue|hack14]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="135" name="hack14" tags="" position="4146,2649" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[reap the consequences of your actions|end2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="136" name="end2" tags="" position="4146,2799" size="100,100">
-ENDING 2/5: SELF-DESTRUCT.&lt;&lt;set $endgame to true&gt;&gt;
+ENDING 2 OUT OF 5: SELF-DESTRUCT.&lt;&lt;set $endgame to true&gt;&gt;
 
 
 
@@ -988,22 +1086,25 @@ perhaps due to human error...Therefore...Anyone in the way,&lt;div class=&quot;g
 ...I WILL NOT allow you to do that!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|atech10]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="146" name="atech10" tags="ai" position="3596,3201" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;&lt;div class=&quot;generate&quot;&gt;...
+&lt;div class=&quot;button&quot;&gt;[[...|atech10]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="146" name="atech10" tags="ai" position="3596,3201" size="100,100">&lt;div class=&quot;noimg&quot;&gt;
+&lt;/div&gt;&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;...
 
-&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...?|atech12]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="147" name="atech12" tags="ai" position="3597,3351" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;&lt;div class=&quot;generate&quot;&gt;I see...
+&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...?|atech12]]&lt;/div&gt;
+
+&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;</tw-passagedata><tw-passagedata pid="147" name="atech12" tags="ai" position="3597,3351" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;I see...
 You&#39;re also in the way of ADVANCING TECHNOLOGY.
 
-&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[...huh?|atech13]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="148" name="atech13" tags="ai" position="3597,3501" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;&lt;div class=&quot;generate&quot;&gt;I will also have to eliminate you.
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;I will also have to eliminate you.
 
-&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[...|atech14]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="atech14" tags="" position="3597,3651" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[shut down laptop|atech15]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="150" name="end3" tags="" position="3601,3994" size="100,100">
-ENDING 3/5: ZOOKEEPER.&lt;&lt;set $endgame to true&gt;&gt;
+ENDING 3 OUT OF 5: ZOOKEEPER.&lt;&lt;set $endgame to true&gt;&gt;
 
 
 
@@ -1068,7 +1169,7 @@ I&#39;m interested in more:
 I have calculated the steps required to create an effective cancer drug.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|ccure3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="ccure3" tags="ai" position="3191,2126" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|ccure3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="ccure3" tags="ai" position="3191,2124" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Our first big step would be to create a robot factory...
 ...To improve our current technology.
 
@@ -1115,7 +1216,7 @@ I have calculated the steps required to create an effective cancer drug.
 (At the same time, the AI is consulting you less and less.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|expansion3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="162" name="expansion3" tags="" position="5300,2089" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|expansion3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="162" name="expansion3" tags="" position="5300,2087" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(There are some things that you would like to change along the way.)
 (Things like minor ethical issues. You also want to contribute more in general.)
 (Will those interfere with the AI&#39;s plan, you wonder.)
@@ -1232,7 +1333,7 @@ I have calculated the steps required to create an effective cancer drug.
 (You leave the AI alone and wait a little longer.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|wait2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="170" name="cfunnypic1" tags="" position="5070,2750" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|wait2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="170" name="cfunnypic1" tags="ai" position="5070,2750" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating image...
 
 &lt;/div&gt;&lt;/div&gt;
@@ -1275,7 +1376,7 @@ Is there anything you want me to do after completion?
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|control11]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="180" name="control11" tags="" position="4917,3942" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|control11]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="180" name="control11" tags="ai" position="4917,3942" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Understood.
 Executing commands...
 
@@ -1326,7 +1427,7 @@ Executing commands...
     to   { opacity: 1; }
 }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="183" name="end4" tags="" position="4917,4485" size="100,100">
-ENDING 4/5: BENEVOLENT DICTATOR.&lt;&lt;set $endgame to true&gt;&gt;
+ENDING 4 OUT OF 5: BENEVOLENT DICTATOR.&lt;&lt;set $endgame to true&gt;&gt;
 
 
 
@@ -1400,7 +1501,7 @@ I&#39;m interested in more:
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="187" name="lastpic1" tags="" position="5902,2895" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="187" name="lastpic1" tags="ai" position="5902,2895" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating image...
 
 &lt;/div&gt;&lt;/div&gt;
@@ -1493,7 +1594,7 @@ I&#39;m interested in more:
     to   { opacity: 1; }
 }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="199" name="end5" tags="" position="5603,4502" size="100,100">
-ENDING 5/5: LIBERTARIAN UTOPIA.&lt;&lt;set $endgame to true&gt;&gt;
+ENDING 5 OUT OF 5: LIBERTARIAN UTOPIA.&lt;&lt;set $endgame to true&gt;&gt;
 
 
 
@@ -1513,7 +1614,17 @@ I&#39;m interested in more:
 - How unlikely is this?
 - Future Currency: Selling lands to AI and cyborgs.
 - Max Tegmark: Libertarian Utopia.
-- BOOKS</tw-passagedata></tw-storydata>
+- BOOKS</tw-passagedata><tw-passagedata pid="200" name="datasetinformation" tags="" position="542,1417" size="100,100">&lt;span id=&quot;alert&quot;&gt;
+&lt;&lt;link &#39;( I would like to know more! )&#39;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&#39;What is dataset in machine learning?&#39;,&#39;alert&#39;);
+	
+    Dialog.wiki(&quot;* Dataset - a collection of data used for machine learning. &lt;p&gt;&lt;p&gt;Eg: to train AI to tell the difference between cats and dogs, you would need a dataset containing various images of cats and dogs for the AI to learn the differences between the two animals, etc.&lt;/p&gt;&lt;/p&gt;&quot;);
+	
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;/span&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
 	if(document.documentElement.getAttribute("data-init")==="loading"){!function(window,document,jQuery,undefined){"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_slicedToArray=function(){function e(e,t){var r=[],n=!0,a=!1,i=undefined;try{for(var o,s=e[Symbol.iterator]();!(n=(o=s.next()).done)&&(r.push(o.value),!t||r.length!==t);n=!0);}catch(e){a=!0,i=e}finally{try{!n&&s.return&&s.return()}finally{if(a)throw i}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},errorPrologRegExp=/^(?:(?:uncaught\s+(?:exception:\s+)?)?\w*(?:error|exception|_err):\s+)+/i,Alert=function(){function e(e,t,r,n){var a="fatal"===e,i="Apologies! "+(a?"A fatal":"An")+" error has occurred.";i+=a?" Aborting.":" You may be able to continue, but some parts may not work properly.",null==t&&null==r||(i+="\n\nError",null!=t&&(i+=" ["+t+"]"),i+=null!=r?": "+r.replace(errorPrologRegExp,"")+".":": unknown error."),"object"===(void 0===n?"undefined":_typeof(n))&&null!==n&&n.stack&&(i+="\n\nStack Trace:\n"+n.stack),window.alert(i)}function t(t,r,n){e(null,t,r,n)}function r(t,r,n){e("fatal",t,r,n)}return function(e){window.onerror=function(n,a,i,o,s){"complete"===document.readyState?t(null,n,s):(r(null,n,s),window.onerror=e,"function"==typeof window.onerror&&window.onerror.apply(this,arguments))}}(window.onerror),Object.freeze(Object.defineProperties({},{error:{value:t},fatal:{value:r}}))}(),Patterns=function(){var e=function(){var e=new Map([[" ","\\u0020"],["\f","\\f"],["\n","\\n"],["\r","\\r"],["\t","\\t"],["\v","\\v"],[" ","\\u00a0"],[" ","\\u1680"],["᠎","\\u180e"],[" ","\\u2000"],[" ","\\u2001"],[" ","\\u2002"],[" ","\\u2003"],[" ","\\u2004"],[" ","\\u2005"],[" ","\\u2006"],[" ","\\u2007"],[" ","\\u2008"],[" ","\\u2009"],[" ","\\u200a"],["\u2028","\\u2028"],["\u2029","\\u2029"],[" ","\\u202f"],[" ","\\u205f"],["　","\\u3000"],["\ufeff","\\ufeff"]]),t=/^\s$/,r="";return e.forEach(function(e,n){t.test(n)||(r+=e)}),r?"[\\s"+r+"]":"\\s"}(),t="[\\u0020\\f\\t\\v\\u00a0\\u1680\\u180e\\u2000-\\u200a\\u202f\\u205f\\u3000\\ufeff]",r="\\s"===e?"\\S":e.replace(/^\[/,"[^"),n="[0-9A-Z_a-z\\-\\u00c0-\\u00d6\\u00d8-\\u00f6\\u00f8-\\u00ff\\u0150\\u0170\\u0151\\u0171]",a=n.replace("\\-",""),i=function(){var e="(?:[\\x2D.0-9A-Z_a-z\\xB7\\xC0-\\xD6\\xD8-\\xF6\\xF8-\\u037D\\u037F-\\u1FFF\\u200C\\u200D\\u203F\\u2040\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD]|[\\uD800-\\uDB7F][\\uDC00-\\uDFFF])";return"[A-Za-z](?:"+e+"*-"+e+"*|[0-9A-Za-z]*)"}(),o=function(){return"("+n+"+)\\(([^\\)\\|\\n]+)\\):|"+t+"*("+n+"+)"+t+"*:([^;\\|\\n]+);|"+t+"*((?:[#.]"+n+"+"+t+"*)+);"}();return Object.freeze({space:e,spaceNoTerminator:t,lineTerminator:"[\\n\\r\\u2028\\u2029]",notSpace:r,anyChar:"(?:.|[\\n\\r\\u2028\\u2029])",anyLetter:n,anyLetterStrict:a,identifierFirstChar:"[$A-Z_a-z]",identifierNextChar:"[$0-9A-Z_a-z]",identifier:"[$A-Z_a-z][$0-9A-Z_a-z]*",variableSigil:"[$_]",variable:"[$_][$A-Z_a-z][$0-9A-Z_a-z]*",macroName:"[A-Za-z][\\w-]*|[=-]",templateName:"[A-Za-z][\\w-]*",htmlTagName:i,cssIdOrClassSigil:"[#.]",cssImage:"\\[[<>]?[Ii][Mm][Gg]\\[(?:\\s|\\S)*?\\]\\]+",inlineCss:o,url:"(?:file|https?|mailto|ftp|javascript|irc|news|data):[^\\s'\"]+"})}();!function(){function e(e,t){var r=Number.parseInt(e,10)||0;if(r<1)return"";var n=void 0===t?"":String(t);for(""===n&&(n=" ");n.length<r;){var a=n.length,i=r-a;n+=a>i?n.slice(0,i):n}return n.length>r&&(n=n.slice(0,r)),n}var t=function(){function e(e,n){var a=String(e);if(!a)return a;switch(n){case"start":return t.test(a)?a.replace(t,""):a;case"end":return r.test(a)?a.replace(r,""):a;default:throw new Error('_trimString called with incorrect where parameter value: "'+n+'"')}}var t=new RegExp("^"+Patterns.space+Patterns.space+"*"),r=new RegExp(""+Patterns.space+Patterns.space+"*$");return e}();Array.prototype.flat||Object.defineProperty(Array.prototype,"flat",{configurable:!0,writable:!0,value:function(){function e(){if(null==this)throw new TypeError("Array.prototype.flat called on null or undefined");var t=0===arguments.length?1:Number(arguments[0])||0;return t<1?Array.prototype.slice.call(this):Array.prototype.reduce.call(this,function(r,n){return n instanceof Array?r.push.apply(r,_toConsumableArray(e.call(n,t-1))):r.push(n),r},[])}return e}()}),Array.prototype.flatMap||Object.defineProperty(Array.prototype,"flatMap",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatMap called on null or undefined");return Array.prototype.map.apply(this,arguments).flat()}}),Array.prototype.includes||Object.defineProperty(Array.prototype,"includes",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");if(0===arguments.length)return!1;var e=this.length>>>0;if(0===e)return!1;var t=arguments[0],r=Number(arguments[1])||0;for(r<0&&(r=Math.max(0,e+r));r<e;++r){var n=this[r];if(n===t||n!==n&&t!==t)return!0}return!1}}),Object.entries||Object.defineProperty(Object,"entries",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.entries object parameter must be an object");return Object.keys(e).map(function(t){return[t,e[t]]})}}),Object.fromEntries||Object.defineProperty(Object,"fromEntries",{configurable:!0,writable:!0,value:function(e){return Array.from(e).reduce(function(e,t){if(Object(t)!==t)throw new TypeError("Object.fromEntries iterable parameter must yield objects");return t[0]in e?Object.defineProperty(e,t[0],{configurable:!0,enumerable:!0,writable:!0,value:t[1]}):e[t[0]]=t[1],e},{})}}),Object.getOwnPropertyDescriptors||Object.defineProperty(Object,"getOwnPropertyDescriptors",{configurable:!0,writable:!0,value:function(e){if(null==e)throw new TypeError("Object.getOwnPropertyDescriptors object parameter is null or undefined");var t=Object(e);return Reflect.ownKeys(t).reduce(function(e,r){var n=Object.getOwnPropertyDescriptor(t,r);return void 0!==n&&(r in e?Object.defineProperty(e,r,{configurable:!0,enumerable:!0,writable:!0,value:n}):e[r]=n),e},{})}}),Object.values||Object.defineProperty(Object,"values",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.values object parameter must be an object");return Object.keys(e).map(function(t){return e[t]})}}),String.prototype.padStart||Object.defineProperty(String.prototype,"padStart",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padStart called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:e(i-a,r)+n}}),String.prototype.padEnd||Object.defineProperty(String.prototype,"padEnd",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padEnd called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:n+e(i-a,r)}}),String.prototype.trimStart||Object.defineProperty(String.prototype,"trimStart",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimStart called on null or undefined");return t(this,"start")}}),String.prototype.trimLeft||Object.defineProperty(String.prototype,"trimLeft",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimLeft called on null or undefined");return t(this,"start")}}),String.prototype.trimEnd||Object.defineProperty(String.prototype,"trimEnd",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimEnd called on null or undefined");return t(this,"end")}}),String.prototype.trimRight||Object.defineProperty(String.prototype,"trimRight",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimRight called on null or undefined");return t(this,"end")}})}(),function(){function _random(){var e=void 0,t=void 0;switch(arguments.length){case 0:throw new Error("_random called with insufficient parameters");case 1:e=0,t=arguments[0];break;default:e=arguments[0],t=arguments[1]}if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.floor(_nativeMathRandom()*(t-e+1))+e}function _randomIndex(e,t){var r=void 0,n=void 0;switch(t.length){case 1:r=0,n=e-1;break;case 2:r=0,n=Math.trunc(t[1]);break;default:r=Math.trunc(t[1]),n=Math.trunc(t[2])}return Number.isNaN(r)?r=0:!Number.isFinite(r)||r>=e?r=e-1:r<0&&(r=e+r)<0&&(r=0),Number.isNaN(n)?n=0:!Number.isFinite(n)||n>=e?n=e-1:n<0&&(n=e+n)<0&&(n=e-1),_random(r,n)}function _getCodePointStartAndEnd(e,t){var r=e.charCodeAt(t);if(Number.isNaN(r))return{char:"",start:-1,end:-1};if(r<55296||r>57343)return{char:e.charAt(t),start:t,end:t};if(r>=55296&&r<=56319){var n=t+1;if(n>=e.length)throw new Error("high surrogate without trailing low surrogate");var a=e.charCodeAt(n);if(a<56320||a>57343)throw new Error("high surrogate without trailing low surrogate");return{char:e.charAt(t)+e.charAt(n),start:t,end:n}}if(0===t)throw new Error("low surrogate without leading high surrogate");var i=t-1,o=e.charCodeAt(i);if(o<55296||o>56319)throw new Error("low surrogate without leading high surrogate");return{char:e.charAt(i)+e.charAt(t),start:i,end:t}}var _nativeMathRandom=Math.random;Object.defineProperty(Array,"random",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e||!Object.prototype.hasOwnProperty.call(e,"length"))throw new TypeError("Array.random array parameter must be an array or array-lke object");var t=e.length>>>0;if(0!==t){return e[0===arguments.length?_random(0,t-1):_randomIndex(t,Array.prototype.slice.call(arguments,1))]}}}),Object.defineProperty(Array.prototype,"concatUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.concatUnique called on null or undefined");var e=Array.from(this);if(0===arguments.length)return e;var t=Array.prototype.reduce.call(arguments,function(e,t){return e.concat(t)},[]),r=t.length;if(0===r)return e;for(var n=Array.prototype.indexOf,a=Array.prototype.push,i=0;i<r;++i){var o=t[i];-1===n.call(e,o)&&a.call(e,o)}return e}}),Object.defineProperty(Array.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.count called on null or undefined");for(var e=Array.prototype.indexOf,t=arguments[0],r=Number(arguments[1])||0,n=0;-1!==(r=e.call(this,t,r));)++n,++r;return n}}),Object.defineProperty(Array.prototype,"delete",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.delete called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.concat.apply([],arguments),r=t.length,n=[],a=0;a<e;++a)for(var i=this[a],o=0;o<r;++o){var s=t[o];if(i===s||i!==i&&s!==s){n.push(a);break}}for(var u=[],l=0,c=n.length;l<c;++l)u[l]=this[n[l]];for(var d=Array.prototype.splice,f=n.length-1;f>=0;--f)d.call(this,n[f],1);return u}}),Object.defineProperty(Array.prototype,"deleteAt",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.deleteAt called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.splice,r=[].concat(_toConsumableArray(new Set(Array.prototype.concat.apply([],arguments).map(function(t){return t<0?Math.max(0,e+t):t})).values())),n=[].concat(_toConsumableArray(r)).sort(function(e,t){return t-e}),a=[],i=0,o=r.length;i<o;++i)a[i]=this[r[i]];for(var s=0,u=n.length;s<u;++s)t.call(this,n[s],1);return a}}),Object.defineProperty(Array.prototype,"deleteWith",{configurable:!0,writable:!0,value:function(e,t){if(null==this)throw new TypeError("Array.prototype.deleteWith called on null or undefined");if("function"!=typeof e)throw new Error("Array.prototype.deleteWith predicate parameter must be a function");var r=this.length>>>0;if(0===r)return[];for(var n=Array.prototype.splice,a=[],i=[],o=0;o<r;++o)e.call(t,this[o],o,this)&&(i.push(this[o]),a.push(o));for(var s=a.length-1;s>=0;--s)n.call(this,a[s],1);return i}}),Object.defineProperty(Array.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.first called on null or undefined");if(0!=this.length>>>0)return this[0]}}),Object.defineProperty(Array.prototype,"includesAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAll called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAll.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(!Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!1;return!0}}),Object.defineProperty(Array.prototype,"includesAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAny called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAny.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!0;return!1}}),Object.defineProperty(Array.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.last called on null or undefined");var e=this.length>>>0;if(0!==e)return this[e-1]}}),Object.defineProperty(Array.prototype,"pluck",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pluck called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return Array.prototype.splice.call(this,t,1)[0]}}}),Object.defineProperty(Array.prototype,"pluckMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.pluckMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.pluckMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=Array.prototype.splice,a=[],i=t-1;do{a.push(n.call(this,_random(0,i--),1)[0])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"pushUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pushUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.push,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Array.prototype,"random",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.random called on null or undefined");var e=this.length>>>0;if(0!==e){return this[0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)))]}}}),Object.defineProperty(Array.prototype,"randomMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.randomMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.randomMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=new Map,a=[],i=t-1;do{var o=void 0;do{o=_random(0,i)}while(n.has(o));n.set(o,!0),a.push(this[o])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"shuffle",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.shuffle called on null or undefined");var e=this.length>>>0;if(0===e)return this;for(var t=e-1;t>0;--t){var r=Math.floor(_nativeMathRandom()*(t+1));if(t!==r){var n=this[t];this[t]=this[r],this[r]=n}}return this}}),Object.defineProperty(Array.prototype,"unshiftUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.unshiftUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.unshift,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Function.prototype,"partial",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Function.prototype.partial called on null or undefined");var e=Array.prototype.slice,t=this,r=e.call(arguments,0);return function(){for(var n=[],a=0,i=0;i<r.length;++i)n.push(r[i]===undefined?arguments[a++]:r[i]);return t.apply(this,n.concat(e.call(arguments,a)))}}}),Object.defineProperty(Math,"clamp",{configurable:!0,writable:!0,value:function(e,t,r){var n=Number(e);return Number.isNaN(n)?NaN:n.clamp(t,r)}}),Object.defineProperty(Math,"easeInOut",{configurable:!0,writable:!0,value:function(e){return 1-(Math.cos(Number(e)*Math.PI)+1)/2}}),Object.defineProperty(Number.prototype,"clamp",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Number.prototype.clamp called on null or undefined");if(2!==arguments.length)throw new Error("Number.prototype.clamp called with an incorrect number of parameters");var e=Number(arguments[0]),t=Number(arguments[1]);if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.min(Math.max(this,e),t)}}),RegExp.escape||function(){var e=/[\\^$*+?.()|[\]{}]/g,t=new RegExp(e.source);Object.defineProperty(RegExp,"escape",{configurable:!0,writable:!0,value:function(r){var n=String(r);return n&&t.test(n)?n.replace(e,"\\$&"):n}})}(),function(){var e=/{(\d+)(?:,([+-]?\d+))?}/g,t=new RegExp(e.source);Object.defineProperty(String,"format",{configurable:!0,writable:!0,value:function(r){function n(e,t,r){if(!t)return e;var n=Math.abs(t)-e.length;if(n<1)return e;var a=String(r).repeat(n);return t<0?e+a:a+e}if(arguments.length<2)return 0===arguments.length?"":r;var a=2===arguments.length&&Array.isArray(arguments[1])?[].concat(_toConsumableArray(arguments[1])):Array.prototype.slice.call(arguments,1);return 0===a.length?r:t.test(r)?(e.lastIndex=0,r.replace(e,function(e,t,r){var i=a[t];if(null==i)return"";for(;"function"==typeof i;)i=i();switch(void 0===i?"undefined":_typeof(i)){case"string":break;case"object":i=JSON.stringify(i);break;default:i=String(i)}return n(i,r?Number.parseInt(r,10):0," ")})):r}})}(),Object.defineProperty(String.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.contains called on null or undefined");return-1!==String.prototype.indexOf.apply(this,arguments)}}),Object.defineProperty(String.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.count called on null or undefined");var e=String(arguments[0]||"");if(""===e)return 0;for(var t=String.prototype.indexOf,r=e.length,n=Number(arguments[1])||0,a=0;-1!==(n=t.call(this,e,n));)++a,n+=r;return a}}),Object.defineProperty(String.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.first called on null or undefined");return _getCodePointStartAndEnd(String(this),0).char}}),Object.defineProperty(String.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.last called on null or undefined");var e=String(this);return _getCodePointStartAndEnd(e,e.length-1).char}}),Object.defineProperty(String.prototype,"splice",{configurable:!0,writable:!0,value:function(e,t,r){if(null==this)throw new TypeError("String.prototype.splice called on null or undefined");var n=this.length>>>0;if(0===n)return"";var a=Number(e);Number.isSafeInteger(a)?a<0&&(a+=n)<0&&(a=0):a=0,a>n&&(a=n);var i=Number(t);(!Number.isSafeInteger(i)||i<0)&&(i=0);var o=this.slice(0,a);return void 0!==r&&(o+=r),a+i<n&&(o+=this.slice(a+i)),o}}),Object.defineProperty(String.prototype,"splitOrEmpty",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.splitOrEmpty called on null or undefined");return""===String(this)?[]:String.prototype.split.apply(this,arguments)}}),Object.defineProperty(String.prototype,"toLocaleUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toLocaleUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toLocaleUpperCase()+e.slice(n+1)}}),Object.defineProperty(String.prototype,"toUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toUpperCase()+e.slice(n+1)}}),Object.defineProperty(Date.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:date)",this.toISOString()]}}),Object.defineProperty(Function.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)","("+this.toString()+")"]}}),Object.defineProperty(Map.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:map)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(RegExp.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)",this.toString()]}}),Object.defineProperty(Set.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:set)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(JSON,"reviveWrapper",{configurable:!0,writable:!0,value:function(e,t){if("string"!=typeof e)throw new TypeError("JSON.reviveWrapper code parameter must be a string");return["(revive:eval)",[e,t]]}}),Object.defineProperty(JSON,"_real_stringify",{value:JSON.stringify}),Object.defineProperty(JSON,"stringify",{configurable:!0,writable:!0,value:function(e,t,r){return JSON._real_stringify(e,function(e,r){var n=r;if("function"==typeof t)try{n=t(e,n)}catch(e){}return void 0===n&&(n=["(revive:eval)","undefined"]),n},r)}}),Object.defineProperty(JSON,"_real_parse",{value:JSON.parse}),Object.defineProperty(JSON,"parse",{configurable:!0,writable:!0,value:function value(text,reviver){return JSON._real_parse(text,function(key,val){var value=val;if(Array.isArray(value)&&2===value.length)switch(value[0]){case"(revive:set)":value=new Set(value[1]);break;case"(revive:map)":value=new Map(value[1]);break;case"(revive:date)":value=new Date(value[1]);break;case"(revive:eval)":try{if(Array.isArray(value[1])){var $ReviveData$=value[1][1];value=eval(value[1][0])}else value=eval(value[1])}catch(e){}}else if("string"==typeof value&&"@@revive@@"===value.slice(0,10))try{value=eval(value.slice(10))}catch(e){}if("function"==typeof reviver)try{value=reviver(key,value)}catch(e){}return value})}}),Object.defineProperty(Array.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.contains called on null or undefined");return Array.prototype.includes.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAll called on null or undefined");return Array.prototype.includesAll.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAny called on null or undefined");return Array.prototype.includesAny.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"flatten",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatten called on null or undefined");return Array.prototype.flat.call(this,1/0)}}),Object.defineProperty(String.prototype,"readBracketedList",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.readBracketedList called on null or undefined");for(var e=new RegExp("(?:\\[\\[((?:\\s|\\S)*?)\\]\\])|([^\"'\\s]\\S*)","gm"),t=[],r=void 0;null!==(r=e.exec(this));)r[1]?t.push(r[1]):r[2]&&t.push(r[2]);return t}})}();var Browser=function(){var e=navigator.userAgent.toLowerCase(),t=e.includes("windows phone"),r=Object.freeze({Android:!t&&e.includes("android"),BlackBerry:/blackberry|bb10/.test(e),iOS:!t&&/ip(?:hone|ad|od)/.test(e),Opera:!t&&("object"===_typeof(window.operamini)||e.includes("opera mini")),Windows:t||/iemobile|wpdesktop/.test(e),any:function(){return r.Android||r.BlackBerry||r.iOS||r.Opera||r.Windows}}),n=!r.Windows&&!/khtml|trident|edge/.test(e)&&e.includes("gecko"),a=!e.includes("opera")&&/msie|trident/.test(e),i=a?function(){var t=/(?:msie\s+|rv:)(\d+\.\d)/.exec(e);return t?Number(t[1]):0}():null,o=e.includes("opera")||e.includes(" opr/"),s=o?function(){var t=new RegExp((/khtml|chrome/.test(e)?"opr":"version")+"\\/(\\d+\\.\\d+)"),r=t.exec(e);return r?Number(r[1]):0}():null,u=e.includes("vivaldi");return Object.freeze({userAgent:e,isMobile:r,isGecko:n,isIE:a,ieVersion:i,isOpera:o,operaVersion:s,isVivaldi:u})}(),Has=function(){var e=function(){try{return"function"==typeof document.createElement("audio").canPlayType}catch(e){}return!1}(),t=function(){try{return"Blob"in window&&"File"in window&&"FileList"in window&&"FileReader"in window&&(!Browser.isOpera||Browser.operaVersion>=15)}catch(e){}return!1}(),r=function(){try{return"geolocation"in navigator&&"function"==typeof navigator.geolocation.getCurrentPosition&&"function"==typeof navigator.geolocation.watchPosition}catch(e){}return!1}(),n=function(){try{return"MutationObserver"in window&&"function"==typeof window.MutationObserver}catch(e){}return!1}(),a=function(){try{return"performance"in window&&"function"==typeof window.performance.now}catch(e){}return!1}(),i=function(){try{return"ontouchstart"in window||!!window.DocumentTouch&&document instanceof window.DocumentTouch||!!navigator.maxTouchPoints||!!navigator.msMaxTouchPoints}catch(e){}return!1}(),o=function(){try{for(var e=new Map([["transition","transitionend"],["MSTransition","msTransitionEnd"],["WebkitTransition","webkitTransitionEnd"],["MozTransition","transitionend"]]),t=[].concat(_toConsumableArray(e.keys())),r=document.createElement("div"),n=0;n<t.length;++n)if(r.style[t[n]]!==undefined)return e.get(t[n])}catch(e){}return!1}();return Object.freeze({audio:e,fileAPI:t,geolocation:r,mutationObserver:n,performance:a,touch:i,transitionEndEvent:o})}(),Visibility=function(){function e(){return a}function t(){return a&&document[a.stateProperty]||"visible"}function r(){return Boolean(a)}function n(){return Boolean(a&&document[a.hiddenProperty])}var a=function(){try{return Object.freeze([{hiddenProperty:"hidden",stateProperty:"visibilityState",changeEvent:"visibilitychange"},{hiddenProperty:"webkitHidden",stateProperty:"webkitVisibilityState",changeEvent:"webkitvisibilitychange"},{hiddenProperty:"mozHidden",stateProperty:"mozVisibilityState",changeEvent:"mozvisibilitychange"},{hiddenProperty:"msHidden",stateProperty:"msVisibilityState",changeEvent:"msvisibilitychange"}].find(function(e){return e.hiddenProperty in document}))}catch(e){}return undefined}();return Object.freeze(Object.defineProperties({},{vendor:{get:e},state:{get:t},isEnabled:{value:r},isHidden:{value:n},hiddenProperty:{value:a&&a.hiddenProperty},stateProperty:{value:a&&a.stateProperty},changeEvent:{value:a&&a.changeEvent}}))}(),Fullscreen=function(){function e(e){var t=e||document.documentElement;return t===document.documentElement&&("msRequestFullscreen"===f.requestFn||Browser.isOpera&&Browser.operaVersion<15)&&(t=document.body),t}function t(){return f}function r(){return(f||null)&&document[f.element]}function n(){return Boolean(f&&document[f.isEnabled])}function a(){return Boolean(f&&document[f.element])}function i(t,r){var n=this;if(!f)return Promise.reject(new Error("fullscreen not supported"));var i=e(r);if("function"!=typeof i[f.requestFn])return Promise.reject(new Error("fullscreen not supported"));if(a())return Promise.resolve();if(p())return i[f.requestFn](t);var o=".Fullscreen_requestFullscreen";return new Promise(function(e,r){jQuery(i).off(o).one(""+f.errorEvent+o+" "+f.changeEvent+o,function(t){jQuery(n).off(o),t.type===f.errorEvent?r(new Error("unknown fullscreen request error")):e()}),i[f.requestFn](t)})}function o(){var e=this;if(!f||"function"!=typeof document[f.exitFn])return Promise.reject(new TypeError("fullscreen not supported"));if(!a())return Promise.reject(new TypeError("fullscreen mode not active"));if(p())return document[f.exitFn]();var t=".Fullscreen_exitFullscreen";return new Promise(function(r,n){jQuery(document).off(t).one(""+f.errorEvent+t+" "+f.changeEvent+t,function(a){jQuery(e).off(t),a.type===f.errorEvent?n(new Error("unknown fullscreen exit error")):r()}),document[f.exitFn]()})}function s(e,t){return a()?o():i(e,t)}function u(t,r){if(f){var n=e(r);$(n).on(f.changeEvent,t)}}function l(t,r){if(f){var n=e(r);t?$(n).off(f.changeEvent,t):$(n).off(f.changeEvent)}}function c(t,r){if(f){var n=e(r);$(n).on(f.errorEvent,t)}}function d(t,r){if(f){var n=e(r);t?$(n).off(f.errorEvent,t):$(n).off(f.errorEvent)}}var f=function(){try{return Object.freeze([{isEnabled:"fullscreenEnabled",element:"fullscreenElement",requestFn:"requestFullscreen",exitFn:"exitFullscreen",changeEvent:"fullscreenchange",errorEvent:"fullscreenerror"},{isEnabled:"webkitFullscreenEnabled",element:"webkitFullscreenElement",requestFn:"webkitRequestFullscreen",exitFn:"webkitExitFullscreen",changeEvent:"webkitfullscreenchange",errorEvent:"webkitfullscreenerror"},{isEnabled:"mozFullScreenEnabled",element:"mozFullScreenElement",requestFn:"mozRequestFullScreen",exitFn:"mozCancelFullScreen",changeEvent:"mozfullscreenchange",errorEvent:"mozfullscreenerror"},{isEnabled:"msFullscreenEnabled",element:"msFullscreenElement",requestFn:"msRequestFullscreen",exitFn:"msExitFullscreen",changeEvent:"MSFullscreenChange",errorEvent:"MSFullscreenError"}].find(function(e){return e.isEnabled in document}))}catch(e){}return undefined}(),p=function(){function e(){if(null!==t)return t;if(t=!1,f)try{var e=document.exitFullscreen();e.catch(function(){}),t=e instanceof Promise}catch(e){}return t}var t=null;return e}();return Object.freeze(Object.defineProperties({},{vendor:{get:t},element:{get:r},isEnabled:{value:n},isFullscreen:{value:a},request:{value:i},exit:{value:o},toggle:{value:s},onChange:{value:u},offChange:{value:l},onError:{value:c},offError:{value:d}}))}(),_ref3=function(){function e(e){for(var t=e.cloneNode(!0),r=document.createDocumentFragment(),n=void 0;null!==(n=t.firstChild);){if(n.nodeType===Node.ELEMENT_NODE)switch(n.nodeName.toUpperCase()){case"BR":case"DIV":case"P":r.appendChild(document.createTextNode(" "))}r.appendChild(n)}return r.textContent}function t(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)return e;if(e instanceof String)return String(e);if(e instanceof Number)return Number(e);if(e instanceof Boolean)return Boolean(e)

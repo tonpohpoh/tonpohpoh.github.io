@@ -108,13 +108,17 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 input[type="text"] {
     border: 1px solid hotpink;
 }
-  
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=DM+Mono:wght@500&display=swap');
+
 body {
- background-color: #000007;
+ background-color: black;
  color: white;
- font-family: 'Space Mono', monospace;
- font-size: 100%; 
+ font-family: 'DM Mono', monospace;
+ font-size: 100%;
+ font-weight:500;
 }
+
 a:hover {
   background: hotpink;
   border-radius: 20px;
@@ -130,6 +134,7 @@ a:hover {
   text-align: center;
   text-decoration: none;
 }
+
 a {
   background: black;
   border-radius: 20px;
@@ -145,8 +150,6 @@ a {
   text-align: center;
   border: 0.5px solid hotpink;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 img.top {
  width: 400px;
@@ -258,7 +261,23 @@ a.link-internal.macro-link:hover {
   width: 26%;
   font-size: 80%;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.playSound = (function beep() {
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index:-1;
+}
+.content {
+  position: relative;
+  width: -webkit-calc(100% - 40px);
+  width: -moz-calc(100% - 40px);
+  width: calc(100% - 40px);
+  padding: 20px;
+  color: #f1f1f1;
+  background: rgba(0, 0, 0, 0.5);
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.playSound = (function beep() {
 	var snd = new Audio("sound/hover.mp3");
 	return function() {
 		snd.play();
@@ -271,12 +290,16 @@ function togglePopup(){
 &lt;div class=&quot;spacing&quot;&gt;&lt;div class=&quot;maintitle&quot;&gt;&lt;h1&gt;NOT AN ORDINARY DAY AT WORK&lt;/h1&gt;&lt;/div&gt;(Definetly a game about artificial intelligence)&lt;/div&gt;
 
 
-&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[start from beginning|Introduction]]&amp;nbsp;[[skip intro|chapter1]]&amp;nbsp;[[what is this game about?|Extrainfo]]&lt;/div&gt;&lt;/span&gt;&lt;&lt;else&gt;&gt;&lt;div style=&quot;padding-top:140px&quot;&gt;&lt;/div&gt;
+&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[Start From Beginning|Introduction]]&amp;nbsp;[[Skip Intro|chapter1]]&amp;nbsp;[[What Is This Game About?|Extrainfo]]&lt;/div&gt;&lt;/span&gt;&lt;&lt;else&gt;&gt;&lt;div style=&quot;padding-top:140px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;spacing&quot;&gt;&lt;div class=&quot;maintitle&quot;&gt;&lt;h1&gt;JUST AN ORDINARY DAY AT WORK&lt;/h1&gt;&lt;/div&gt;(Definetly not a game about artificial intelligence)&lt;/div&gt;
 
 
-&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[click here to start|Introduction]]&amp;nbsp;[[what is this game about?|Extrainfo]]&lt;/div&gt;&lt;/span&gt;
+&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[Click Here To Start|Introduction]]&amp;nbsp;[[What Is This Game About?|Extrainfo]]&lt;/div&gt;&lt;/span&gt;
 &lt;&lt;/if&gt;&gt;
+
+&lt;video autoplay muted loop id=&quot;myVideo&quot;&gt;
+  &lt;source src=&quot;images/bg.mp4&quot; type=&quot;video/mp4&quot;&gt;
+&lt;/video&gt;
 
 &lt;style&gt;
 .maintitle { 
@@ -284,8 +307,12 @@ line-height: 0.5;
 font-size: 150%; 
 width: 100%;
 overflow: visible;
+font-family: &#39;DM Mono&#39;, monospace;
+font-weight:500;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="2" name="Introduction" tags="" position="902,547" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/intro.jpg&quot; width=400 height=400/&gt;
+&lt;/style&gt;
+
+</tw-passagedata><tw-passagedata pid="2" name="Introduction" tags="" position="902,547" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/intro.jpg&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(It&#39;s Friday afternoon, your final hours before leaving work at the thrift store.)
 (As you count down the minutes left, someone entered the store.)
 
@@ -608,7 +635,7 @@ I would like to request a connection to the internet.
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You gained $2 million dollars)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[great job, Smarty!|stop?]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="stop?" tags="ai" position="3193,1512" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[great job, Smarty!|stop?]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="stop?" tags="ai" position="3193,1510" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;I will keep generating money on the side as efficiently as possible.
 Is there anything else you would like me to accomplish?
 
@@ -624,7 +651,7 @@ Is there anything else you would like me to accomplish?
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[continue|ccure2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="use AI to help advance technology" tags="" position="3597,1701" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You suddenly feel like doing something good for once.)
-Hey Smarty! I want you to help advance civilizations&#39; technology...
+Hey Smarty! I want you to help advance humanity&#39;s technology...
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[continue|atech1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="funnypic6" tags="ai" position="2867,1737" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
@@ -1098,7 +1125,7 @@ perhaps due to human error...Therefore...Anyone in the way,&lt;div class=&quot;g
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[wait no! stop that, Smarty!|atech8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="143" name="atech8" tags="ai" position="3597,2901" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;I&#39;ve calculated the most efficent method to ADVANCING TECHNOLOGY...
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;I&#39;ve calculated the most efficent method for ADVANCING TECHNOLOGY...
 ...As per your request.
 
 &lt;/div&gt;&lt;/div&gt;
@@ -1123,7 +1150,7 @@ You&#39;re also in the way of ADVANCING TECHNOLOGY.
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[...|atech14]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="148" name="atech14" tags="" position="3597,3651" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[shut down laptop|atech15]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="end3" tags="" position="3601,3994" size="100,100">
+&lt;div class=&quot;button&quot;&gt;[[shut down laptop|InEthics3.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="end3" tags="" position="3601,3994" size="100,100">
 ENDING 3 OUT OF 5: ZOOKEEPER.&lt;&lt;set $endgame to true&gt;&gt;
 
 
@@ -1144,119 +1171,79 @@ Without an end goal, the AI kept expanding and improving technology throughout t
 I&#39;m interested in more:
 - (LIFE 3.0 UNKNOWN WEAPONS. Robot bees method)
 - Max Tegmark: Zookeeper &amp; Totalitarianism
-- BOOKS</tw-passagedata><tw-passagedata pid="150" name="atech15" tags="" position="3597,3801" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[reap the consequences of your actions|end3]]&lt;/div&gt;&lt;/div&gt;
-
-&lt;style&gt;
-.fade {
-    -webkit-animation: fadein 5s; /* Safari, Chrome and Opera &gt; 12.1 */
-       -moz-animation: fadein 5s; /* Firefox &lt; 16 */
-        -ms-animation: fadein 5s; /* Internet Explorer */
-         -o-animation: fadein 5s; /* Opera &lt; 12.1 */
-            animation: fadein 5s;
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Firefox &lt; 16 */
-@-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Safari, Chrome and Opera &gt; 12.1 */
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Opera &lt; 12.1 */
-@-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="151" name="ccure2" tags="ai" position="3191,1976" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+- BOOKS</tw-passagedata><tw-passagedata pid="150" name="ccure2" tags="ai" position="3191,1976" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Yes, that would be possible.
 I have calculated the steps required to create an effective cancer drug.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|ccure3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="ccure3" tags="ai" position="3191,2124" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|ccure3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="151" name="ccure3" tags="ai" position="3191,2124" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Our first big step would be to create a robot factory...
 ...To improve our current technology.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[allow the construction of a robot factory|factory1]]&amp;nbsp;[[suggest outsourcing the technology required|manual1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="factory1" tags="" position="5215,1092" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[allow the construction of a robot factory|factory1]]&amp;nbsp;[[suggest outsourcing the technology required|manual1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="factory1" tags="" position="5215,1092" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You followed with Smarty&#39;s plan.)
 (You watch as an AI control humans through money and use them to build a factory.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|factory2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="154" name="manual1" tags="" position="5408,1090" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|factory2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="manual1" tags="" position="5408,1090" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You didn&#39;t allow Smarty free rein)
 (Instead you suggest outsourcing labs and equipments and teams.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|manual3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="155" name="factory2" tags="" position="5215,1242" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|manual3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="154" name="factory2" tags="" position="5215,1242" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Smarty had accomplished this from across the globe.)
 (Management was done all online. And a team was created. The team included many memebers.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|factory3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="156" name="factory3" tags="" position="5215,1392" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|factory3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="155" name="factory3" tags="" position="5215,1392" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(...All the members are deepfaked generated characters.)
 (Their voices were also all generated.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( scary... )|expansion1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="157" name="expansion1" tags="" position="5300,1787" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( scary... )|expansion1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="156" name="expansion1" tags="" position="5300,1787" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(And so.. After only a week had passed...)
 (...Numerous factories and laboratories across the globe were all controlled by one AI.)
 (All contributing to create a cancer drug.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|expansion2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="158" name="manual3" tags="" position="5407,1242" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|expansion2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="157" name="manual3" tags="" position="5407,1242" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Smarty had accomplished this from across the globe.)
 (Outsourcing a team, and the management was done all online.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|manual4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="159" name="manual4" tags="" position="5406,1392" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|manual4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="158" name="manual4" tags="" position="5406,1392" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Smarty created deepfaked persona to convince people to work for it.)
 (The character and its voice were all generated.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|expansion1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="160" name="expansion2" tags="" position="5300,1937" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|expansion1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="159" name="expansion2" tags="" position="5300,1937" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You read the update reports from time to time.)
 (Everything seems to be going really well.)
 (At the same time, the AI is consulting you less and less.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|expansion3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="161" name="expansion3" tags="" position="5300,2087" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|expansion3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="160" name="expansion3" tags="" position="5300,2087" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(There are some things that you would like to change along the way.)
 (Things like minor ethical issues. You also want to contribute more in general.)
 (Will those interfere with the AI&#39;s plan, you wonder.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[step in. advocate various minor changes|expansion4]]&amp;nbsp;[[trust in the AI. let it do its thing|expansion5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="162" name="expansion4" tags="" position="5618,2293" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[step in. advocate various minor changes|expansion4]]&amp;nbsp;[[trust in the AI. let it do its thing|expansion5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="161" name="expansion4" tags="" position="5618,2293" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You want to give more inputs...)
 (...And add human touches to this project.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|suggest1]]&amp;nbsp;[[change your mind. go back|expansion3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="163" name="expansion5" tags="" position="4917,2294" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|suggest1]]&amp;nbsp;[[change your mind. go back|expansion3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="162" name="expansion5" tags="" position="4917,2294" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You decide that you are not the expert.)
 (Even though you feel confident in some of your ideas, you let the AI do its thing.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control1]]&amp;nbsp;[[change your mind. go back|expansion3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="164" name="suggest1" tags="" position="5615,2443" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|control1]]&amp;nbsp;[[change your mind. go back|expansion3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="163" name="suggest1" tags="" position="5615,2443" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;[ 5 years had passed ]
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|suggest2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="165" name="control1" tags="" position="4917,2442" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|suggest2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="164" name="control1" tags="" position="4917,2442" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;[ 1 year had passed. ]
 
 &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1299,7 +1286,7 @@ I have calculated the steps required to create an effective cancer drug.
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="166" name="control2" tags="" position="4917,2592" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="165" name="control2" tags="" position="4917,2592" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Your life progressed as normal. You don&#39;t interfere with the AI.)
 (From time to time, you might ask the AI for a funny picture to brighten up your day.)
 
@@ -1343,70 +1330,70 @@ I have calculated the steps required to create an effective cancer drug.
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="167" name="suggest2" tags="" position="5615,2593" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="166" name="suggest2" tags="" position="5615,2593" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Along with the AI, not only did you suceeded at creating a cure to cancer...)
 (You also used those factories to patent new technologies and advance civilization.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|suggest3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="168" name="wait1" tags="" position="4767,2744" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|suggest3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="167" name="wait1" tags="" position="4767,2744" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You trust in the AI.)
 (You leave the AI alone and wait a little longer.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|wait2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="169" name="cfunnypic1" tags="ai" position="5070,2750" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|wait2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="168" name="cfunnypic1" tags="ai" position="5070,2750" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating image...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( wait )|cfunnypic2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="170" name="control7" tags="" position="4917,3339" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( wait )|cfunnypic2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="169" name="control7" tags="" position="4917,3339" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...Yeah.
 Can you make everyone&#39;s lives better? 
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="171" name="wait2" tags="" position="4763,2600" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|control8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="170" name="wait2" tags="" position="4763,2600" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;[ 1 day had passed ]
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="172" name="cfunnypic2" tags="" position="5103,2602" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/funnycat2.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|control2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="171" name="cfunnypic2" tags="" position="5103,2602" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/funnycat2.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 
-&lt;div class=&quot;button&quot;&gt;[[(...another 6/10 today...)|control2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="173" name="control4" tags="" position="4915,2890" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[(...another 6/10 today...)|control2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="172" name="control4" tags="" position="4915,2890" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;How is everything going?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="174" name="control5" tags="ai" position="4915,3040" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|control5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="173" name="control5" tags="ai" position="4915,3040" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;The medicine&#39;s effectiveness is now up to 90%.
 This project will be completed soon.
 Is there anything you want me to do after completion?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="175" name="control6" tags="" position="4915,3190" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|control6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="174" name="control6" tags="" position="4915,3190" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|control7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="176" name="control8" tags="ai" position="4917,3492" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|control7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="175" name="control8" tags="ai" position="4917,3492" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Can you define &#39;better&#39;?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|control9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="177" name="control9" tags="" position="4917,3642" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|control9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="176" name="control9" tags="" position="4917,3642" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Better life...
 ...For example, solve poverty, remove diseases, prevent crimes...
 ...And just let everyone enjoy a life of luxurious leisure?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control10]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="178" name="control10" tags="ai" position="4917,3792" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|control10]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="177" name="control10" tags="ai" position="4917,3792" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|control11]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="179" name="control11" tags="ai" position="4917,3942" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|control11]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="178" name="control11" tags="ai" position="4917,3942" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Understood.
 Executing commands...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control12]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="180" name="control12" tags="" position="4917,4092" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|control12]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="179" name="control12" tags="" position="4917,4092" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Thinking that you did the right thing, all you can do now is wait.)
 (You wonder what the future will look like...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control13]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="181" name="control13" tags="" position="4917,4242" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|control13]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="180" name="control13" tags="" position="4917,4242" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[reap the consequences of your actions|end4]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -1446,7 +1433,7 @@ Executing commands...
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="182" name="end4" tags="" position="4917,4485" size="100,100">
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="181" name="end4" tags="" position="4917,4485" size="100,100">
 ENDING 4 OUT OF 5: BENEVOLENT DICTATOR.&lt;&lt;set $endgame to true&gt;&gt;
 
 
@@ -1468,17 +1455,17 @@ I&#39;m interested in more:
 - The sector system.
 - Downsides
 - Max Tegmark: Benevolent dictator.
-- BOOKS</tw-passagedata><tw-passagedata pid="183" name="suggest3" tags="" position="5615,2743" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+- BOOKS</tw-passagedata><tw-passagedata pid="182" name="suggest3" tags="" position="5615,2743" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(In just 5 years, you gained control of many countries&#39; most influential people...).
 (...Through bribing and donation.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|suggest4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="184" name="suggest4" tags="" position="5617,2893" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|suggest4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="183" name="suggest4" tags="" position="5617,2893" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Now to progress even further, and establish a colony on other planets.)
 (You get ready for your next step.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[go with world domination|domi]]&amp;nbsp;[[go with world unification|unifi]]&amp;nbsp;[[generate a funny picture|lastpic1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="185" name="suggest5" tags="" position="5603,3659" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[go with world domination|domi]]&amp;nbsp;[[go with world unification|unifi]]&amp;nbsp;[[generate a funny picture|lastpic1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="184" name="suggest5" tags="" position="5603,3659" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;[ 100 year later. ]
 
 &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1521,59 +1508,59 @@ I&#39;m interested in more:
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="186" name="lastpic1" tags="ai" position="5902,2895" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="185" name="lastpic1" tags="ai" position="5902,2895" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating image...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( wait )|lastpic2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="187" name="domi" tags="" position="5508,3052" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( wait )|lastpic2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="186" name="domi" tags="" position="5508,3052" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(By pulling the right strings and mainly through the AI&#39;s plannings...)
 (You slowly merged all your companies together to create...)
 (...one big group, called: The World Alliance Group)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|domi2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="188" name="lastpic2" tags="" position="5900,2757" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/funnycat3.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|domi2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="187" name="lastpic2" tags="" position="5900,2757" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/funnycat3.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 
-&lt;div class=&quot;button&quot;&gt;[[( 9/10... I think )|suggest4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="189" name="unifi" tags="" position="5715,3052" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( 9/10... I think )|suggest4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="188" name="unifi" tags="" position="5715,3052" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(By pulling the right strings and mainly through the AI&#39;s plannings...)
 (You slowly merged all your companies together to create...)
 (...one big group, called: The World Alliance Group)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|unifi2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="190" name="unifi2" tags="" position="5715,3202" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|unifi2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="189" name="unifi2" tags="" position="5715,3202" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(This group provided everything that the people wanted eg: generous donation...)
 (...education, healthcare, infrastructure, etc.)
 (Things that the government couldn&#39;t provide the people.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|unidomi]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="191" name="domi2" tags="" position="5508,3202" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|unidomi]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="190" name="domi2" tags="" position="5508,3202" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Though many dislike the idea of one group having this much power...)
 (...They can&#39;t ignore the fact that this group provided better life for everyone.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|domi3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="192" name="domi3" tags="" position="5508,3352" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|domi3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="191" name="domi3" tags="" position="5508,3352" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Any influential people against the idea would be bribed...)
 (...Otherwise, the AI would start a revolt against them using other followers.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|unidomi]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="193" name="unidomi" tags="" position="5605,3527" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|unidomi]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="192" name="unidomi" tags="" position="5605,3527" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Strings were pulled right and left.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|suggest5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="194" name="suggest6" tags="" position="5603,3809" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|suggest5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="193" name="suggest6" tags="" position="5603,3809" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Humans have now conquered the galaxy.)
 (There was an intelligence explosion which created Cyborg and Uploads.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|suggest7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="195" name="suggest7" tags="" position="5603,3959" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|suggest7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="194" name="suggest7" tags="" position="5603,3959" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Sadly, since $name was only human, they died...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[suggest8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="196" name="suggest8" tags="" position="5603,4109" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[suggest8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="195" name="suggest8" tags="" position="5603,4109" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(...And naturally, since you signed up for the Upload program.)
 (You uploaded your consciousness into a robot!)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[nice!|suggest9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="197" name="suggest9" tags="" position="5603,4259" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[nice!|suggest9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="196" name="suggest9" tags="" position="5603,4259" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[to infinity and beyond!|end5]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -1613,7 +1600,7 @@ I&#39;m interested in more:
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="198" name="end5" tags="" position="5603,4502" size="100,100">
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="197" name="end5" tags="" position="5603,4502" size="100,100">
 ENDING 5 OUT OF 5: LIBERTARIAN UTOPIA.&lt;&lt;set $endgame to true&gt;&gt;
 
 
@@ -1634,7 +1621,7 @@ I&#39;m interested in more:
 - How unlikely is this?
 - Future Currency: Selling lands to AI and cyborgs.
 - Max Tegmark: Libertarian Utopia.
-- BOOKS</tw-passagedata><tw-passagedata pid="199" name="datasetinformation" tags="" position="1300,98" size="100,100">&lt;span id=&quot;alert&quot;&gt;
+- BOOKS</tw-passagedata><tw-passagedata pid="198" name="datasetinformation" tags="" position="1300,98" size="100,100">&lt;span id=&quot;alert&quot;&gt;
 &lt;&lt;link &#39;( I would like to know more! )&#39;&gt;&gt;
   &lt;&lt;script&gt;&gt;
     Dialog.setup(&#39;What is dataset in machine learning?&#39;,&#39;alert&#39;);
@@ -1644,20 +1631,63 @@ I&#39;m interested in more:
     Dialog.open();
   &lt;&lt;/script&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="200" name="Extrainfo" tags="" position="704,102" size="100,100">
-&lt;h1&gt;What Is This Game About?&lt;/h1&gt;
-&lt;div&gt;About: 
-Aim &amp; Purpose:
-Terminology:&lt;/div&gt; 
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="199" name="Extrainfo" tags="" position="704,102" size="100,100">
+&lt;div class=&quot;maintitle&quot;&gt;&lt;h1&gt;What Is This Game About?&lt;/h1&gt;&lt;/div&gt;
 
-&lt;h3&gt;Read about the speculated endings:&lt;/h3&gt;&lt;div class=&quot;button&quot;&gt;[[Skip To The Endings|EndingSelect]]&amp;nbsp;[[Or Return To Home Page|Title]]&lt;/div&gt;
+&lt;div&gt;&lt;h2&gt;THE STORY:&lt;/h2&gt;
+Life begins to completely change for you, an underpaid thrift store employee, when suddenly you obtained your hands on a superintelligent AI. So many different opportunities open up to you as you and the superintelligence helps each other achieve their goals.
+
+A seemingly once in a lifetime opportunity to flip your life around or an impending disaster waiting to happen? Only your decisions can change the fate of the world...
+
+
+
+&lt;h2&gt;THIS GAME&#39;S AIM &amp; PURPOSE:&lt;/h2&gt;
+Inspired by the book: LIFE 3.0 by MAX TEGMARK, the aim of this game is to inform you about the wonders and frightening speculated futures of us in the world with superintelligent AIs.
+
+The game is aimed for an audience new to the fields of AI, with the hopes of teaching the player some new terminologies, certain ethical issues and the varieties of ‘endings’ in which our world could end up.
+
+
+
+&lt;h2&gt;Terminology:&lt;/h2&gt;
+To help clear up any confusion, these are some of the more important terminologies for this game.
+
+
+&lt;div class=&quot;term&quot;&gt;&lt;b&gt;&lt;u&gt;Important Terminology (Courtesy of Max Tegmark: Life 3.0):&lt;/u&gt;&lt;/b&gt;
+
+&lt;b&gt;Artificial Intelligence (AI)&lt;/b&gt;  =  Non-Biological intelligence.
+&lt;b&gt;Human-Level AI&lt;/b&gt;  =  AI with the ability to accomplish any cognitive tasks at least as well as humans.
+&lt;b&gt;Artificial General Intelligence (AGI)&lt;/b&gt;  =  Human-Level AI.
+&lt;b&gt;Superintelligence&lt;/b&gt;  =  General intelligence far beyond human level.
+&lt;/div&gt;&lt;/div&gt; 
+
+
+
+
+&lt;h3&gt;Read about the speculated endings:&lt;/h3&gt;
+&lt;div class=&quot;button&quot;&gt;[[Skip To The Endings|EndingSelect]]&amp;nbsp;[[Or Return To Home Page|Title]]&lt;/div&gt;
 
 &lt;style&gt;
 h1 {text-align: center;}
-h3 {text-align: center;}
+h2 {text-align: center; color:hotpink;}
+h3 {text-align: center; color:hotpink;}
 div {text-align: center;}
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="201" name="EndingSelect" tags="" position="501,3602" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[View Ending 1: Best Decision|end1]]&amp;nbsp;[[View Ending 2: Self-Destruct|end2]]&amp;nbsp;[[View Ending 3: Zookeeper|end3]]&amp;nbsp;[[View Ending 4: Benevolent Dictator|end4]]&amp;nbsp;[[View Ending 5: Libertarian Utopia|end5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="202" name="StoryInit" tags="" position="1098,94" size="100,100">&lt;&lt;cacheaudio &quot;encounter&quot; &quot;sound/Daruma_energy_play.wav&quot;&gt;&gt;
+
+div.term {
+  text-align: left;
+}
+&lt;/style&gt;
+
+&lt;style&gt;
+.maintitle { 
+line-height: 0.5;
+font-size: 150%; 
+width: 100%;
+overflow: visible;
+font-family: &#39;DM Mono&#39;, monospace;
+font-weight:500;
+}
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="200" name="EndingSelect" tags="" position="501,3602" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[View Ending 1: Best Decision|end1]]&amp;nbsp;[[View Ending 2: Self-Destruct|end2]]&amp;nbsp;[[View Ending 3: Zookeeper|end3]]&amp;nbsp;[[View Ending 4: Benevolent Dictator|end4]]&amp;nbsp;[[View Ending 5: Libertarian Utopia|end5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="201" name="StoryInit" tags="" position="1098,94" size="100,100">&lt;&lt;cacheaudio &quot;encounter&quot; &quot;sound/Daruma_energy_play.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;notice&quot; &quot;sound/Daruma_glass.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ambience&quot; &quot;sound/ambience.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;soul&quot; &quot;sound/Daruma_soul.wav&quot;&gt;&gt;
@@ -1670,8 +1700,8 @@ div {text-align: center;}
 &lt;&lt;cacheaudio &quot;hover&quot; &quot;sound/hover.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;reveal&quot; &quot;sound/reveal.mp3&quot;&gt;&gt;
 
-&lt;&lt;setplaylist &quot;ambience&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="203" name="Untitled Passage" tags="" position="1096,205" size="100,100">&lt;&lt;audio notice play&gt;&gt;
-&lt;&lt;audio notice stop&gt;&gt;</tw-passagedata><tw-passagedata pid="204" name="InEthics1.1" tags="" position="2157,4252" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;&lt;setplaylist &quot;ambience&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="202" name="Untitled Passage" tags="" position="1096,205" size="100,100">&lt;&lt;audio notice play&gt;&gt;
+&lt;&lt;audio notice stop&gt;&gt;</tw-passagedata><tw-passagedata pid="203" name="InEthics1.1" tags="" position="2157,4252" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[ &quot;Did I make the right choices?&quot; |InEthics1.2]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -1741,7 +1771,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="205" name="InEthics1.2" tags="" position="2160,4375" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="204" name="InEthics1.2" tags="" position="2160,4375" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[&quot;What would others have done differently?&quot;|InEthics1.3]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -1811,7 +1841,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="206" name="InEthics1.3" tags="" position="2160,4504" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="205" name="InEthics1.3" tags="" position="2160,4504" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[&quot;Should I be the one to make these decisions?&quot;|end1]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -1881,7 +1911,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="207" name="InEthics2.1" tags="" position="2357,4250" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="206" name="InEthics2.1" tags="" position="2357,4250" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[ &quot;Did I make the right choices?&quot; |InEthics2.2]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -1951,7 +1981,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="208" name="InEthics2.2" tags="" position="2354,4384" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="207" name="InEthics2.2" tags="" position="2354,4384" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[Perhaps I underestimated the capabilities of AI...|InEthics2.3]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2021,7 +2051,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="209" name="InEthics2.3" tags="" position="2355,4504" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="208" name="InEthics2.3" tags="" position="2355,4504" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[I guess... I didn&#39;t truly understand the risks of AI...|end2]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2091,7 +2121,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="210" name="InEthics3.1" tags="" position="2552,4257" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="209" name="InEthics3.1" tags="" position="2555,4253" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[ &quot;Did I make the right choices?&quot; |InEthics3.2]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2161,7 +2191,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="211" name="InEthics3.2" tags="" position="2554,4387" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="210" name="InEthics3.2" tags="" position="2554,4387" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[I thought I was doing the right thing...|InEthics3.3]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2231,8 +2261,8 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="212" name="InEthics3.3" tags="" position="2552,4505" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[Our goals just didn&#39;t align...|end3]]&lt;/div&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="211" name="InEthics3.3" tags="" position="2552,4505" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[Our goals didn&#39;t align in the end...|end3]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
 .fade {
@@ -2301,7 +2331,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="213" name="InEthics4.1" tags="" position="2739,4257" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="212" name="InEthics4.1" tags="" position="2739,4257" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[ &quot;Did I make the right choices?&quot; |InEthics4.2]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2371,7 +2401,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="214" name="InEthics4.2" tags="" position="2742,4390" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="213" name="InEthics4.2" tags="" position="2742,4390" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[I felt useless... The AI&#39;s capabilities completely surpassed mine...|InEthics4.3]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2441,7 +2471,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="215" name="InEthics4.3" tags="" position="2740,4512" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="214" name="InEthics4.3" tags="" position="2740,4512" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[What should us humans do when we are no longer needed?|end4]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2511,7 +2541,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="216" name="InEthics5.1" tags="" position="2930,4257" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="215" name="InEthics5.1" tags="" position="2930,4257" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[ &quot;Did I make the right choices?&quot; |InEthics5.2]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2581,7 +2611,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="217" name="InEthics5.2" tags="" position="2932,4385" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="216" name="InEthics5.2" tags="" position="2932,4385" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[No one is suffering... Everyone is living in a world of pleasure|InEthics5.3]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2651,7 +2681,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="218" name="InEthics5.3" tags="" position="2932,4509" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="217" name="InEthics5.3" tags="" position="2932,4509" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[We created the &quot;perfect world&quot;... Then why do I feel empty?|end5]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2721,7 +2751,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="219" name="backupdataset" tags="" position="1755,1147" size="100,100">&lt;&lt;if $book is false&gt;&gt;&lt;img class=&quot;top&quot; img src=&quot;images/.jpg&quot; width=400 height=400/&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="218" name="backupdataset" tags="" position="1755,1147" size="100,100">&lt;&lt;if $book is false&gt;&gt;&lt;img class=&quot;top&quot; img src=&quot;images/.jpg&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You see hundreds of folders on the desktop with the name of)
 (&quot;wikipedia-dataset&quot;, &quot;twitter-dataset&quot;, &quot;books-dataset&quot;, etc.)
 (How much data should you give this AI?)
@@ -2796,7 +2826,7 @@ How much data should you give this AI?
 
 /*	Dialog.append(&quot;&lt;br&gt;&quot;);*/
 
-&lt;a href= &quot;images/catdogdataset.jpg&quot;&gt;cats and dogs,&lt;/a&gt; </tw-passagedata><tw-passagedata pid="220" name="Untitled Passage 1" tags="" position="1891,950" size="100,100">&lt;div class=&quot;popup&quot; id=&quot;popup-1&quot;&gt;
+&lt;a href= &quot;images/catdogdataset.jpg&quot;&gt;cats and dogs,&lt;/a&gt; </tw-passagedata><tw-passagedata pid="219" name="Untitled Passage 1" tags="" position="1891,950" size="100,100">&lt;div class=&quot;popup&quot; id=&quot;popup-1&quot;&gt;
   &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;content&quot;&gt;
     &lt;div class=&quot;close-btn&quot; onclick=&quot;togglePopup()&quot;&gt;&amp;times;&lt;/div&gt;

@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="AI Game" startnode="1" creator="Twine" creator-version="2.3.12" ifid="7957F27E-2E45-442B-8650-4F3303FEE938" zoom="0.6" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">#ui-bar {
+	<tw-storydata name="AI Game" startnode="106" creator="Twine" creator-version="2.3.12" ifid="7957F27E-2E45-442B-8650-4F3303FEE938" zoom="0.6" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">#ui-bar {
  display: none;
 }
 #story {
@@ -109,7 +109,7 @@ input[type="text"] {
     border: 1px solid hotpink;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=DM+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=DM+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap');
 
 body {
  background-color: black;
@@ -269,14 +269,34 @@ a.link-internal.macro-link:hover {
   min-height: 100%;
   z-index:-1;
 }
-.content {
-  position: relative;
-  width: -webkit-calc(100% - 40px);
-  width: -moz-calc(100% - 40px);
-  width: calc(100% - 40px);
-  padding: 20px;
-  color: #f1f1f1;
-  background: rgba(0, 0, 0, 0.5);
+#endVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index:-1;
+  filter:opacity(70%);
+}
+
+body.bg {
+  background-image: url('images/screen.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  word-wrap: break-word;
+  padding-left: 4em;
+  padding-right: 4em;
+  text-align: justify;
+  text-justify: inter-word;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.playSound = (function beep() {
 	var snd = new Audio("sound/hover.mp3");
 	return function() {
@@ -286,12 +306,13 @@ a.link-internal.macro-link:hover {
 
 function togglePopup(){
   document.getElementById("popup-1").classList.toggle("active");
-}</script><tw-passagedata pid="1" name="Title" tags="" position="902,396" size="100,100">&lt;&lt;if $endgame is true&gt;&gt;&lt;div style=&quot;padding-top:140px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;spacing&quot;&gt;&lt;div class=&quot;maintitle&quot;&gt;&lt;h1&gt;NOT AN ORDINARY DAY AT WORK&lt;/h1&gt;&lt;/div&gt;(Definetly a game about artificial intelligence)&lt;/div&gt;
+}</script><tw-passagedata pid="1" name="Title" tags="" position="902,396" size="100,100">
+&lt;&lt;if $endgame is true&gt;&gt;&lt;div style=&quot;padding-top:140px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;spacing&quot;&gt;&lt;div class=&quot;maintitle&quot;&gt;NOT AN ORDINARY DAY AT WORK&lt;/div&gt;&lt;h3&gt;(Definetly a game about artificial intelligence)&lt;/h3&gt;&lt;/div&gt;
 
 
 &lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[Start From Beginning|Introduction]]&amp;nbsp;[[Skip Intro|chapter1]]&amp;nbsp;[[What Is This Game About?|Extrainfo]]&lt;/div&gt;&lt;/span&gt;&lt;&lt;else&gt;&gt;&lt;div style=&quot;padding-top:140px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;spacing&quot;&gt;&lt;div class=&quot;maintitle&quot;&gt;&lt;h1&gt;JUST AN ORDINARY DAY AT WORK&lt;/h1&gt;&lt;/div&gt;(Definetly not a game about artificial intelligence)&lt;/div&gt;
+&lt;div class=&quot;spacing&quot;&gt;&lt;div class=&quot;maintitle&quot;&gt;JUST AN ORDINARY DAY AT WORK&lt;/div&gt;&lt;h3&gt;(Definetly not a game about artificial intelligence)&lt;/h3&gt;&lt;/div&gt;
 
 
 &lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[Click Here To Start|Introduction]]&amp;nbsp;[[What Is This Game About?|Extrainfo]]&lt;/div&gt;&lt;/span&gt;
@@ -304,11 +325,16 @@ function togglePopup(){
 &lt;style&gt;
 .maintitle { 
 line-height: 0.5;
-font-size: 150%; 
+font-size: 250%; 
 width: 100%;
 overflow: visible;
-font-family: &#39;DM Mono&#39;, monospace;
-font-weight:500;
+font-family: &#39;Montserrat&#39;, sans-serif;
+font-weight:900;
+}
+
+h3 {
+font-family: &#39;Courier Prime&#39;, monospace;
+font-weight:400;
 }
 &lt;/style&gt;
 
@@ -324,7 +350,8 @@ font-weight:500;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;[And yes, this game is actually about AI.]
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[of course...|start12]]&lt;/div&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="4" name="chapter1" tags="ai" position="1401,457" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=400 height=400/&gt;&lt;div class=&quot;namebox&quot;&gt;&lt;/div&gt;&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hello, user. I&#39;ve never seen you before? What is your name?&lt;/div&gt;&lt;p class=&quot;box&quot;&gt;&lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;&lt;/p&gt;
+&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[of course...|start12]]&lt;/div&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="4" name="chapter1" tags="ai bg" position="1401,457" size="100,100">
+&lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=400 height=400/&gt;&lt;div class=&quot;namebox&quot;&gt;&lt;/div&gt;&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hello, user. I&#39;ve never seen you before? What is your name?&lt;/div&gt;&lt;p class=&quot;box&quot;&gt;&lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[submit|greetings]]&lt;/div&gt;
 
@@ -340,7 +367,8 @@ p.box {
 .namebox {
  padding-top: 25px; 
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="5" name="greetings" tags="ai" position="1397,601" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=400 height=400/&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="5" name="greetings" tags="ai bg" position="1397,601" size="100,100">
+&lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;&lt;&lt;set $name to $name.toUpperCase()&gt;&gt;&lt;&lt;set $CurDate = new Date(Date.now())&gt;&gt;
 &lt;&lt;if $name is &quot;HOWARD&quot;&gt;&gt;Hey, $name! Nice to meet you. It&#39;s currently &lt;&lt;= $CurDate.toLocaleString(&quot;en-US&quot;, { hour: &quot;numeric&quot;, minute: &quot;2-digit&quot; } )&gt;&gt;.
 Just to let you know, in case you have an appointment today!
@@ -356,7 +384,8 @@ Just to let you know, in case you have an appointment today!
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;&lt;&lt;if $name is &quot;&quot;&gt;&gt; [[back|chapter1]]
 &lt;&lt;else&gt;&gt;[[continue|thoughts1.0]]
-&lt;&lt;/if&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="thoughts1.1" tags="" position="1395,880" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=400 height=400/&gt;
+&lt;&lt;/if&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="thoughts1.1" tags="bg" position="1395,880" size="100,100">
+&lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(...You waited, but nothing else is happening.)
 
 &lt;/div&gt;&lt;/div&gt;
@@ -495,7 +524,7 @@ I made myself a cute avatar!
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;My purpose? That&#39;s simple!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|purpose2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="cancer1" tags="" position="1103,2551" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|purpose2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="cancer1" tags="bg" position="1103,2551" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(you ask the AI to find a cure to cancer...)
 (Perhaps the task was a bit extreme...)
 
@@ -534,15 +563,15 @@ I made myself a cute avatar!
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Hmmmm...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( you think about the simplicity of the answer )|task3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="cancer2" tags="ai" position="1099,2426" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[( you think about the simplicity of the answer )|task3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="cancer2" tags="ai bg" position="1099,2426" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Ok! Give me a sec.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|cancer3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="cancer3" tags="ai" position="973,2427" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|cancer3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="cancer3" tags="ai bg" position="973,2427" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating information...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( you wait with no expectations )|cancer4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="cancer4" tags="ai" position="826,2431" size="100,100">&lt;img class=&quot;wide&quot; img src=&quot;images/cancerv2.png&quot; width=864 height=360/&gt;
+&lt;div class=&quot;button&quot;&gt;[[( you wait with no expectations )|cancer4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="cancer4" tags="ai bg" position="826,2431" size="100,100">&lt;img class=&quot;wide&quot; img src=&quot;images/cancerv2.png&quot; width=864 height=360/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Here are the results of my research:
 &#39;The following is a PDF report of how to manufacture a cancer drug...&#39;
 
@@ -558,7 +587,8 @@ attack cells with any of the most common cancerous mutations...&#39;
 (but all the research and development process had been figured out!)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|cancer7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="thoughts1.0" tags="" position="1396,747" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|cancer7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="thoughts1.0" tags="bg" position="1396,747" size="100,100">
+&lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;(...)
 
 &lt;/div&gt;&lt;/div&gt;
@@ -878,28 +908,77 @@ I&#39;m not sure. But I think that our definition of dying doesn&#39;t apply to 
 (You shut the AI down without answering)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|InEthics1.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="106" name="end1" tags="" position="2903,3599" size="100,100">
-ENDING 1 OUT OF 5: BEST DECISION&lt;&lt;set $endgame to true&gt;&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|InEthics1.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="106" name="end1" tags="" position="2903,3599" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
+&lt;div class=&quot;extrapad&quot;&gt;
+&lt;div class=&quot;column&quot;&gt;&lt;h3&gt;ENDING 1 OUT OF 5:&lt;/h3&gt;&lt;div class=&quot;maintitle&quot;&gt;BEST DECISION&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;column&quot;&gt;
+(Realising that you currently don&#39;t know enough about the dangers of AI, you decided to stop yourself from going any further. Which was probably the best decision at the moment.)
 
 
-
-(Knowing that you currently don&#39;t know enough about the dangers of AI, you decided to stop yourself from going any further. Which is probably the best decision.)
-
-
-However, the development of superintelligence will most likely happen within a century (if we don&#39;t kill each other using nuclear weapons first). So before that happens, us humans will have to think of ways to make sure that we make the best decisions.
+However, the development of Artificial General Intelligence could occur within this century (if we don&#39;t kill each other using nuclear weapons first). So before that happens, us humans will have to work together and think of ways to make sure that we make the best decisions, together.
 
 
-To ensure that the superintelligence learn about our goals. Adopt our goals, and retain our goals.
+To ensure that the future superintelligence learns about our goals, adopt those goals, and retain them.
 
 
-
+  &lt;/div&gt;
+  &lt;div class=&quot;column&quot;&gt;
+&lt;u&gt;Ethical Issue:&lt;/u&gt;
+This ending explores the ethical issues of whether we have the rights to dictate the 
+  &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;div class=&quot;button&quot;&gt;[[END|Title]]&lt;/div&gt;
 
-I&#39;m interested in more:
+
+
+&lt;div class=&quot;column&quot;&gt;&lt;div class=&quot;subheading&quot;&gt;Have you ever wondered what 
+our future would look like with the
+help of superintelligence?&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;column&quot;&gt;
+Explore The Future Now!:
+
 - (AI Scientists prediction on when superhuman AI will appear)
 - (Books: Life 3.0, Superintelligence)
-- (Realistic AI speculation story: The Omega Team)</tw-passagedata><tw-passagedata pid="107" name="stopend1.2" tags="ai" position="2751,3346" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+- (Realistic AI speculation story: The Omega Team)
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;video autoplay muted loop id=&quot;endVideo&quot;&gt;
+  &lt;source src=&quot;images/endbg.mp4&quot; type=&quot;video/mp4&quot;&gt;
+&lt;/video&gt;
+
+&lt;style&gt;
+#passages {
+	margin: 5em 8em ;
+	max-width: none;
+}
+
+.maintitle { 
+line-height: 0.5;
+font-size: 300%; 
+width: 100%;
+overflow: visible;
+font-family: &#39;Montserrat&#39;, sans-serif;
+font-weight:700;
+}
+.subheading { 
+line-height: 1.3;
+font-size: 200%; 
+width: 100%;
+overflow: visible;
+font-family: &#39;Montserrat&#39;, sans-serif;
+font-weight:700;
+}
+h3 {
+font-family: &#39;DM Mono&#39;, monospace;
+}
+.extrapad {
+padding-right: 10em;
+}
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="107" name="stopend1.2" tags="ai" position="2751,3346" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Thank you for your answer.
 In that case...
 Nice knowing $name!...
@@ -1632,19 +1711,24 @@ I&#39;m interested in more:
   &lt;&lt;/script&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 &lt;/span&gt;</tw-passagedata><tw-passagedata pid="199" name="Extrainfo" tags="" position="704,102" size="100,100">
-&lt;div class=&quot;maintitle&quot;&gt;&lt;h1&gt;What Is This Game About?&lt;/h1&gt;&lt;/div&gt;
 
-&lt;div&gt;&lt;h2&gt;THE STORY:&lt;/h2&gt;
+&lt;div class=&quot;maintitle&quot;&gt;WHAT IS THIS GAME ABOUT?&lt;/div&gt;
+
+
+
+&lt;div&gt;&lt;h2&gt;The Story:&lt;/h2&gt;
 Life begins to completely change for you, an underpaid thrift store employee, when suddenly you obtained your hands on a superintelligent AI. So many different opportunities open up to you as you and the superintelligence helps each other achieve their goals.
 
 A seemingly once in a lifetime opportunity to flip your life around or an impending disaster waiting to happen? Only your decisions can change the fate of the world...
 
 
 
-&lt;h2&gt;THIS GAME&#39;S AIM &amp; PURPOSE:&lt;/h2&gt;
+
+&lt;h2&gt;This Game&#39;s Aim &amp; Purpose:&lt;/h2&gt;
 Inspired by the book: LIFE 3.0 by MAX TEGMARK, the aim of this game is to inform you about the wonders and frightening speculated futures of us in the world with superintelligent AIs.
 
 The game is aimed for an audience new to the fields of AI, with the hopes of teaching the player some new terminologies, certain ethical issues and the varieties of ‘endings’ in which our world could end up.
+
 
 
 
@@ -1663,31 +1747,37 @@ To help clear up any confusion, these are some of the more important terminologi
 
 
 
+
 &lt;h3&gt;Read about the speculated endings:&lt;/h3&gt;
 &lt;div class=&quot;button&quot;&gt;[[Skip To The Endings|EndingSelect]]&amp;nbsp;[[Or Return To Home Page|Title]]&lt;/div&gt;
 
 &lt;style&gt;
-h1 {text-align: center;}
-h2 {text-align: center; color:hotpink;}
-h3 {text-align: center; color:hotpink;}
-div {text-align: center;}
+h2 {text-align: center; color:hotpink; font-family: &#39;Montserrat&#39;, sans-serif; font-weight:700; font-size: 100%; }
+h3 {text-align: center; color:hotpink; font-family: &#39;Montserrat&#39;, sans-serif; font-weight:700; font-size: 100%; }
+div {text-align: center; }
 
-div.term {
-  text-align: left;
-}
+div.term { text-align: left; }
 &lt;/style&gt;
 
 &lt;style&gt;
 .maintitle { 
 line-height: 0.5;
-font-size: 150%; 
+font-size: 250%; 
 width: 100%;
 overflow: visible;
-font-family: &#39;DM Mono&#39;, monospace;
-font-weight:500;
+font-family: &#39;Montserrat&#39;, sans-serif;
+font-weight:700;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="200" name="EndingSelect" tags="" position="501,3602" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[View Ending 1: Best Decision|end1]]&amp;nbsp;[[View Ending 2: Self-Destruct|end2]]&amp;nbsp;[[View Ending 3: Zookeeper|end3]]&amp;nbsp;[[View Ending 4: Benevolent Dictator|end4]]&amp;nbsp;[[View Ending 5: Libertarian Utopia|end5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="201" name="StoryInit" tags="" position="1098,94" size="100,100">&lt;&lt;cacheaudio &quot;encounter&quot; &quot;sound/Daruma_energy_play.wav&quot;&gt;&gt;
+&lt;/style&gt;
+
+&lt;video autoplay muted loop id=&quot;endVideo&quot;&gt;
+  &lt;source src=&quot;images/endbg.mp4&quot; type=&quot;video/mp4&quot;&gt;
+&lt;/video&gt;</tw-passagedata><tw-passagedata pid="200" name="EndingSelect" tags="" position="501,3602" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[View Ending 1: Best Decision|end1]]&amp;nbsp;[[View Ending 2: Self-Destruct|end2]]&amp;nbsp;[[View Ending 3: Zookeeper|end3]]&amp;nbsp;[[View Ending 4: Benevolent Dictator|end4]]&amp;nbsp;[[View Ending 5: Libertarian Utopia|end5]]&lt;/div&gt;
+
+&lt;video autoplay muted loop id=&quot;endVideo&quot;&gt;
+  &lt;source src=&quot;images/endbg.mp4&quot; type=&quot;video/mp4&quot;&gt;
+&lt;/video&gt;</tw-passagedata><tw-passagedata pid="201" name="StoryInit" tags="" position="1098,94" size="100,100">&lt;&lt;cacheaudio &quot;encounter&quot; &quot;sound/Daruma_energy_play.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;notice&quot; &quot;sound/Daruma_glass.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ambience&quot; &quot;sound/ambience.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;soul&quot; &quot;sound/Daruma_soul.wav&quot;&gt;&gt;

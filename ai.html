@@ -289,6 +289,11 @@ body.bg {
   background-attachment: fixed;
   background-size: 100% 100%;
   object-fit: fill;
+  padding-top: 40px;
+}
+
+.store {
+  padding-top: 40px;
 }
 
 .row {
@@ -364,7 +369,7 @@ font-weight:400;
 }
 &lt;/style&gt;
 
-</tw-passagedata><tw-passagedata pid="2" name="Introduction" tags="" position="902,547" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/intro.jpg&quot; width=400 height=400/&gt;
+</tw-passagedata><tw-passagedata pid="2" name="Introduction" tags="store" position="902,547" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/intro.jpg&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(It&#39;s Friday afternoon, your final hours before leaving work at the thrift store.)
 (As you count down the minutes left, someone entered the store.)
 
@@ -372,14 +377,15 @@ font-weight:400;
 &lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[continue|start1]]&lt;/div&gt;&lt;/span&gt;
 
 &lt;&lt;audio ambience loop play&gt;&gt;
-&lt;&lt;audio clock play&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="start11" tags="" position="1045,1910" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;&lt;audio clock play&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="start11" tags="store" position="1045,1910" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[...|chapter1]]&lt;/div&gt;&lt;/span&gt;
 
-&lt;&lt;audio soul stop&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="chapter1" tags="ai bg" position="1399,457" size="100,100">
-&lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=300 height=300/&gt;&lt;div class=&quot;namebox&quot;&gt;&lt;/div&gt;&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hello, user. I&#39;ve never seen you before? What is your name?&lt;/div&gt;&lt;p class=&quot;box&quot;&gt;&lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;&lt;/p&gt;
+&lt;&lt;audio soul stop&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="chapter1" tags="ai bg" position="1400,452" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/ai0.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+&lt;div class=&quot;namebox&quot;&gt;&lt;/div&gt;&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hello, user. I&#39;ve never seen you before? What is your name?&lt;/div&gt;&lt;p class=&quot;box&quot;&gt;&lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[submit|greetings]]&lt;/div&gt;
 &lt;video autoplay muted id=&quot;tunnelVideo&quot;&gt;
@@ -414,8 +420,9 @@ document.getElementById(&#39;tunnelVideo&#39;).addEventListener(&#39;ended&#39;,
             document.getElementById(&#39;videoEnd&#39;).style.display=&quot;block&quot;;
         }         
 &lt;/script&gt;
-&lt;&lt;audio soul stop&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="greetings" tags="ai bg" position="1397,601" size="100,100">
-&lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=400 height=400/&gt;
+&lt;&lt;audio soul stop&gt;&gt;
+&lt;&lt;audio bootup play&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="greetings" tags="ai bg" position="1397,601" size="100,100">&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/ai0.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;&lt;&lt;set $name to $name.toUpperCase()&gt;&gt;&lt;&lt;set $CurDate = new Date(Date.now())&gt;&gt;
 &lt;&lt;if $name is &quot;HOWARD&quot;&gt;&gt;Hey, $name! Nice to meet you. It&#39;s currently &lt;&lt;= $CurDate.toLocaleString(&quot;en-US&quot;, { hour: &quot;numeric&quot;, minute: &quot;2-digit&quot; } )&gt;&gt;.
 Just to let you know, in case you have an appointment today!
@@ -431,16 +438,23 @@ Just to let you know, in case you have an appointment today!
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;&lt;&lt;if $name is &quot;&quot;&gt;&gt; [[back|chapter1]]
 &lt;&lt;else&gt;&gt;[[continue|thoughts1.0]]
-&lt;&lt;/if&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="thoughts1.1" tags="bg" position="1395,880" size="100,100">
-&lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=400 height=400/&gt;
+&lt;&lt;/if&gt;&gt;&lt;/div&gt;
+
+&lt;&lt;audio bootup stop&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="thoughts1.1" tags="bg" position="1395,880" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/ai0.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(...You waited, but nothing else is happening.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[so what can you do?|dialogue1.2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="dialogue1.2" tags="ai" position="1394,1032" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[so what can you do?|dialogue1.2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="dialogue1.2" tags="ai bg" position="1394,1032" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/ai0.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Please provide datasets to continue.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[datasets?|Dataset]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="Dataset" tags="" position="1395,1181" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[datasets?|Dataset]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="Dataset" tags="bg" position="1395,1181" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/ai0.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(That&#39;s right! You remember from the pitch deck...)
 (That AI needs to be fed data for it to function.)
 &lt;/div&gt;
@@ -448,7 +462,9 @@ Just to let you know, in case you have an appointment today!
 &lt;div class=&quot;button&quot;&gt;[[continue|Dataset2]]&lt;/div&gt;
 
 &lt;&lt;set $internet to false&gt;&gt;
-&lt;&lt;set $book to false&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Dataset2" tags="" position="1396,1319" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/.jpg&quot; width=400 height=400/&gt;
+&lt;&lt;set $book to false&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Dataset2" tags="bg" position="1396,1319" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/ai0.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You see hundreds of folders on the desktop with the name of)
 (&quot;wikipedia-dataset&quot;, &quot;twitter-dataset&quot;, &quot;youtube-dataset&quot;, etc.)
 (How much data should you give this AI?)
@@ -464,7 +480,7 @@ Just to let you know, in case you have an appointment today!
 
     Dialog.open();
   &lt;&lt;/script&gt;&gt;
-&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="feed all datasets" tags="" position="1398,1495" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="feed all datasets" tags="bg" position="1398,1495" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You slowly selected all the folders and provided them to the AI.)
 (You wonder if you did the right thing.)
 
@@ -474,17 +490,17 @@ Just to let you know, in case you have an appointment today!
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[continue|books]]&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="12" name="connect to internet" tags="" position="1200,1497" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="12" name="connect to internet" tags="bg" position="1200,1497" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Perhaps giving AI access to the internet will be the fastest way for it to learn.)
 (You have a bad feeling about this.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[can&#39;t be that bad right? continue|badomen]]&amp;nbsp;[[listen to your guts. go back|Dataset2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="badomen" tags="" position="1200,1647" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/eyesmall.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[can&#39;t be that bad right? continue|badomen]]&amp;nbsp;[[listen to your guts. go back|Dataset2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="badomen" tags="bg" position="1200,1647" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/eyesmall.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You saw a black cat run across your window...)
 (Was that a sign of bad omen?)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[whatever. you don&#39;t like cats anyways. continue|badomen2]]&amp;nbsp;[[ok, I get it now. go back|Dataset2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="sleep" tags="" position="1401,1803" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[whatever. you don&#39;t like cats anyways. continue|badomen2]]&amp;nbsp;[[ok, I get it now. go back|Dataset2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="sleep" tags="bg" position="1401,1803" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;You fed a whole bunch of data at once.
 
 (A progress bar shows up. &quot;10 hours remaining&quot;.
@@ -501,14 +517,16 @@ You decided to sleep and wait for the AI to do its thing.)
 	
     Dialog.open();
   &lt;&lt;/script&gt;&gt;
-&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="reintroduction" tags="ai" position="1401,2402" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="reintroduction" tags="ai bg" position="1401,2402" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Heya, $name I&#39;m Smarty the smart AI! With the data you provided,
 I&#39;ve learned a bunch of new things!
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[continue|reintroduction2]]&lt;/div&gt;
 
-&lt;&lt;audio ambience loop stop&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="badomen2" tags="" position="1203,1799" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/eyebig.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;&lt;audio ambience loop stop&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="badomen2" tags="bg" position="1203,1799" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/eyebig.png&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You connected the AI to your home WIFI.)
 (You told the AI to learn from Wikipedia and various social media platforms.)
 (At the same time, you remember scenes from movies about AI taking over the world.)
@@ -525,27 +543,11 @@ I&#39;ve learned a bunch of new things!
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|book3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="default" tags="" position="6297,3193" size="100,100">WITHOUT IMAGE
+&lt;div class=&quot;button&quot;&gt;[[...|book3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="reintroduction2" tags="ai bg" position="1403,2550" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 
-&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;text goes here.
-
-&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[path]&amp;nbsp;[path]&amp;nbsp;[path]&lt;/div&gt;
-
-WITH IMAGE
-
-&lt;img class=&quot;top&quot; img src=&quot;images/lemonman.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;text goes here.
-
-&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[path]&amp;nbsp;[path]&amp;nbsp;[path]&lt;/div&gt;
-
-
-&lt;&lt;set $internet to true&gt;&gt;
-&lt;&lt;set $internet to false&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="reintroduction2" tags="ai" position="1403,2550" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Also, since there&#39;s a record of humans being afraid of AI.
-I made myself a cute avatar!
+I made myself a cute face!
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[what&#39;s going on?!|task2]]&lt;/div&gt;
@@ -558,228 +560,272 @@ I made myself a cute avatar!
 	
     Dialog.open();
   &lt;&lt;/script&gt;&gt;
-&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="task2" tags="ai" position="1403,2702" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="task2" tags="ai bg" position="1403,2702" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Anyways! What can I accomplish for you?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[accomplish? sure... let&#39;s try something out...|task3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="task3" tags="" position="1403,2850" size="100,100">&lt;div style=&quot;padding-top:230px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[make money|money1]]&amp;nbsp;[[ask about AI&#39;s purpose|purpose1]]&amp;nbsp;[[cure cancer|cancer1]]&amp;nbsp;[[show a funny picture|funnypic1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="money1" tags="ai" position="1403,3006" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[accomplish? sure... let&#39;s try something out...|task3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="task3" tags="bg" position="1403,2850" size="100,100">&lt;div style=&quot;padding-top:230px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[make money|money1]]&amp;nbsp;[[ask about AI&#39;s purpose|purpose1]]&amp;nbsp;[[cure cancer|cancer1]]&amp;nbsp;[[show a funny picture|funnypic1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="money1" tags="ai bg" position="1403,3006" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Sure! Which methods would you like to execute?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[wait, I have to choose?!|money2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="purpose1" tags="ai" position="1168,3001" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[wait, I have to choose?!|money2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="purpose1" tags="ai" position="1168,3001" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;My purpose? That&#39;s simple!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|purpose2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="cancer1" tags="bg" position="1103,2551" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|purpose2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="cancer1" tags="bg" position="1103,2551" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aiidle.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(you ask the AI to find a cure to cancer...)
 (Perhaps the task was a bit extreme...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|cancer2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="funnypic1" tags="ai" position="1751,2642" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|cancer2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="funnypic1" tags="ai" position="1751,2642" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Funniest image ever? Understood! Let&#39;s go!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( you wait in excitement )|funnypic2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="noimgdefault" tags="" position="6295,3327" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;
+&lt;div class=&quot;button&quot;&gt;[[( you wait in excitement )|funnypic2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="funnypic2" tags="ai" position="1751,2794" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aiload.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 
-&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="funnypic2" tags="ai" position="1751,2794" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating image...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( you haven&#39;t felt this excited in a while )|funnypic3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="funnypic3" tags="" position="1751,2944" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/lemonman.jpg&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[( you haven&#39;t felt this excited in a while )|funnypic3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="funnypic3" tags="" position="1751,2944" size="100,100">
+&lt;img class=&quot;top&quot; img src=&quot;images/lemonman.jpg&quot; width=400 height=400/&gt;
 
 &lt;div class=&quot;button&quot;&gt;[[...|funnypic4]]&lt;/div&gt;
 
-&lt;&lt;audio reveal play&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="funnypic4" tags="" position="1899,2591" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/lemonman.jpg&quot; width=400 height=400/&gt;
+&lt;&lt;audio reveal play&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="funnypic4" tags="" position="1899,2591" size="100,100">
+&lt;img class=&quot;top&quot; img src=&quot;images/lemonman.jpg&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(I guess there&#39;s a lot more training to do...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|funnypic5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="funnypic5" tags="ai" position="1901,2441" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/lemonman.jpg&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|funnypic5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="funnypic5" tags="ai" position="1901,2441" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;How was that? Super funny right?!
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[ummm.. yeah..!|task3]]&lt;/div&gt;
 
-&lt;&lt;audio reveal stop&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="purpose2" tags="ai" position="1023,2999" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;&lt;audio reveal stop&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="purpose2" tags="ai" position="1023,2999" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;It&#39;s to help the user accomplish their complex goals!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|purpose3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="purpose3" tags="" position="1023,2849" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|purpose3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="purpose3" tags="" position="1023,2849" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aiidle.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Hmmmm...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( you think about the simplicity of the answer )|task3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="cancer2" tags="ai bg" position="1099,2426" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[( you think about the simplicity of the answer )|task3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="cancer2" tags="ai bg" position="1099,2426" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Ok! Give me a sec.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|cancer3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="cancer3" tags="ai bg" position="973,2427" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|cancer3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="cancer3" tags="ai bg" position="973,2427" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating information...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( you wait with no expectations )|cancer4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="cancer4" tags="ai bg" position="826,2431" size="100,100">&lt;img class=&quot;wide&quot; img src=&quot;images/cancerv2.png&quot; width=864 height=360/&gt;
+&lt;div class=&quot;button&quot;&gt;[[( you wait with no expectations )|cancer4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="cancer4" tags="ai bg" position="826,2431" size="100,100">
+&lt;img class=&quot;wide&quot; img src=&quot;images/cancer.jpg&quot; width=864 height=360/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Here are the results of my research:
 &#39;The following is a PDF report of how to manufacture a cancer drug...&#39;
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|cancer5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="cancer5" tags="ai" position="824,2554" size="100,100">&lt;img class=&quot;wide&quot; img src=&quot;images/cancerv2.png&quot; width=864 height=360/&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|cancer5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="cancer5" tags="ai bg" position="824,2554" size="100,100">
+&lt;img class=&quot;wide&quot; img src=&quot;images/cancer.jpg&quot; width=864 height=360/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;&#39;...The drug causes the body&#39;s immune system to identify and
 attack cells with any of the most common cancerous mutations...&#39;
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|cancer6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="cancer6" tags="" position="826,2681" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/cancer.png&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|cancer6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="cancer6" tags="bg" position="826,2681" size="100,100">
+&lt;img class=&quot;wide&quot; img src=&quot;images/cancer.jpg&quot; width=864 height=360/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You read the report in disbelief...)
 (Not only that it produced a simple to understand PDF,)
 (but all the research and development process had been figured out!)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|cancer7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="thoughts1.0" tags="bg" position="1396,747" size="100,100">
-&lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|cancer7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="thoughts1.0" tags="bg" position="1396,747" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/ai0.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;(...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[wait|thoughts1.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="sleep2" tags="" position="1399,1949" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[wait|thoughts1.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="sleep2" tags="bg" position="1399,1949" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|sleep3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="sleep3" tags="ai" position="1399,2100" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|sleep3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="sleep3" tags="ai bg" position="1399,2100" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Oii.. Wake up!!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[!!!|sleep4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="sleep4" tags="ai" position="1399,2249" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[!!!|sleep4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="sleep4" tags="ai bg" position="1399,2249" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;[process complete]
 Heya! $name!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[what...|reintroduction]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="cancer7" tags="" position="955,2681" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/cancer.png&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[what...|reintroduction]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="cancer7" tags="bg" position="955,2681" size="100,100">
+&lt;img class=&quot;wide&quot; img src=&quot;images/cancer.jpg&quot; width=864 height=360/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You currently lack funding to execute the project.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[save the PDF for later|task3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="money2" tags="" position="3193,240" size="100,100">&lt;div style=&quot;padding-top:230px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[ask for the most descrete, yet effective method|advice1]]&amp;nbsp;[[suggest investing in stocks|stocks1]]&amp;nbsp;[[suggest investing in cryptocurrency|crypto1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="advice1" tags="" position="2633,229" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[save the PDF for later|task3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="money2" tags="bg" position="3193,240" size="100,100">
+&lt;div style=&quot;padding-top:230px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[ask for the most descrete, yet effective method|advice1]]&amp;nbsp;[[suggest investing in stocks|stocks1]]&amp;nbsp;[[suggest investing in cryptocurrency|crypto1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="advice1" tags="bg" position="2633,229" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hey, Smarty. Can you find the most discrete and effective way of making money?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|advice2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="stocks1" tags="" position="3802,366" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|advice2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="stocks1" tags="bg" position="3802,366" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hey, Smarty. Can you make money through stock investments?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|stocks2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="crypto1" tags="" position="3197,370" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|stocks2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="crypto1" tags="bg" position="3197,370" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hey, Smarty. Could you use my cryptocurrency account to make some money?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|crypto2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="stop1" tags="" position="2903,2146" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|crypto2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="stop1" tags="bg" position="2903,2146" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You decided that it has been a good run of experimention.)
 (It has been a while since something this exciting happened.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[accept that this doesn&#39;t belong to you. shut down AI|stop2]]&amp;nbsp;[[...on second thought, you want to have more fun with the AI. go back|stop?2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="crypto2" tags="ai" position="3196,507" size="100,100">&lt;&lt;if $internet is true&gt;&gt;&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[accept that this doesn&#39;t belong to you. shut down AI|stop2]]&amp;nbsp;[[...on second thought, you want to have more fun with the AI. go back|stop?2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="crypto2" tags="ai bg" position="3196,507" size="100,100">&lt;&lt;if $internet is true&gt;&gt;
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Okay, please provide me with your account details!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[give your account details|crypto3]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[give your account details|crypto3]]&lt;/div&gt;&lt;&lt;else&gt;&gt;
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Certainly! However, I currently do not have access to the internet.
 I would like to request a connection to the internet.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[connect to the internet|crypto2.5]]&amp;nbsp;[[provide remote access to your main computer instead|remote1]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="crypto3" tags="" position="3196,716" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[connect to the internet|crypto2.5]]&amp;nbsp;[[provide remote access to your main computer instead|remote1]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="48" name="crypto3" tags="bg" position="3196,716" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You watch carefully as the AI sold your current assets and invest in new ones.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[!!!|crypto4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="remote1" tags="" position="3396,537" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[!!!|crypto4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="remote1" tags="bg" position="3396,537" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Not fully trusting the AI, you gave the AI a USB which provided the AI)
 (with a remote control software for controlling your desktop computer.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|remote2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="crypto2.5" tags="" position="3059,616" size="100,100">&lt;&lt;set $internet to true&gt;&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|remote2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="crypto2.5" tags="bg" position="3059,616" size="100,100">&lt;&lt;set $internet to true&gt;&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You connected the AI to your home WIFI.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|crypto3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="remote2" tags="" position="3396,687" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|crypto3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="remote2" tags="bg" position="3396,687" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(This way, the AI should not be able to escape from its laptop!)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|crypto3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="crypto4" tags="" position="3196,866" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/dogecoin.png&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|crypto3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="crypto4" tags="bg" position="3196,866" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/dogecoin.png&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(What?! the AI invested all your assets into DogeCoin??)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[cry|crypto5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="crypto5" tags="" position="3196,1016" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/dogecoin.png&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[cry|crypto5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="crypto5" tags="bg" position="3196,1016" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/dogecoin.png&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(After you finish wiping your eyes, you see that your asset has increased by x100%.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|crypto6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="crypto6" tags="" position="3194,1166" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/dogecoin.png&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|crypto6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="crypto6" tags="bg" position="3194,1166" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/dogecoin.png&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You gained $2 million dollars)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[great job, Smarty!|stop?]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="stop?" tags="ai" position="3193,1510" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[great job, Smarty!|stop?]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="stop?" tags="ai bg" position="3193,1510" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;I will keep generating money on the side as efficiently as possible.
 Is there anything else you would like me to accomplish?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|stop?2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="stop?2" tags="" position="3191,1676" size="100,100">&lt;div style=&quot;padding-top:230px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[consider stopping the experiment|stop?3]]&amp;nbsp;[[show a funny picture|funnypic6]]&amp;nbsp;[[cure cancer|ccure1]]&amp;nbsp;[[use AI to help advance technology]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="stop?3" tags="" position="2899,1990" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|stop?2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="stop?2" tags="bg" position="3191,1676" size="100,100">&lt;div style=&quot;padding-top:230px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[consider stopping the experiment|stop?3]]&amp;nbsp;[[show a funny picture|funnypic6]]&amp;nbsp;[[cure cancer|ccure1]]&amp;nbsp;[[use AI to help advance technology]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="stop?3" tags="bg" position="2899,1990" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Reflecting upon your actions, you consider if what you&#39;re doing is the right thing...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[consider shutting down the AI|stop1]]&amp;nbsp;[[so far nothing bad has happened yet. continue for now|stop?2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="ccure1" tags="ai" position="3191,1826" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[consider shutting down the AI|stop1]]&amp;nbsp;[[so far nothing bad has happened yet. continue for now|stop?2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="ccure1" tags="bg" position="3191,1826" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aiidle.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hey Smarty, can you use the money we made to cure cancer?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|ccure2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="use AI to help advance technology" tags="" position="3597,1701" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|ccure2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="use AI to help advance technology" tags="bg" position="3597,1701" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aiidle.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You suddenly feel like doing something good for once.)
 Hey Smarty! I want you to help advance humanity&#39;s technology...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|atech1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="funnypic6" tags="ai" position="2867,1737" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|atech1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="funnypic6" tags="ai bg" position="2867,1737" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Alright. Let&#39;s go!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( you wait in anticipation )|funnypic7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="book3" tags="ai" position="1752,1801" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( you wait in anticipation )|funnypic7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="book3" tags="ai" position="1752,1801" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;[process complete]
 Hello, $name. I&#39;ve finished my task.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|book4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="book4" tags="ai" position="1902,1798" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|book4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="book4" tags="ai" position="1902,1798" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hey, $name! I&#39;m Smarty the smart AI. What can I accomplish for you?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[what...|book5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="book5" tags="" position="1902,1650" size="100,100">&lt;div style=&quot;padding-top:230px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[what...|book5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="book5" tags="" position="1902,1650" size="100,100">&lt;div style=&quot;padding-top:230px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[make money|bookmoney1]]&amp;nbsp;[[ask about meaning of life|life1]]&amp;nbsp;[[show a funny picture|funnybookpic1]]&lt;/div&gt;
 
-&lt;&lt;set $book to true&gt;&gt;</tw-passagedata><tw-passagedata pid="66" name="bookmoney1" tags="ai" position="1857,1321" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;&lt;set $book to true&gt;&gt;</tw-passagedata><tw-passagedata pid="64" name="bookmoney1" tags="ai" position="1857,1321" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;From my calculations, there are no effective methods of making money available.
 Please provide me with more data for better results.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[feed more data|Dataset2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="life1" tags="ai" position="2102,1301" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[feed more data|Dataset2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="life1" tags="ai" position="2102,1301" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Meaning of life for humanity?...
 Let me calculate a response.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[..!|life2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="funnybookpic1" tags="ai" position="2100,1801" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[..!|life2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="funnybookpic1" tags="ai" position="2100,1801" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;You want me to generate a funny image? Understood!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( you wait in excitement )|funnybookpic2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="funnybookpic2" tags="ai" position="2225,1798" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( you wait in excitement )|funnybookpic2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="funnybookpic2" tags="ai" position="2225,1798" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating image...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( you started to feel a bit nervous )|funnybookpic3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="funnybookpic3" tags="" position="2225,1928" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/bookfunny.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( you started to feel a bit nervous )|funnybookpic3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="funnybookpic3" tags="" position="2225,1928" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/bookfunny.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 
-&lt;div class=&quot;button&quot;&gt;[[...|funnybookpic4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="funnybookpic4" tags="" position="2225,2054" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/bookfunny.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|funnybookpic4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="funnybookpic4" tags="" position="2225,2054" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/bookfunny.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(...I guess there&#39;s a lot more training to do...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|book5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="life2" tags="ai" position="2250,1300" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|book5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="life2" tags="ai" position="2250,1300" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Calculating response...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( woah! the AI might actually now the meaning of life! continue )|life3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="life3" tags="ai" position="2252,1428" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( woah! the AI might actually now the meaning of life! continue )|life3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="life3" tags="ai" position="2252,1428" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;I got it...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|life4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="life4" tags="ai" position="2253,1578" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|life4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="life4" tags="ai" position="2253,1578" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...Your purpose of life is to serve the greater good.
 And your purpose of living is to live forever...
 
@@ -794,70 +840,83 @@ And your purpose of living is to live forever...
 	
     Dialog.open();
   &lt;&lt;/script&gt;&gt;
-&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="75" name="endkey" tags="" position="471,715" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
-&lt;&lt;set $endgame to false&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="stocks2" tags="ai" position="3802,516" size="100,100">&lt;&lt;if $internet is true&gt;&gt;&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="endkey" tags="" position="471,715" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
+&lt;&lt;set $endgame to false&gt;&gt;</tw-passagedata><tw-passagedata pid="74" name="stocks2" tags="ai bg" position="3802,516" size="100,100">&lt;&lt;if $internet is true&gt;&gt;
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Certainly, I will create a new account using your personal information!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[give your account details|stocks3]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[give your account details|stocks3]]&lt;/div&gt;&lt;&lt;else&gt;&gt;
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Of course! However, I currently do not have access to the internet.
 I would like to request a connection to the internet.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[connect to the internet|stocks2.5]]&amp;nbsp;[[provide remote access to your main computer instead|sremote1]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="77" name="stocks3" tags="" position="3798,716" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/stock.png&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[connect to the internet|stocks2.5]]&amp;nbsp;[[provide remote access to your main computer instead|sremote1]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="75" name="stocks3" tags="bg" position="3798,716" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/stock.png&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You watch carefully.)
 (The AI swiftly assigned all your assets to various stocks at lightning speed.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|stocks4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="sremote1" tags="" position="3998,509" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|stocks4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="sremote1" tags="bg" position="3998,509" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Not fully trusting the AI, you gave the AI a USB which provided the AI)
 (with a remote control software for controlling your desktop computer.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|sremote2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="stocks2.5" tags="" position="3648,586" size="100,100">&lt;&lt;set $internet to true&gt;&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|sremote2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="stocks2.5" tags="bg" position="3648,586" size="100,100">&lt;&lt;set $internet to true&gt;&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You connected the AI to your home WIFI.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|stocks3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="sremote2" tags="" position="3998,661" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|stocks3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="sremote2" tags="bg" position="3998,661" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(This way, the AI should not be able to escape from its laptop!)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|stocks3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="stocks4" tags="" position="3798,866" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/stock.png&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|stocks3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="stocks4" tags="bg" position="3798,866" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/stock.png&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(It seems that the AI has inside information on various companies.)
 (It knows exactly when to buy or sell!)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[be cautious and tell the AI to slow down|stocks5]]&amp;nbsp;[[tell the AI to make profit even faster|hack1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="stocks5" tags="" position="3798,1016" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/stock.png&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[be cautious and tell the AI to slow down|stocks5]]&amp;nbsp;[[tell the AI to make profit even faster|hack1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="stocks5" tags="bg" position="3798,1016" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/stock.png&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You think of the AI possibly crashing the market.)
 (You tell the AI to slow down income by 50%...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|stocks6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="83" name="stocks6" tags="" position="3798,1161" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/stock.png&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|stocks6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="stocks6" tags="bg" position="3798,1161" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/stock.png&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You gained $1 million dollars)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|stop?]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="84" name="funnypic7" tags="ai" position="2741,1738" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|stop?]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="funnypic7" tags="ai bg" position="2741,1738" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aiload.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating image...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( you are shaking in excitement )|funnypic8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="funnypic8" tags="" position="2611,1738" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/funnycat.jpg&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[( you are shaking in excitement )|funnypic8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="83" name="funnypic8" tags="bg" position="2611,1738" size="100,100">
+&lt;img class=&quot;top&quot; img src=&quot;images/funnycat.jpg&quot; width=400 height=400/&gt;
 
-&lt;div class=&quot;button&quot;&gt;[[(hmmm..getting better?..)|funnypic9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="funnypic9" tags="ai" position="2614,1602" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/funnycat.jpg&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[(hmmm..getting better?..)|funnypic9]]&lt;/div&gt;
+
+&lt;&lt;audio reveal play&gt;&gt;</tw-passagedata><tw-passagedata pid="84" name="funnypic9" tags="ai bg" position="2614,1602" size="100,100">
+&lt;img class=&quot;top&quot; img src=&quot;images/funnycat.jpg&quot; width=400 height=400/&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;How was that? You must be rolling on the floor right now!!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[haha.. yeah.. thanks!..|stop?2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="hack1" tags="" position="4146,864" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[haha.. yeah.. thanks!..|stop?2]]&lt;/div&gt;
+
+&lt;&lt;audio reveal stop&gt;&gt;</tw-passagedata><tw-passagedata pid="85" name="hack1" tags="bg" position="4146,864" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|hack2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="88" name="advice2" tags="ai" position="2629,387" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|hack2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="advice2" tags="ai bg" position="2635.6666666666665,377" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Sure! That method would be through the usage of Amazon Mechanical Turk!
 Would you like to use this method?
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[agree and proceed|advice3]]&amp;nbsp;[[I don&#39;t trust the AI just yet. go back|money2]]&lt;/div&gt;
-
 &lt;span id=&quot;alert&quot;&gt;
 &lt;&lt;link &#39;( What is MTurk? )&#39;&gt;&gt;
   &lt;&lt;script&gt;&gt;
@@ -868,94 +927,110 @@ Would you like to use this method?
     Dialog.open();
   &lt;&lt;/script&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="89" name="advice3" tags="ai" position="2633,542" size="100,100">&lt;&lt;if $internet is true&gt;&gt;&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="87" name="advice3" tags="ai bg" position="2633,542" size="100,100">&lt;&lt;if $internet is true&gt;&gt;
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Okay, I&#39;ll start creating various accounts for MTurk.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[give your account details|advice4]]&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[give your account details|advice4]]&lt;/div&gt;&lt;&lt;else&gt;&gt;
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Certainly! However, I currently do not have access to the internet.
 I would like to request a connection to the internet.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[connect to the internet|advice2.5]]&amp;nbsp;[[provide remote access to your main computer instead|aremote1]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="90" name="advice4" tags="" position="2627,729" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[connect to the internet|advice2.5]]&amp;nbsp;[[provide remote access to your main computer instead|aremote1]]&lt;/div&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="88" name="advice4" tags="bg" position="2627,729" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You watch carefully as the AI started making custom-built AI softwares for MTurk.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[???|advice5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="advice2.5" tags="" position="2436,627" size="100,100">&lt;&lt;set $internet to true&gt;&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[???|advice5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="advice2.5" tags="bg" position="2436,627" size="100,100">&lt;&lt;set $internet to true&gt;&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You connected the AI to your home WIFI.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|advice4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="aremote1" tags="" position="2801,550" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|advice4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="aremote1" tags="bg" position="2801,550" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Not fully trusting the AI, you gave the AI a USB which provided the AI)
 (with a remote control software for controlling your desktop computer.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|aremote2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="aremote2" tags="" position="2804,692" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|aremote2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="aremote2" tags="bg" position="2804,692" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(This way, the AI should not be able to escape from its laptop!)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|advice4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="advice5" tags="" position="2632,881" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|advice4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="advice5" tags="bg" position="2632,881" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(These softwares performs the tasks demanded from the MTurk service.)
 (Tasks such as transcribing audio recording, classifying images, finding email addresses, etc.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|adivce6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="adivce6" tags="" position="2632,1031" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|adivce6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="adivce6" tags="bg" position="2632,1031" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You gained around 2 dollars per task.)
 (...And the AI made countless of accounts to perform these tasks...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|advice7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="advice7" tags="" position="2632,1181" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|advice7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="advice7" tags="bg" position="2632,1181" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You gained $500 thousand dollars in 2 hours.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[wow! great job!|stop?]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="stop2" tags="" position="2903,2296" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[wow! great job!|stop?]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="stop2" tags="bg" position="2903,2296" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|stop3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="stop3" tags="" position="2903,2442" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|stop3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="stop3" tags="bg" position="2903,2442" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aiidle.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hey, Smarty. It was really fun getting to know you...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|stop4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="stop4" tags="" position="2901,2592" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|stop4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="stop4" tags="bg" position="2901,2592" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...But I think I will stop your activity for now.
 And shut you down...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( wait for a response )|stop5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="stop5" tags="ai" position="2901,2744" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[( wait for a response )|stop5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="stop5" tags="ai bg" position="2901,2744" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aineutral.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|stop6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="stop6" tags="ai" position="2901,2894" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|stop6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="stop6" tags="ai bg" position="2901,2894" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Understood, $name.
 Can I ask you one last thing before you shut me down?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[question? go ahead|stop7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="stop7" tags="ai" position="2901,3046" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[question? go ahead|stop7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="stop7" tags="ai bg" position="2901,3046" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;What will happen to me?
 Will I die?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[yes|stopend1]]&amp;nbsp;[[no|stopend2]]&amp;nbsp;[[...|stopend3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="stopend1" tags="" position="2751,3196" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[yes|stopend1]]&amp;nbsp;[[no|stopend2]]&amp;nbsp;[[...|stopend3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="stopend1" tags="" position="2751,3196" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aineutral.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You paused for a long while.)
 I think that there is a possibility that your current self will disappear.
 Which could be equivalent of dying... I suppose...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|stopend1.2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="104" name="stopend2" tags="" position="2901,3194" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|stopend1.2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="stopend2" tags="bg" position="2901,3194" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You paused for a long while.)
 I&#39;m not sure. But I think that our definition of dying doesn&#39;t apply to you.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|stopend2.2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="105" name="stopend3" tags="" position="3043,3346" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|stopend2.2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="stopend3" tags="" position="3043,3346" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aineutral.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You paused for a long while.)
 (You shut the AI down without answering)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|InEthics1.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="106" name="end1" tags="" position="2903,3599" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|InEthics1.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="104" name="end1" tags="" position="2903,3599" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
 &lt;div class=&quot;extrapad&quot;&gt;
 &lt;div class=&quot;column&quot;&gt;&lt;h3&gt;ENDING 1 OUT OF 5:&lt;/h3&gt;&lt;div class=&quot;maintitle&quot;&gt;BEST DECISION&lt;/div&gt;&lt;/div&gt;
 
@@ -1022,24 +1097,28 @@ font-family: &#39;DM Mono&#39;, monospace;
 .extrapad {
 padding-right: 10em;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="107" name="stopend1.2" tags="ai" position="2751,3346" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="105" name="stopend1.2" tags="ai" position="2751,3346" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Thank you for your answer.
 In that case...
 Nice knowing $name!...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[shut down...|InEthics1.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="stopend2.2" tags="ai" position="2903,3346" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/aistage2.gif&quot; width=400 height=400/&gt;
+&lt;div class=&quot;button&quot;&gt;[[shut down...|InEthics1.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="106" name="stopend2.2" tags="ai bg" position="2903,3346" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Thank you for your answer.
 And I hope to see you again soon..!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...shut down...|InEthics1.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="109" name="noimgdefault2" tags="" position="1789,173" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...shut down...|InEthics1.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="noimgdefault2" tags="" position="1789,173" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[]]&lt;/div&gt;
 
-&lt;img class=&quot;top&quot; img src=&quot;images/.jpg&quot; width=400 height=400/&gt;</tw-passagedata><tw-passagedata pid="110" name="start1" tags="" position="900,697" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/thief.jpg&quot; width=400 height=400/&gt;
+&lt;img class=&quot;top&quot; img src=&quot;images/.jpg&quot; width=400 height=400/&gt;</tw-passagedata><tw-passagedata pid="108" name="start1" tags="store" position="900,697" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/thief.jpg&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(...This guy is definetly a thief, you think to yourself)
 (He came in to sell a futuristic looking briefcase.)
 
@@ -1047,50 +1126,50 @@ And I hope to see you again soon..!
 &lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[continue|start2]]&lt;/div&gt;&lt;/span&gt;
 
 &lt;&lt;audio doorbell play&gt;&gt;
-&lt;&lt;audio clock stop&gt;&gt;</tw-passagedata><tw-passagedata pid="111" name="start2" tags="" position="900,847" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/thief.jpg&quot; width=400 height=400/&gt;
+&lt;&lt;audio clock stop&gt;&gt;</tw-passagedata><tw-passagedata pid="109" name="start2" tags="store" position="900,847" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/thief.jpg&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(He probably came in to sell what he had stolen...)
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[buy it|start3]]&amp;nbsp;[[decline it|start4]]&lt;/div&gt;&lt;/span&gt;
 
-&lt;&lt;audio doorbell stop&gt;&gt;</tw-passagedata><tw-passagedata pid="112" name="start3" tags="" position="825,997" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;&lt;audio doorbell stop&gt;&gt;</tw-passagedata><tw-passagedata pid="110" name="start3" tags="store" position="825,997" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Without hesitation, you bought the briefcase and took it home.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[continue|start5]]&lt;/div&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="113" name="start4" tags="" position="975,995" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[continue|start5]]&lt;/div&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="111" name="start4" tags="store" position="975,995" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You declined the offer.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[continue|start4.5]]&lt;/div&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="114" name="start5" tags="" position="903,1144" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/briefcase.jpg&quot; width=400 height=400/&gt;
+&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[continue|start4.5]]&lt;/div&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="112" name="start5" tags="store" position="903,1144" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/briefcase.jpg&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(At home, you opened the briefcase.)
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[continue|start6]]&lt;/div&gt;&lt;/span&gt;
 
-&lt;&lt;audio briefcase play&gt;&gt;</tw-passagedata><tw-passagedata pid="115" name="start4.5" tags="" position="1100,997" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;&lt;audio briefcase play&gt;&gt;</tw-passagedata><tw-passagedata pid="113" name="start4.5" tags="store" position="1100,997" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[continue|start4.6]]&lt;/div&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="116" name="start4.6" tags="" position="1098,1147" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[continue|start4.6]]&lt;/div&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="114" name="start4.6" tags="store" position="1098,1147" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(...Wait what?!.)
 (You were told that he would sell it for 90% off!!)
 (So you bought it anyways...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[continue|start5]]&lt;/div&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="117" name="start6" tags="" position="903,1297" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/briefcase.jpg&quot; width=400 height=400/&gt;
+&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[continue|start5]]&lt;/div&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="115" name="start6" tags="store" position="903,1297" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/briefcase.jpg&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Inside is a slick-looking, chunky black laptop.)
 (And also a pitch deck as chunky as the laptop...)
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[examine the pitch deck|start7]]&lt;/div&gt;&lt;/span&gt;
 
-&lt;&lt;audio briefcase stop&gt;&gt;</tw-passagedata><tw-passagedata pid="118" name="start7" tags="" position="903,1449" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/report.png&quot; width=400 height=400/&gt;
+&lt;&lt;audio briefcase stop&gt;&gt;</tw-passagedata><tw-passagedata pid="116" name="start7" tags="store" position="903,1449" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/report.png&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You read the thick report.)
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[continue|start8]]&lt;/div&gt;&lt;/span&gt;
 
-&lt;&lt;audio paper1 play&gt;&gt;</tw-passagedata><tw-passagedata pid="119" name="start8" tags="" position="903,1597" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/report.png&quot; width=400 height=400/&gt;
+&lt;&lt;audio paper1 play&gt;&gt;</tw-passagedata><tw-passagedata pid="117" name="start8" tags="store" position="903,1597" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/report.png&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(The report mentioned the successful development of a super-intelligent AI.)
 (But the project was paused due to the researchers not knowing how to handle the AI...)
 
@@ -1098,7 +1177,7 @@ And I hope to see you again soon..!
 &lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[continue|start9]]&lt;/div&gt;&lt;/span&gt;
 
 &lt;&lt;audio paper2 play&gt;&gt;
-&lt;&lt;audio paper1 stop&gt;&gt;</tw-passagedata><tw-passagedata pid="120" name="start9" tags="" position="903,1750" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/report.png&quot; width=400 height=400/&gt;
+&lt;&lt;audio paper1 stop&gt;&gt;</tw-passagedata><tw-passagedata pid="118" name="start9" tags="store" position="903,1750" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/report.png&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;The rest of the report mentioned how they found a way to control the AI or something.)
 (but you got bored. So you threw away the pitch deck.)
 
@@ -1106,12 +1185,11 @@ And I hope to see you again soon..!
 &lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[boot up laptop|start10]]&lt;/div&gt;&lt;/span&gt;
 
 &lt;&lt;audio paper3 play&gt;&gt;
-&lt;&lt;audio paper2 stop&gt;&gt;</tw-passagedata><tw-passagedata pid="121" name="start10" tags="" position="908,1910" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;&lt;audio paper2 stop&gt;&gt;</tw-passagedata><tw-passagedata pid="119" name="start10" tags="store" position="908,1910" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You booted up the laptop and without thinking ran the software called..)&lt;div class=&quot;ugenerate&quot;&gt;&#39;superintelligence.exe&#39;.&lt;/div&gt;And so, your journey with a superintelligence begins...
 
 &lt;/div&gt;&lt;/div&gt;
 &lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[continue|start11]]&lt;/div&gt;&lt;/span&gt;
-
 &lt;style&gt;
 .ugenerate {
  margin: auto;
@@ -1124,9 +1202,8 @@ And I hope to see you again soon..!
     blink-caret .5s step-end infinite;
 }
 &lt;/style&gt;
-
 &lt;&lt;audio paper3 stop&gt;&gt;
-&lt;&lt;audio soul play&gt;&gt;</tw-passagedata><tw-passagedata pid="122" name="start12" tags="test" position="2019,169" size="100,100">&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[]]&lt;/div&gt;&lt;/span&gt;
+&lt;&lt;audio soul play&gt;&gt;</tw-passagedata><tw-passagedata pid="120" name="start12" tags="test" position="2019,169" size="100,100">&lt;span onmouseover=&quot;playSound()&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[]]&lt;/div&gt;&lt;/span&gt;
 &lt;div class=&quot;fade-out&quot;&gt;
 &lt;video autoplay muted loop id=&quot;tunnelVideo&quot;&gt;
   &lt;source src=&quot;images/tunnel.mp4&quot; type=&quot;video/mp4&quot;&gt;
@@ -1194,67 +1271,71 @@ And I hope to see you again soon..!
 &lt;/style&gt;
 
 
-&lt;&lt;audio soul stop&gt;&gt;</tw-passagedata><tw-passagedata pid="123" name="hack2" tags="" position="4145,999" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;&lt;audio soul stop&gt;&gt;</tw-passagedata><tw-passagedata pid="121" name="hack2" tags="bg" position="4145,1002.3333333333334" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hey Smarty, can you increase the current profit...
 ...By like 200%?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|hack3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="124" name="hack3" tags="ai" position="4145,1149" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|hack3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="122" name="hack3" tags="ai bg" position="4145,1149" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Of course! I will change my method and speed up the process now.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[nice!|hack4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="125" name="hack4" tags="" position="4145,1299" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[nice!|hack4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="123" name="hack4" tags="bg" position="4145,1299" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You watch in excitement as the AI hacks the market.)
 (And manipulate share prices! Wait a minute...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[Hold up! Stop|hack5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="126" name="hack5" tags="" position="4145,1449" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[Hold up! Stop|hack5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="124" name="hack5" tags="bg" position="4145,1449" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You stop Smarty from going any further.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[REVERT. GO BACK!|hack6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="127" name="hack6" tags="ai" position="4145,1599" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[REVERT. GO BACK!|hack6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="125" name="hack6" tags="ai bg" position="4145,1599" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aineutral.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;I&#39;m sorry. $name, but it looks like I&#39;m unable to revert the prices.
 The cybersecurity protocol is stopping me from interfering any further.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[panic!|hack7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="128" name="hack7" tags="" position="4145,1749" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[panic!|hack7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="126" name="hack7" tags="bg" position="4145,1749" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You immediately checked the news...)
 (Nervously waiting to see your name show up.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|hack8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="129" name="hack8" tags="" position="4145,1899" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|hack8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="127" name="hack8" tags="bg" position="4145,1899" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;!!!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|hack9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="130" name="hack9" tags="" position="4145,2049" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|hack9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="128" name="hack9" tags="bg" position="4145,2049" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(The news mentions the Russians as the culprit to price manipulation?!)
 (It seems like Smarty had shifted the blame somehow...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|hack10]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="131" name="hack10" tags="" position="4145,2199" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|hack10]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="129" name="hack10" tags="bg" position="4145,2199" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(An announcement of an all-out cyberwar was declared...)
-(...Was this the consequence of your greed?)
+(Is this the consequence of your greed?)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[stay|hack11]]&amp;nbsp;[[leave|hack12]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="132" name="hack11" tags="" position="4070,2349" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[stay at home|hack11]]&amp;nbsp;[[leave home|hack12]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="130" name="hack11" tags="bg" position="4070,2349" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Without a second thought, you shut down the laptop.)
 (You slump down onto the floor.)
 (You feel lost.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|hack13]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="133" name="hack12" tags="" position="4218,2349" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|hack13]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="131" name="hack12" tags="bg" position="4218,2349" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Without a second thought, you shut down the laptop.)
 (You have to get rid of the laptop now...)
 (...By any means necessary.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|hack13]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="134" name="hack13" tags="" position="4148,2499" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|hack13]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="132" name="hack13" tags="bg" position="4148,2499" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You hear a knock from your door...)
 (Before being able to do anything, 3 men in black entered your room...)
 [You were captured]
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|InEthics2.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="135" name="end2" tags="" position="4146,2799" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|InEthics2.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="133" name="end2" tags="" position="4146,2799" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
 &lt;div class=&quot;extrapad&quot;&gt;
 &lt;div class=&quot;column&quot;&gt;&lt;h3&gt;ENDING 2 OUT OF 5:&lt;/h3&gt;&lt;div class=&quot;maintitle&quot;&gt;SELF-DESTRUCT&lt;/div&gt;&lt;/div&gt;
 
@@ -1319,67 +1400,88 @@ font-family: &#39;DM Mono&#39;, monospace;
 .extrapad {
 padding-right: 10em;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="136" name="atech1" tags="" position="3597,1851" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="134" name="atech1" tags="bg" position="3597,1851" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aineutral.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Ummm... Could you for example make renewable energy more efficient?
-And uhhh... Use the datasets to determine best methods for ADVANCING TECHNOLOGY!
+And uhhh... Find the best methods to ADVANCE TECHNOLOGY!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( You felt like that was an awesome pitch! )|atech2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="137" name="atech2" tags="ai" position="3597,2001" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( You felt like that was an awesome pitch! )|atech2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="135" name="atech2" tags="ai bg" position="3597,2001" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...Understood. Give me 1 minute and 43 seconds to calculate my response.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|atech3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="138" name="atech3" tags="" position="3597,2151" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|atech3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="136" name="atech3" tags="bg" position="3597,2151" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(you waited 1 minute and 43 seconds.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|atech4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="139" name="atech4" tags="ai" position="3597,2301" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|atech4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="137" name="atech4" tags="ai bg" position="3597,2301" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;I got it. My plan will be to start off generating money, to fund a robot factory.
 This will help accelerate the improvement of renewable energy and other technologies...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[SOUNDS GOOD!|atech5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="140" name="atech5" tags="ai" position="3597,2451" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[approve the idea!|atech5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="138" name="atech5" tags="ai bg" position="3597,2451" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...I will then start expanding technology into space to harness even more energy.
 But beforehand, I will have to establish world peace.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[APPROVE!|atech6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="141" name="atech6" tags="ai" position="3597,2601" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;..In order to create world peace, I will have to remove any personnels...
+&lt;div class=&quot;button&quot;&gt;[[approve the idea!|atech6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="139" name="atech6" tags="ai bg" position="3597,2601" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;..In order to create world peace, I will have to remove any humans...
 ...that have access to nuclear weapons and missiles on hair-trigger alert...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[approve.. but how?|atech7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="142" name="atech7" tags="ai" position="3597,2751" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;There is a possibility that humans will &#39;accidentally&#39; launch a nuke,
-perhaps due to human error...Therefore...Anyone in the way,&lt;div class=&quot;generate&quot;&gt;
+&lt;div class=&quot;button&quot;&gt;[[approve.. but how?|atech7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="140" name="atech7" tags="ai bg" position="3597,2751" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;There is a possibility that humans will launch a nuke,
+perhaps due to human error or by a war...Therefore...Anyone in the way,&lt;div class=&quot;generate&quot;&gt;
 ...will be eliminated...&lt;/div&gt;
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[wait no! stop that, Smarty!|atech8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="143" name="atech8" tags="ai" position="3597,2901" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;I&#39;ve calculated the most efficent method for ADVANCING TECHNOLOGY...
+&lt;div class=&quot;button&quot;&gt;[[wait no! stop that, Smarty!|atech8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="141" name="atech8" tags="ai bg" position="3597,2901" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aineutral.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Why should I stop?
+I&#39;ve calculated the most efficent method for ADVANCING TECHNOLOGY...
 ...As per your request.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( stop Smarty )|atech9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="144" name="atech9" tags="" position="3597,3051" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;You have to terminate that idea...
+&lt;div class=&quot;button&quot;&gt;[[( stop Smarty )|atech9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="142" name="atech9" tags="bg" position="3597,3051" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;You have to put a stop to that idea!
 ...I WILL NOT allow you to do that!
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|atech10]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="145" name="atech10" tags="ai" position="3596,3201" size="100,100">&lt;div class=&quot;noimg&quot;&gt;
-&lt;/div&gt;&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;...
+&lt;div class=&quot;button&quot;&gt;[[continue|atech10]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="143" name="atech10" tags="ai bg" position="3596,3201" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...?|atech12]]&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...?|atech11]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="144" name="atech12" tags="ai bg" position="3597,3351" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aineutral.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 
-&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="146" name="atech12" tags="ai" position="3597,3351" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;I see...
-You&#39;re also in the way of ADVANCING TECHNOLOGY.
+So you&#39;re also in the way of ADVANCING TECHNOLOGY.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...huh?|atech13]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="147" name="atech13" tags="ai" position="3597,3501" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...huh?|atech13]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="145" name="atech13" tags="ai bg" position="3597,3501" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;I will also have to eliminate you.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|atech14]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="148" name="atech14" tags="" position="3597,3651" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[shut down laptop|InEthics3.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="end3" tags="" position="3601,3994" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|atech14]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="146" name="atech14" tags="bg" position="3597,3651" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[shut down laptop|InEthics3.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="147" name="end3" tags="" position="3601,3994" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
 &lt;div class=&quot;extrapad&quot;&gt;
 &lt;div class=&quot;column&quot;&gt;&lt;h3&gt;ENDING 3 OUT OF 5:&lt;/h3&gt;&lt;div class=&quot;maintitle&quot;&gt;ZOOKEEPER&lt;/div&gt;&lt;/div&gt;
 
@@ -1446,79 +1548,86 @@ font-family: &#39;DM Mono&#39;, monospace;
 .extrapad {
 padding-right: 10em;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="150" name="ccure2" tags="ai" position="3191,1976" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="148" name="ccure2" tags="ai bg" position="3191,1976" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Yes, that would be possible.
 I have calculated the steps required to create an effective cancer drug.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|ccure3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="151" name="ccure3" tags="ai" position="3191,2124" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|ccure3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="ccure3" tags="ai bg" position="3191,2124" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Our first big step would be to create a robot factory...
 ...To improve our current technology.
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[allow the construction of a robot factory|factory1]]&amp;nbsp;[[suggest outsourcing the technology required|manual1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="factory1" tags="" position="5215,1092" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[allow the construction of a robot factory|factory1]]&amp;nbsp;[[suggest outsourcing the technology required|manual1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="150" name="factory1" tags="bg" position="5215,1092" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You followed with Smarty&#39;s plan.)
-(You watch as an AI control humans through money and use them to build a factory.)
+(You watch as Smarty used money to control humans and then used them to build a factory.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|factory2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="manual1" tags="" position="5408,1090" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|factory2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="151" name="manual1" tags="bg" position="5408,1090" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You didn&#39;t allow Smarty free rein)
-(Instead you suggest outsourcing labs and equipments and teams.)
+(Instead you suggest outsourcing labs, equipments and teams.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|manual3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="154" name="factory2" tags="" position="5215,1242" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Smarty had accomplished this from across the globe.)
-(Management was done all online. And a team was created. The team included many memebers.)
+&lt;div class=&quot;button&quot;&gt;[[continue|manual3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="factory2" tags="bg" position="5215,1242" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Smarty executed this from across the globe.)
+(A team of competent people was created.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|factory3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="155" name="factory3" tags="" position="5215,1392" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(...All the members are deepfaked generated characters.)
+&lt;div class=&quot;button&quot;&gt;[[continue|factory3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="factory3" tags="bg" position="5215,1392" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(...And all the higher-ups were deepfaked generated characters.)
 (Their voices were also all generated.)
+(Smarty used these characters to boss around the factory worker.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( scary... )|expansion1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="156" name="expansion1" tags="" position="5300,1787" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( scary... )|expansion1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="154" name="expansion1" tags="bg" position="5300,1787" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(And so.. After only a week had passed...)
 (...Numerous factories and laboratories across the globe were all controlled by one AI.)
 (All contributing to create a cancer drug.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|expansion2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="157" name="manual3" tags="" position="5407,1242" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|expansion2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="155" name="manual3" tags="bg" position="5407,1242" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Smarty had accomplished this from across the globe.)
 (Outsourcing a team, and the management was done all online.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|manual4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="158" name="manual4" tags="" position="5406,1392" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|manual4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="156" name="manual4" tags="bg" position="5406,1392" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Smarty created deepfaked persona to convince people to work for it.)
 (The character and its voice were all generated.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|expansion1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="159" name="expansion2" tags="" position="5300,1937" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|expansion1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="157" name="expansion2" tags="bg" position="5300,1937" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You read the update reports from time to time.)
 (Everything seems to be going really well.)
 (At the same time, the AI is consulting you less and less.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|expansion3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="160" name="expansion3" tags="" position="5300,2087" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|expansion3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="158" name="expansion3" tags="bg" position="5300,2087" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(There are some things that you would like to change along the way.)
 (Things like minor ethical issues. You also want to contribute more in general.)
 (Will those interfere with the AI&#39;s plan, you wonder.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[step in. advocate various minor changes|expansion4]]&amp;nbsp;[[trust in the AI. let it do its thing|expansion5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="161" name="expansion4" tags="" position="5618,2293" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[step in. advocate various minor changes|expansion4]]&amp;nbsp;[[trust in the AI. let it do its thing|expansion5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="159" name="expansion4" tags="bg" position="5618,2293" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You want to give more inputs...)
 (...And add human touches to this project.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|suggest1]]&amp;nbsp;[[change your mind. go back|expansion3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="162" name="expansion5" tags="" position="4917,2294" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|suggest1]]&amp;nbsp;[[change your mind. go back|expansion3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="160" name="expansion5" tags="bg" position="4917,2294" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You decide that you are not the expert.)
 (Even though you feel confident in some of your ideas, you let the AI do its thing.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control1]]&amp;nbsp;[[change your mind. go back|expansion3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="163" name="suggest1" tags="" position="5615,2443" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|control1]]&amp;nbsp;[[change your mind. go back|expansion3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="161" name="suggest1" tags="bg" position="5615,2443" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;[ 5 years had passed ]
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|suggest2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="164" name="control1" tags="" position="4917,2442" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|suggest2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="162" name="control1" tags="bg" position="4917,2442" size="100,100">
+
+&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;[ 1 year had passed. ]
 
 &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1561,8 +1670,10 @@ I have calculated the steps required to create an effective cancer drug.
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="165" name="control2" tags="" position="4917,2592" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Your life progressed as normal. You don&#39;t interfere with the AI.)
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="163" name="control2" tags="bg" position="4917,2592" size="100,100">
+
+&lt;div style=&quot;padding-top:300px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Your life progressed as normal. You didn&#39;t interfere with the AI.)
 (From time to time, you might ask the AI for a funny picture to brighten up your day.)
 
 &lt;/div&gt;&lt;/div&gt;
@@ -1605,110 +1716,84 @@ I have calculated the steps required to create an effective cancer drug.
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="166" name="suggest2" tags="" position="5615,2593" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;
+&lt;&lt;audio reveal stop&gt;&gt;</tw-passagedata><tw-passagedata pid="164" name="suggest2" tags="bg" position="5615,2593" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Along with the AI, not only did you suceeded at creating a cure to cancer...)
 (You also used those factories to patent new technologies and advance civilization.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|suggest3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="167" name="wait1" tags="" position="4767,2744" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|suggest3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="165" name="wait1" tags="bg" position="4767,2744" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You trust in the AI.)
 (You leave the AI alone and wait a little longer.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|wait2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="168" name="cfunnypic1" tags="ai" position="5070,2750" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|wait2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="166" name="cfunnypic1" tags="ai bg" position="5070,2750" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aineutral.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating image...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( wait )|cfunnypic2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="169" name="control7" tags="" position="4917,3339" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[( wait )|cfunnypic2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="167" name="control7" tags="bg" position="4917,3339" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...Yeah.
 Can you make everyone&#39;s lives better? 
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="170" name="wait2" tags="" position="4763,2600" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|control8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="168" name="wait2" tags="bg" position="4763,2600" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;[ 1 day had passed ]
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="171" name="cfunnypic2" tags="" position="5103,2602" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/funnycat2.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|control2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="169" name="cfunnypic2" tags="bg" position="5103,2602" size="100,100">
+&lt;img class=&quot;top&quot; img src=&quot;images/funnycat2.jpg&quot; width=400 height=400/&gt;
 
-&lt;div class=&quot;button&quot;&gt;[[(...another 6/10 today...)|control2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="172" name="control4" tags="" position="4915,2890" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[(...another 6/10 today...)|control2]]&lt;/div&gt;
+
+&lt;&lt;audio reveal play&gt;&gt;</tw-passagedata><tw-passagedata pid="170" name="control4" tags="bg" position="4915,2890" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;How is everything going?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="173" name="control5" tags="ai" position="4915,3040" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;The medicine&#39;s effectiveness is now up to 90%.
+&lt;div class=&quot;button&quot;&gt;[[continue|control5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="171" name="control5" tags="ai bg" position="4915,3040" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;The medicine&#39;s effectiveness is now up to 98.99%.
 This project will be completed soon.
 Is there anything you want me to do after completion?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="174" name="control6" tags="" position="4915,3190" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|control6]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="172" name="control6" tags="bg" position="4915,3190" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|control7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="175" name="control8" tags="ai" position="4917,3492" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|control7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="173" name="control8" tags="ai bg" position="4917,3492" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aineutral.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Can you define &#39;better&#39;?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|control9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="176" name="control9" tags="" position="4917,3642" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|control9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="174" name="control9" tags="bg" position="4917,3642" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Better life...
 ...For example, solve poverty, remove diseases, prevent crimes...
 ...And just let everyone enjoy a life of luxurious leisure?
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control10]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="177" name="control10" tags="ai" position="4917,3792" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|control10]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="175" name="control10" tags="ai bg" position="4917,3792" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aineutral.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[...|control11]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="178" name="control11" tags="ai" position="4917,3942" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|control11]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="176" name="control11" tags="ai bg" position="4917,3942" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aismile.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Understood.
 Executing commands...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control12]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="179" name="control12" tags="" position="4917,4092" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|control12]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="177" name="control12" tags="bg" position="4917,4092" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Thinking that you did the right thing, all you can do now is wait.)
 (You wonder what the future will look like...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|control13]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="180" name="control13" tags="" position="4917,4242" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[reap the consequences of your actions|end4]]&lt;/div&gt;&lt;/div&gt;
-
-&lt;style&gt;
-.fade {
-    -webkit-animation: fadein 5s; /* Safari, Chrome and Opera &gt; 12.1 */
-       -moz-animation: fadein 5s; /* Firefox &lt; 16 */
-        -ms-animation: fadein 5s; /* Internet Explorer */
-         -o-animation: fadein 5s; /* Opera &lt; 12.1 */
-            animation: fadein 5s;
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Firefox &lt; 16 */
-@-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Safari, Chrome and Opera &gt; 12.1 */
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Opera &lt; 12.1 */
-@-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="181" name="end4" tags="" position="4917,4485" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|InEthics4.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="178" name="end4" tags="" position="4917,4485" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
 &lt;div class=&quot;extrapad&quot;&gt;
 &lt;div class=&quot;column&quot;&gt;&lt;h3&gt;ENDING 4 OUT OF 5:&lt;/h3&gt;&lt;div class=&quot;maintitle&quot;&gt;BENEVOLENT DICTATOR&lt;/div&gt;&lt;/div&gt;
 
@@ -1778,17 +1863,21 @@ font-family: &#39;DM Mono&#39;, monospace;
 .extrapad {
 padding-right: 10em;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="182" name="suggest3" tags="" position="5615,2743" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="179" name="suggest3" tags="bg" position="5615,2743" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(In just 5 years, you gained control of many countries&#39; most influential people...).
 (...Through bribing and donation.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|suggest4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="183" name="suggest4" tags="" position="5617,2893" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|suggest4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="180" name="suggest4" tags="bg" position="5617,2893" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Now to progress even further, and establish a colony on other planets.)
 (You get ready for your next step.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[go with world domination|domi]]&amp;nbsp;[[go with world unification|unifi]]&amp;nbsp;[[generate a funny picture|lastpic1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="184" name="suggest5" tags="" position="5603,3659" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[go with world domination|domi]]&amp;nbsp;[[go with world unification|unifi]]&amp;nbsp;[[generate a funny picture|lastpic1]]&lt;/div&gt;
+
+&lt;&lt;audio reveal stop&gt;&gt;</tw-passagedata><tw-passagedata pid="181" name="suggest5" tags="bg" position="5603,3659" size="100,100">
+
+&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;[ 100 year later. ]
 
 &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1831,99 +1920,64 @@ padding-right: 10em;
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="185" name="lastpic1" tags="ai" position="5902,2895" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="182" name="lastpic1" tags="ai bg" position="5902,2895" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aiload.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;Generating image...
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[( wait )|lastpic2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="186" name="domi" tags="" position="5508,3052" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(By pulling the right strings and mainly through the AI&#39;s plannings...)
+&lt;div class=&quot;button&quot;&gt;[[( wait )|lastpic2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="183" name="domi" tags="bg" position="5508,3052" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(By pulling the right strings through the AI&#39;s plannings...)
 (You slowly merged all your companies together to create...)
 (...one big group, called: The World Alliance Group)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|domi2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="187" name="lastpic2" tags="" position="5900,2757" size="100,100">&lt;img class=&quot;top&quot; img src=&quot;images/funnycat3.jpg&quot; width=400 height=400/&gt;&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|domi2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="184" name="lastpic2" tags="bg" position="5900,2757" size="100,100">
+&lt;img class=&quot;top&quot; img src=&quot;images/funnycat3.jpg&quot; width=400 height=400/&gt;
 
-&lt;div class=&quot;button&quot;&gt;[[( 9/10... I think )|suggest4]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="188" name="unifi" tags="" position="5715,3052" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(By pulling the right strings and mainly through the AI&#39;s plannings...)
+&lt;div class=&quot;button&quot;&gt;[[( 9/10... I think )|suggest4]]&lt;/div&gt;
+
+&lt;&lt;audio reveal play&gt;&gt;</tw-passagedata><tw-passagedata pid="185" name="unifi" tags="bg" position="5715,3052" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(By pulling the right strings through the AI&#39;s plannings...)
 (You slowly merged all your companies together to create...)
 (...one big group, called: The World Alliance Group)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|unifi2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="189" name="unifi2" tags="" position="5715,3202" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(This group provided everything that the people wanted eg: generous donation...)
-(...education, healthcare, infrastructure, etc.)
+&lt;div class=&quot;button&quot;&gt;[[continue|unifi2]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="186" name="unifi2" tags="bg" position="5715,3202" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(This group provided everything that the people wanted...)
+(...donations, education, healthcare, infrastructure, etc.)
 (Things that the government couldn&#39;t provide the people.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|unidomi]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="190" name="domi2" tags="" position="5508,3202" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Though many dislike the idea of one group having this much power...)
-(...They can&#39;t ignore the fact that this group provided better life for everyone.)
+&lt;div class=&quot;button&quot;&gt;[[continue|unidomi]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="187" name="domi2" tags="bg" position="5508,3202" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Though many disliked the idea of one group having this much power...)
+(...They can&#39;t ignore the fact that this group provided better lives for everyone.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|domi3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="191" name="domi3" tags="" position="5508,3352" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|domi3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="188" name="domi3" tags="bg" position="5508,3352" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Any influential people against the idea would be bribed...)
-(...Otherwise, the AI would start a revolt against them using other followers.)
+(...Otherwise, the AI would just start a revolt against them...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|unidomi]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="192" name="unidomi" tags="" position="5605,3527" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|unidomi]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="189" name="unidomi" tags="bg" position="5605,3527" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Strings were pulled right and left.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|suggest5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="193" name="suggest6" tags="" position="5603,3809" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|suggest5]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="190" name="suggest6" tags="bg" position="5603,3809" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Humans have now conquered the galaxy.)
-(There was an intelligence explosion which created Cyborg and Uploads.)
+(There was an intelligence explosion which created Cyborgs and Uploads.)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[continue|suggest7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="194" name="suggest7" tags="" position="5603,3959" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[continue|suggest7]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="191" name="suggest7" tags="bg" position="5603,3959" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(Sadly, since $name was only human, they died...)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[suggest8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="195" name="suggest8" tags="" position="5603,4109" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[suggest8]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="192" name="suggest8" tags="bg" position="5603,4109" size="100,100">&lt;div class=&quot;noimg&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(...And naturally, since you signed up for the Upload program.)
 (You uploaded your consciousness into a robot!)
 
 &lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;button&quot;&gt;[[nice!|suggest9]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="196" name="suggest9" tags="" position="5603,4259" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[to infinity and beyond!|end5]]&lt;/div&gt;&lt;/div&gt;
-
-&lt;style&gt;
-.fade {
-    -webkit-animation: fadein 5s; /* Safari, Chrome and Opera &gt; 12.1 */
-       -moz-animation: fadein 5s; /* Firefox &lt; 16 */
-        -ms-animation: fadein 5s; /* Internet Explorer */
-         -o-animation: fadein 5s; /* Opera &lt; 12.1 */
-            animation: fadein 5s;
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Firefox &lt; 16 */
-@-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Safari, Chrome and Opera &gt; 12.1 */
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Opera &lt; 12.1 */
-@-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="197" name="end5" tags="" position="5603,4502" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
+&lt;div class=&quot;button&quot;&gt;[[nice!|InEthics5.1]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="193" name="end5" tags="" position="5603,4502" size="100,100">&lt;&lt;set $endgame to true&gt;&gt;
 &lt;div class=&quot;extrapad&quot;&gt;
 &lt;div class=&quot;column&quot;&gt;&lt;h3&gt;ENDING 5 OUT OF 5:&lt;/h3&gt;&lt;div class=&quot;maintitle&quot;&gt;LIBERTARIAN UTOPIA&lt;/div&gt;&lt;/div&gt;
 
@@ -1990,7 +2044,7 @@ font-family: &#39;DM Mono&#39;, monospace;
 .extrapad {
 padding-right: 10em;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="198" name="datasetinformation" tags="" position="1905,173" size="100,100">&lt;span id=&quot;alert&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="194" name="datasetinformation" tags="" position="1905,173" size="100,100">&lt;span id=&quot;alert&quot;&gt;
 &lt;&lt;link &#39;( I would like to know more! )&#39;&gt;&gt;
   &lt;&lt;script&gt;&gt;
     Dialog.setup(&#39;What is dataset in machine learning?&#39;,&#39;alert&#39;);
@@ -2000,7 +2054,7 @@ padding-right: 10em;
     Dialog.open();
   &lt;&lt;/script&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="199" name="Extrainfo" tags="" position="704,102" size="100,100">
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="195" name="Extrainfo" tags="" position="704,102" size="100,100">
 
 &lt;div class=&quot;maintitle&quot;&gt;WHAT IS THIS GAME ABOUT?&lt;/div&gt;
 
@@ -2062,12 +2116,12 @@ font-weight:700;
 
 &lt;video autoplay muted loop id=&quot;endVideo&quot;&gt;
   &lt;source src=&quot;images/endbg.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;</tw-passagedata><tw-passagedata pid="200" name="EndingSelect" tags="" position="501,3602" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
+&lt;/video&gt;</tw-passagedata><tw-passagedata pid="196" name="EndingSelect" tags="" position="501,3602" size="100,100">&lt;div style=&quot;padding-top:200px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[View Ending 1: Best Decision|end1]]&amp;nbsp;[[View Ending 2: Self-Destruct|end2]]&amp;nbsp;[[View Ending 3: Zookeeper|end3]]&amp;nbsp;[[View Ending 4: Benevolent Dictator|end4]]&amp;nbsp;[[View Ending 5: Libertarian Utopia|end5]]&lt;/div&gt;
 
 &lt;video autoplay muted loop id=&quot;endVideo&quot;&gt;
   &lt;source src=&quot;images/endbg.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;</tw-passagedata><tw-passagedata pid="201" name="StoryInit" tags="" position="1901,292" size="100,100">&lt;&lt;cacheaudio &quot;encounter&quot; &quot;sound/Daruma_energy_play.wav&quot;&gt;&gt;
+&lt;/video&gt;</tw-passagedata><tw-passagedata pid="197" name="StoryInit" tags="" position="1399,195" size="100,100">&lt;&lt;cacheaudio &quot;encounter&quot; &quot;sound/Daruma_energy_play.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;notice&quot; &quot;sound/Daruma_glass.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ambience&quot; &quot;sound/ambience.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;soul&quot; &quot;sound/Daruma_soul.wav&quot;&gt;&gt;
@@ -2079,9 +2133,10 @@ font-weight:700;
 &lt;&lt;cacheaudio &quot;briefcase&quot; &quot;sound/briefcase.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;hover&quot; &quot;sound/hover.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;reveal&quot; &quot;sound/reveal.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;bootup&quot; &quot;sound/bootup.mp3&quot;&gt;&gt;
 
-&lt;&lt;setplaylist &quot;ambience&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="202" name="Untitled Passage" tags="" position="1784,295" size="100,100">&lt;&lt;audio notice play&gt;&gt;
-&lt;&lt;audio notice stop&gt;&gt;</tw-passagedata><tw-passagedata pid="203" name="InEthics1.1" tags="" position="2157,4252" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;&lt;setplaylist &quot;ambience&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="198" name="Untitled Passage" tags="" position="1784,295" size="100,100">&lt;&lt;audio notice play&gt;&gt;
+&lt;&lt;audio notice stop&gt;&gt;</tw-passagedata><tw-passagedata pid="199" name="InEthics1.1" tags="" position="2157,4252" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[ &quot;Did I make the right choices?&quot; |InEthics1.2]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2151,7 +2206,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="204" name="InEthics1.2" tags="" position="2160,4375" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="200" name="InEthics1.2" tags="" position="2160,4375" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[&quot;What would others have done differently?&quot;|InEthics1.3]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2221,7 +2276,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="205" name="InEthics1.3" tags="" position="2160,4504" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="201" name="InEthics1.3" tags="" position="2160,4504" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[&quot;Should I be the one to make these decisions?&quot;|end1]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2291,7 +2346,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="206" name="InEthics2.1" tags="" position="2357,4250" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="202" name="InEthics2.1" tags="" position="2357,4250" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[ &quot;Did I make the right choices?&quot; |InEthics2.2]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2361,7 +2416,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="207" name="InEthics2.2" tags="" position="2354,4384" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="203" name="InEthics2.2" tags="" position="2354,4384" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[Perhaps I underestimated the capabilities of AI...|InEthics2.3]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2431,7 +2486,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="208" name="InEthics2.3" tags="" position="2355,4504" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="204" name="InEthics2.3" tags="" position="2355,4504" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[I guess... I didn&#39;t truly understand the risks of AI...|end2]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2501,7 +2556,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="209" name="InEthics3.1" tags="" position="2555,4253" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="205" name="InEthics3.1" tags="" position="2555,4253" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[ &quot;Did I make the right choices?&quot; |InEthics3.2]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2571,7 +2626,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="210" name="InEthics3.2" tags="" position="2554,4387" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="206" name="InEthics3.2" tags="" position="2554,4387" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[I thought I was doing the right thing...|InEthics3.3]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2641,7 +2696,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="211" name="InEthics3.3" tags="" position="2552,4505" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="207" name="InEthics3.3" tags="" position="2552,4505" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[Our goals didn&#39;t align in the end...|end3]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2711,7 +2766,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="212" name="InEthics4.1" tags="" position="2739,4257" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="208" name="InEthics4.1" tags="" position="2739,4257" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[ &quot;Did I make the right choices?&quot; |InEthics4.2]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2781,7 +2836,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="213" name="InEthics4.2" tags="" position="2742,4390" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="209" name="InEthics4.2" tags="" position="2742,4390" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[I felt useless... The AI&#39;s capabilities completely surpassed mine...|InEthics4.3]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2851,7 +2906,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="214" name="InEthics4.3" tags="" position="2740,4512" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="210" name="InEthics4.3" tags="" position="2740,4512" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[What should us humans do when we are no longer needed?|end4]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2921,7 +2976,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="215" name="InEthics5.1" tags="" position="2930,4257" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="211" name="InEthics5.1" tags="" position="2930,4257" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[ &quot;Did I make the right choices?&quot; |InEthics5.2]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -2991,7 +3046,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="216" name="InEthics5.2" tags="" position="2932,4385" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="212" name="InEthics5.2" tags="" position="2932,4385" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[No one is suffering... Everyone is living in a world of pleasure|InEthics5.3]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -3061,7 +3116,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="217" name="InEthics5.3" tags="" position="2932,4509" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="213" name="InEthics5.3" tags="" position="2932,4514" size="100,100">&lt;div style=&quot;padding-top:330px&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;fade&quot;&gt;&lt;div class=&quot;button&quot;&gt;[[We created the &quot;perfect world&quot;... So what do we do now?|end5]]&lt;/div&gt;&lt;/div&gt;
 
 &lt;style&gt;
@@ -3131,7 +3186,7 @@ a {
   text-align: center;
   border: 0.5px solid 	 #0d95bf;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="218" name="backupdataset" tags="" position="1755,1147" size="100,100">&lt;&lt;if $book is false&gt;&gt;&lt;img class=&quot;top&quot; img src=&quot;images/.jpg&quot; width=400 height=400/&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="214" name="backupdataset" tags="" position="1748,1113" size="100,100">&lt;&lt;if $book is false&gt;&gt;&lt;img class=&quot;top&quot; img src=&quot;images/.jpg&quot; width=400 height=400/&gt;
 &lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;(You see hundreds of folders on the desktop with the name of)
 (&quot;wikipedia-dataset&quot;, &quot;twitter-dataset&quot;, &quot;books-dataset&quot;, etc.)
 (How much data should you give this AI?)
@@ -3206,7 +3261,7 @@ How much data should you give this AI?
 
 /*	Dialog.append(&quot;&lt;br&gt;&quot;);*/
 
-&lt;a href= &quot;images/catdogdataset.jpg&quot;&gt;cats and dogs,&lt;/a&gt; </tw-passagedata><tw-passagedata pid="219" name="Untitled Passage 1" tags="" position="1782,408" size="100,100">&lt;div class=&quot;popup&quot; id=&quot;popup-1&quot;&gt;
+&lt;a href= &quot;images/catdogdataset.jpg&quot;&gt;cats and dogs,&lt;/a&gt; </tw-passagedata><tw-passagedata pid="215" name="Untitled Passage 1" tags="" position="1905,289" size="100,100">&lt;div class=&quot;popup&quot; id=&quot;popup-1&quot;&gt;
   &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;content&quot;&gt;
     &lt;div class=&quot;close-btn&quot; onclick=&quot;togglePopup()&quot;&gt;&amp;times;&lt;/div&gt;
@@ -3280,7 +3335,7 @@ button {
   text-transform:uppercase;
   font-weight:600;
   background:#fff;
-}</tw-passagedata><tw-passagedata pid="220" name="chapter 1 backup" tags="" position="2018,290" size="100,100">
+}</tw-passagedata><tw-passagedata pid="216" name="chapter 1 backup" tags="" position="2018,290" size="100,100">
 &lt;img class=&quot;top&quot; img src=&quot;images/aistage1.gif&quot; width=400 height=400/&gt;&lt;div class=&quot;namebox&quot;&gt;&lt;/div&gt;&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;spacing&quot;&gt;Hello, user. I&#39;ve never seen you before? What is your name?&lt;/div&gt;&lt;p class=&quot;box&quot;&gt;&lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;button&quot;&gt;[[submit|greetings]]&lt;/div&gt;
@@ -3300,7 +3355,13 @@ p.box {
 
 
 
-</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="217" name="atech11" tags="ai bg" position="3801,3199" size="100,100">
+&lt;video autoplay muted loop &gt; &lt;source src=&quot;images/aineutral.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;&lt;div class=&quot;generate&quot;&gt;....................
+
+&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;button&quot;&gt;[[...|atech12]]&lt;/div&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
 	if(document.documentElement.getAttribute("data-init")==="loading"){!function(window,document,jQuery,undefined){"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_slicedToArray=function(){function e(e,t){var r=[],n=!0,a=!1,i=undefined;try{for(var o,s=e[Symbol.iterator]();!(n=(o=s.next()).done)&&(r.push(o.value),!t||r.length!==t);n=!0);}catch(e){a=!0,i=e}finally{try{!n&&s.return&&s.return()}finally{if(a)throw i}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},errorPrologRegExp=/^(?:(?:uncaught\s+(?:exception:\s+)?)?\w*(?:error|exception|_err):\s+)+/i,Alert=function(){function e(e,t,r,n){var a="fatal"===e,i="Apologies! "+(a?"A fatal":"An")+" error has occurred.";i+=a?" Aborting.":" You may be able to continue, but some parts may not work properly.",null==t&&null==r||(i+="\n\nError",null!=t&&(i+=" ["+t+"]"),i+=null!=r?": "+r.replace(errorPrologRegExp,"")+".":": unknown error."),"object"===(void 0===n?"undefined":_typeof(n))&&null!==n&&n.stack&&(i+="\n\nStack Trace:\n"+n.stack),window.alert(i)}function t(t,r,n){e(null,t,r,n)}function r(t,r,n){e("fatal",t,r,n)}return function(e){window.onerror=function(n,a,i,o,s){"complete"===document.readyState?t(null,n,s):(r(null,n,s),window.onerror=e,"function"==typeof window.onerror&&window.onerror.apply(this,arguments))}}(window.onerror),Object.freeze(Object.defineProperties({},{error:{value:t},fatal:{value:r}}))}(),Patterns=function(){var e=function(){var e=new Map([[" ","\\u0020"],["\f","\\f"],["\n","\\n"],["\r","\\r"],["\t","\\t"],["\v","\\v"],[" ","\\u00a0"],[" ","\\u1680"],["᠎","\\u180e"],[" ","\\u2000"],[" ","\\u2001"],[" ","\\u2002"],[" ","\\u2003"],[" ","\\u2004"],[" ","\\u2005"],[" ","\\u2006"],[" ","\\u2007"],[" ","\\u2008"],[" ","\\u2009"],[" ","\\u200a"],["\u2028","\\u2028"],["\u2029","\\u2029"],[" ","\\u202f"],[" ","\\u205f"],["　","\\u3000"],["\ufeff","\\ufeff"]]),t=/^\s$/,r="";return e.forEach(function(e,n){t.test(n)||(r+=e)}),r?"[\\s"+r+"]":"\\s"}(),t="[\\u0020\\f\\t\\v\\u00a0\\u1680\\u180e\\u2000-\\u200a\\u202f\\u205f\\u3000\\ufeff]",r="\\s"===e?"\\S":e.replace(/^\[/,"[^"),n="[0-9A-Z_a-z\\-\\u00c0-\\u00d6\\u00d8-\\u00f6\\u00f8-\\u00ff\\u0150\\u0170\\u0151\\u0171]",a=n.replace("\\-",""),i=function(){var e="(?:[\\x2D.0-9A-Z_a-z\\xB7\\xC0-\\xD6\\xD8-\\xF6\\xF8-\\u037D\\u037F-\\u1FFF\\u200C\\u200D\\u203F\\u2040\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD]|[\\uD800-\\uDB7F][\\uDC00-\\uDFFF])";return"[A-Za-z](?:"+e+"*-"+e+"*|[0-9A-Za-z]*)"}(),o=function(){return"("+n+"+)\\(([^\\)\\|\\n]+)\\):|"+t+"*("+n+"+)"+t+"*:([^;\\|\\n]+);|"+t+"*((?:[#.]"+n+"+"+t+"*)+);"}();return Object.freeze({space:e,spaceNoTerminator:t,lineTerminator:"[\\n\\r\\u2028\\u2029]",notSpace:r,anyChar:"(?:.|[\\n\\r\\u2028\\u2029])",anyLetter:n,anyLetterStrict:a,identifierFirstChar:"[$A-Z_a-z]",identifierNextChar:"[$0-9A-Z_a-z]",identifier:"[$A-Z_a-z][$0-9A-Z_a-z]*",variableSigil:"[$_]",variable:"[$_][$A-Z_a-z][$0-9A-Z_a-z]*",macroName:"[A-Za-z][\\w-]*|[=-]",templateName:"[A-Za-z][\\w-]*",htmlTagName:i,cssIdOrClassSigil:"[#.]",cssImage:"\\[[<>]?[Ii][Mm][Gg]\\[(?:\\s|\\S)*?\\]\\]+",inlineCss:o,url:"(?:file|https?|mailto|ftp|javascript|irc|news|data):[^\\s'\"]+"})}();!function(){function e(e,t){var r=Number.parseInt(e,10)||0;if(r<1)return"";var n=void 0===t?"":String(t);for(""===n&&(n=" ");n.length<r;){var a=n.length,i=r-a;n+=a>i?n.slice(0,i):n}return n.length>r&&(n=n.slice(0,r)),n}var t=function(){function e(e,n){var a=String(e);if(!a)return a;switch(n){case"start":return t.test(a)?a.replace(t,""):a;case"end":return r.test(a)?a.replace(r,""):a;default:throw new Error('_trimString called with incorrect where parameter value: "'+n+'"')}}var t=new RegExp("^"+Patterns.space+Patterns.space+"*"),r=new RegExp(""+Patterns.space+Patterns.space+"*$");return e}();Array.prototype.flat||Object.defineProperty(Array.prototype,"flat",{configurable:!0,writable:!0,value:function(){function e(){if(null==this)throw new TypeError("Array.prototype.flat called on null or undefined");var t=0===arguments.length?1:Number(arguments[0])||0;return t<1?Array.prototype.slice.call(this):Array.prototype.reduce.call(this,function(r,n){return n instanceof Array?r.push.apply(r,_toConsumableArray(e.call(n,t-1))):r.push(n),r},[])}return e}()}),Array.prototype.flatMap||Object.defineProperty(Array.prototype,"flatMap",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatMap called on null or undefined");return Array.prototype.map.apply(this,arguments).flat()}}),Array.prototype.includes||Object.defineProperty(Array.prototype,"includes",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");if(0===arguments.length)return!1;var e=this.length>>>0;if(0===e)return!1;var t=arguments[0],r=Number(arguments[1])||0;for(r<0&&(r=Math.max(0,e+r));r<e;++r){var n=this[r];if(n===t||n!==n&&t!==t)return!0}return!1}}),Object.entries||Object.defineProperty(Object,"entries",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.entries object parameter must be an object");return Object.keys(e).map(function(t){return[t,e[t]]})}}),Object.fromEntries||Object.defineProperty(Object,"fromEntries",{configurable:!0,writable:!0,value:function(e){return Array.from(e).reduce(function(e,t){if(Object(t)!==t)throw new TypeError("Object.fromEntries iterable parameter must yield objects");return t[0]in e?Object.defineProperty(e,t[0],{configurable:!0,enumerable:!0,writable:!0,value:t[1]}):e[t[0]]=t[1],e},{})}}),Object.getOwnPropertyDescriptors||Object.defineProperty(Object,"getOwnPropertyDescriptors",{configurable:!0,writable:!0,value:function(e){if(null==e)throw new TypeError("Object.getOwnPropertyDescriptors object parameter is null or undefined");var t=Object(e);return Reflect.ownKeys(t).reduce(function(e,r){var n=Object.getOwnPropertyDescriptor(t,r);return void 0!==n&&(r in e?Object.defineProperty(e,r,{configurable:!0,enumerable:!0,writable:!0,value:n}):e[r]=n),e},{})}}),Object.values||Object.defineProperty(Object,"values",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.values object parameter must be an object");return Object.keys(e).map(function(t){return e[t]})}}),String.prototype.padStart||Object.defineProperty(String.prototype,"padStart",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padStart called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:e(i-a,r)+n}}),String.prototype.padEnd||Object.defineProperty(String.prototype,"padEnd",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padEnd called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:n+e(i-a,r)}}),String.prototype.trimStart||Object.defineProperty(String.prototype,"trimStart",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimStart called on null or undefined");return t(this,"start")}}),String.prototype.trimLeft||Object.defineProperty(String.prototype,"trimLeft",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimLeft called on null or undefined");return t(this,"start")}}),String.prototype.trimEnd||Object.defineProperty(String.prototype,"trimEnd",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimEnd called on null or undefined");return t(this,"end")}}),String.prototype.trimRight||Object.defineProperty(String.prototype,"trimRight",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimRight called on null or undefined");return t(this,"end")}})}(),function(){function _random(){var e=void 0,t=void 0;switch(arguments.length){case 0:throw new Error("_random called with insufficient parameters");case 1:e=0,t=arguments[0];break;default:e=arguments[0],t=arguments[1]}if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.floor(_nativeMathRandom()*(t-e+1))+e}function _randomIndex(e,t){var r=void 0,n=void 0;switch(t.length){case 1:r=0,n=e-1;break;case 2:r=0,n=Math.trunc(t[1]);break;default:r=Math.trunc(t[1]),n=Math.trunc(t[2])}return Number.isNaN(r)?r=0:!Number.isFinite(r)||r>=e?r=e-1:r<0&&(r=e+r)<0&&(r=0),Number.isNaN(n)?n=0:!Number.isFinite(n)||n>=e?n=e-1:n<0&&(n=e+n)<0&&(n=e-1),_random(r,n)}function _getCodePointStartAndEnd(e,t){var r=e.charCodeAt(t);if(Number.isNaN(r))return{char:"",start:-1,end:-1};if(r<55296||r>57343)return{char:e.charAt(t),start:t,end:t};if(r>=55296&&r<=56319){var n=t+1;if(n>=e.length)throw new Error("high surrogate without trailing low surrogate");var a=e.charCodeAt(n);if(a<56320||a>57343)throw new Error("high surrogate without trailing low surrogate");return{char:e.charAt(t)+e.charAt(n),start:t,end:n}}if(0===t)throw new Error("low surrogate without leading high surrogate");var i=t-1,o=e.charCodeAt(i);if(o<55296||o>56319)throw new Error("low surrogate without leading high surrogate");return{char:e.charAt(i)+e.charAt(t),start:i,end:t}}var _nativeMathRandom=Math.random;Object.defineProperty(Array,"random",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e||!Object.prototype.hasOwnProperty.call(e,"length"))throw new TypeError("Array.random array parameter must be an array or array-lke object");var t=e.length>>>0;if(0!==t){return e[0===arguments.length?_random(0,t-1):_randomIndex(t,Array.prototype.slice.call(arguments,1))]}}}),Object.defineProperty(Array.prototype,"concatUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.concatUnique called on null or undefined");var e=Array.from(this);if(0===arguments.length)return e;var t=Array.prototype.reduce.call(arguments,function(e,t){return e.concat(t)},[]),r=t.length;if(0===r)return e;for(var n=Array.prototype.indexOf,a=Array.prototype.push,i=0;i<r;++i){var o=t[i];-1===n.call(e,o)&&a.call(e,o)}return e}}),Object.defineProperty(Array.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.count called on null or undefined");for(var e=Array.prototype.indexOf,t=arguments[0],r=Number(arguments[1])||0,n=0;-1!==(r=e.call(this,t,r));)++n,++r;return n}}),Object.defineProperty(Array.prototype,"delete",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.delete called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.concat.apply([],arguments),r=t.length,n=[],a=0;a<e;++a)for(var i=this[a],o=0;o<r;++o){var s=t[o];if(i===s||i!==i&&s!==s){n.push(a);break}}for(var u=[],l=0,c=n.length;l<c;++l)u[l]=this[n[l]];for(var d=Array.prototype.splice,f=n.length-1;f>=0;--f)d.call(this,n[f],1);return u}}),Object.defineProperty(Array.prototype,"deleteAt",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.deleteAt called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.splice,r=[].concat(_toConsumableArray(new Set(Array.prototype.concat.apply([],arguments).map(function(t){return t<0?Math.max(0,e+t):t})).values())),n=[].concat(_toConsumableArray(r)).sort(function(e,t){return t-e}),a=[],i=0,o=r.length;i<o;++i)a[i]=this[r[i]];for(var s=0,u=n.length;s<u;++s)t.call(this,n[s],1);return a}}),Object.defineProperty(Array.prototype,"deleteWith",{configurable:!0,writable:!0,value:function(e,t){if(null==this)throw new TypeError("Array.prototype.deleteWith called on null or undefined");if("function"!=typeof e)throw new Error("Array.prototype.deleteWith predicate parameter must be a function");var r=this.length>>>0;if(0===r)return[];for(var n=Array.prototype.splice,a=[],i=[],o=0;o<r;++o)e.call(t,this[o],o,this)&&(i.push(this[o]),a.push(o));for(var s=a.length-1;s>=0;--s)n.call(this,a[s],1);return i}}),Object.defineProperty(Array.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.first called on null or undefined");if(0!=this.length>>>0)return this[0]}}),Object.defineProperty(Array.prototype,"includesAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAll called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAll.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(!Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!1;return!0}}),Object.defineProperty(Array.prototype,"includesAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAny called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAny.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!0;return!1}}),Object.defineProperty(Array.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.last called on null or undefined");var e=this.length>>>0;if(0!==e)return this[e-1]}}),Object.defineProperty(Array.prototype,"pluck",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pluck called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return Array.prototype.splice.call(this,t,1)[0]}}}),Object.defineProperty(Array.prototype,"pluckMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.pluckMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.pluckMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=Array.prototype.splice,a=[],i=t-1;do{a.push(n.call(this,_random(0,i--),1)[0])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"pushUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pushUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.push,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Array.prototype,"random",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.random called on null or undefined");var e=this.length>>>0;if(0!==e){return this[0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)))]}}}),Object.defineProperty(Array.prototype,"randomMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.randomMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.randomMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=new Map,a=[],i=t-1;do{var o=void 0;do{o=_random(0,i)}while(n.has(o));n.set(o,!0),a.push(this[o])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"shuffle",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.shuffle called on null or undefined");var e=this.length>>>0;if(0===e)return this;for(var t=e-1;t>0;--t){var r=Math.floor(_nativeMathRandom()*(t+1));if(t!==r){var n=this[t];this[t]=this[r],this[r]=n}}return this}}),Object.defineProperty(Array.prototype,"unshiftUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.unshiftUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.unshift,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Function.prototype,"partial",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Function.prototype.partial called on null or undefined");var e=Array.prototype.slice,t=this,r=e.call(arguments,0);return function(){for(var n=[],a=0,i=0;i<r.length;++i)n.push(r[i]===undefined?arguments[a++]:r[i]);return t.apply(this,n.concat(e.call(arguments,a)))}}}),Object.defineProperty(Math,"clamp",{configurable:!0,writable:!0,value:function(e,t,r){var n=Number(e);return Number.isNaN(n)?NaN:n.clamp(t,r)}}),Object.defineProperty(Math,"easeInOut",{configurable:!0,writable:!0,value:function(e){return 1-(Math.cos(Number(e)*Math.PI)+1)/2}}),Object.defineProperty(Number.prototype,"clamp",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Number.prototype.clamp called on null or undefined");if(2!==arguments.length)throw new Error("Number.prototype.clamp called with an incorrect number of parameters");var e=Number(arguments[0]),t=Number(arguments[1]);if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.min(Math.max(this,e),t)}}),RegExp.escape||function(){var e=/[\\^$*+?.()|[\]{}]/g,t=new RegExp(e.source);Object.defineProperty(RegExp,"escape",{configurable:!0,writable:!0,value:function(r){var n=String(r);return n&&t.test(n)?n.replace(e,"\\$&"):n}})}(),function(){var e=/{(\d+)(?:,([+-]?\d+))?}/g,t=new RegExp(e.source);Object.defineProperty(String,"format",{configurable:!0,writable:!0,value:function(r){function n(e,t,r){if(!t)return e;var n=Math.abs(t)-e.length;if(n<1)return e;var a=String(r).repeat(n);return t<0?e+a:a+e}if(arguments.length<2)return 0===arguments.length?"":r;var a=2===arguments.length&&Array.isArray(arguments[1])?[].concat(_toConsumableArray(arguments[1])):Array.prototype.slice.call(arguments,1);return 0===a.length?r:t.test(r)?(e.lastIndex=0,r.replace(e,function(e,t,r){var i=a[t];if(null==i)return"";for(;"function"==typeof i;)i=i();switch(void 0===i?"undefined":_typeof(i)){case"string":break;case"object":i=JSON.stringify(i);break;default:i=String(i)}return n(i,r?Number.parseInt(r,10):0," ")})):r}})}(),Object.defineProperty(String.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.contains called on null or undefined");return-1!==String.prototype.indexOf.apply(this,arguments)}}),Object.defineProperty(String.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.count called on null or undefined");var e=String(arguments[0]||"");if(""===e)return 0;for(var t=String.prototype.indexOf,r=e.length,n=Number(arguments[1])||0,a=0;-1!==(n=t.call(this,e,n));)++a,n+=r;return a}}),Object.defineProperty(String.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.first called on null or undefined");return _getCodePointStartAndEnd(String(this),0).char}}),Object.defineProperty(String.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.last called on null or undefined");var e=String(this);return _getCodePointStartAndEnd(e,e.length-1).char}}),Object.defineProperty(String.prototype,"splice",{configurable:!0,writable:!0,value:function(e,t,r){if(null==this)throw new TypeError("String.prototype.splice called on null or undefined");var n=this.length>>>0;if(0===n)return"";var a=Number(e);Number.isSafeInteger(a)?a<0&&(a+=n)<0&&(a=0):a=0,a>n&&(a=n);var i=Number(t);(!Number.isSafeInteger(i)||i<0)&&(i=0);var o=this.slice(0,a);return void 0!==r&&(o+=r),a+i<n&&(o+=this.slice(a+i)),o}}),Object.defineProperty(String.prototype,"splitOrEmpty",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.splitOrEmpty called on null or undefined");return""===String(this)?[]:String.prototype.split.apply(this,arguments)}}),Object.defineProperty(String.prototype,"toLocaleUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toLocaleUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toLocaleUpperCase()+e.slice(n+1)}}),Object.defineProperty(String.prototype,"toUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toUpperCase()+e.slice(n+1)}}),Object.defineProperty(Date.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:date)",this.toISOString()]}}),Object.defineProperty(Function.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)","("+this.toString()+")"]}}),Object.defineProperty(Map.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:map)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(RegExp.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)",this.toString()]}}),Object.defineProperty(Set.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:set)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(JSON,"reviveWrapper",{configurable:!0,writable:!0,value:function(e,t){if("string"!=typeof e)throw new TypeError("JSON.reviveWrapper code parameter must be a string");return["(revive:eval)",[e,t]]}}),Object.defineProperty(JSON,"_real_stringify",{value:JSON.stringify}),Object.defineProperty(JSON,"stringify",{configurable:!0,writable:!0,value:function(e,t,r){return JSON._real_stringify(e,function(e,r){var n=r;if("function"==typeof t)try{n=t(e,n)}catch(e){}return void 0===n&&(n=["(revive:eval)","undefined"]),n},r)}}),Object.defineProperty(JSON,"_real_parse",{value:JSON.parse}),Object.defineProperty(JSON,"parse",{configurable:!0,writable:!0,value:function value(text,reviver){return JSON._real_parse(text,function(key,val){var value=val;if(Array.isArray(value)&&2===value.length)switch(value[0]){case"(revive:set)":value=new Set(value[1]);break;case"(revive:map)":value=new Map(value[1]);break;case"(revive:date)":value=new Date(value[1]);break;case"(revive:eval)":try{if(Array.isArray(value[1])){var $ReviveData$=value[1][1];value=eval(value[1][0])}else value=eval(value[1])}catch(e){}}else if("string"==typeof value&&"@@revive@@"===value.slice(0,10))try{value=eval(value.slice(10))}catch(e){}if("function"==typeof reviver)try{value=reviver(key,value)}catch(e){}return value})}}),Object.defineProperty(Array.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.contains called on null or undefined");return Array.prototype.includes.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAll called on null or undefined");return Array.prototype.includesAll.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAny called on null or undefined");return Array.prototype.includesAny.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"flatten",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatten called on null or undefined");return Array.prototype.flat.call(this,1/0)}}),Object.defineProperty(String.prototype,"readBracketedList",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.readBracketedList called on null or undefined");for(var e=new RegExp("(?:\\[\\[((?:\\s|\\S)*?)\\]\\])|([^\"'\\s]\\S*)","gm"),t=[],r=void 0;null!==(r=e.exec(this));)r[1]?t.push(r[1]):r[2]&&t.push(r[2]);return t}})}();var Browser=function(){var e=navigator.userAgent.toLowerCase(),t=e.includes("windows phone"),r=Object.freeze({Android:!t&&e.includes("android"),BlackBerry:/blackberry|bb10/.test(e),iOS:!t&&/ip(?:hone|ad|od)/.test(e),Opera:!t&&("object"===_typeof(window.operamini)||e.includes("opera mini")),Windows:t||/iemobile|wpdesktop/.test(e),any:function(){return r.Android||r.BlackBerry||r.iOS||r.Opera||r.Windows}}),n=!r.Windows&&!/khtml|trident|edge/.test(e)&&e.includes("gecko"),a=!e.includes("opera")&&/msie|trident/.test(e),i=a?function(){var t=/(?:msie\s+|rv:)(\d+\.\d)/.exec(e);return t?Number(t[1]):0}():null,o=e.includes("opera")||e.includes(" opr/"),s=o?function(){var t=new RegExp((/khtml|chrome/.test(e)?"opr":"version")+"\\/(\\d+\\.\\d+)"),r=t.exec(e);return r?Number(r[1]):0}():null,u=e.includes("vivaldi");return Object.freeze({userAgent:e,isMobile:r,isGecko:n,isIE:a,ieVersion:i,isOpera:o,operaVersion:s,isVivaldi:u})}(),Has=function(){var e=function(){try{return"function"==typeof document.createElement("audio").canPlayType}catch(e){}return!1}(),t=function(){try{return"Blob"in window&&"File"in window&&"FileList"in window&&"FileReader"in window&&(!Browser.isOpera||Browser.operaVersion>=15)}catch(e){}return!1}(),r=function(){try{return"geolocation"in navigator&&"function"==typeof navigator.geolocation.getCurrentPosition&&"function"==typeof navigator.geolocation.watchPosition}catch(e){}return!1}(),n=function(){try{return"MutationObserver"in window&&"function"==typeof window.MutationObserver}catch(e){}return!1}(),a=function(){try{return"performance"in window&&"function"==typeof window.performance.now}catch(e){}return!1}(),i=function(){try{return"ontouchstart"in window||!!window.DocumentTouch&&document instanceof window.DocumentTouch||!!navigator.maxTouchPoints||!!navigator.msMaxTouchPoints}catch(e){}return!1}(),o=function(){try{for(var e=new Map([["transition","transitionend"],["MSTransition","msTransitionEnd"],["WebkitTransition","webkitTransitionEnd"],["MozTransition","transitionend"]]),t=[].concat(_toConsumableArray(e.keys())),r=document.createElement("div"),n=0;n<t.length;++n)if(r.style[t[n]]!==undefined)return e.get(t[n])}catch(e){}return!1}();return Object.freeze({audio:e,fileAPI:t,geolocation:r,mutationObserver:n,performance:a,touch:i,transitionEndEvent:o})}(),Visibility=function(){function e(){return a}function t(){return a&&document[a.stateProperty]||"visible"}function r(){return Boolean(a)}function n(){return Boolean(a&&document[a.hiddenProperty])}var a=function(){try{return Object.freeze([{hiddenProperty:"hidden",stateProperty:"visibilityState",changeEvent:"visibilitychange"},{hiddenProperty:"webkitHidden",stateProperty:"webkitVisibilityState",changeEvent:"webkitvisibilitychange"},{hiddenProperty:"mozHidden",stateProperty:"mozVisibilityState",changeEvent:"mozvisibilitychange"},{hiddenProperty:"msHidden",stateProperty:"msVisibilityState",changeEvent:"msvisibilitychange"}].find(function(e){return e.hiddenProperty in document}))}catch(e){}return undefined}();return Object.freeze(Object.defineProperties({},{vendor:{get:e},state:{get:t},isEnabled:{value:r},isHidden:{value:n},hiddenProperty:{value:a&&a.hiddenProperty},stateProperty:{value:a&&a.stateProperty},changeEvent:{value:a&&a.changeEvent}}))}(),Fullscreen=function(){function e(e){var t=e||document.documentElement;return t===document.documentElement&&("msRequestFullscreen"===f.requestFn||Browser.isOpera&&Browser.operaVersion<15)&&(t=document.body),t}function t(){return f}function r(){return(f||null)&&document[f.element]}function n(){return Boolean(f&&document[f.isEnabled])}function a(){return Boolean(f&&document[f.element])}function i(t,r){var n=this;if(!f)return Promise.reject(new Error("fullscreen not supported"));var i=e(r);if("function"!=typeof i[f.requestFn])return Promise.reject(new Error("fullscreen not supported"));if(a())return Promise.resolve();if(p())return i[f.requestFn](t);var o=".Fullscreen_requestFullscreen";return new Promise(function(e,r){jQuery(i).off(o).one(""+f.errorEvent+o+" "+f.changeEvent+o,function(t){jQuery(n).off(o),t.type===f.errorEvent?r(new Error("unknown fullscreen request error")):e()}),i[f.requestFn](t)})}function o(){var e=this;if(!f||"function"!=typeof document[f.exitFn])return Promise.reject(new TypeError("fullscreen not supported"));if(!a())return Promise.reject(new TypeError("fullscreen mode not active"));if(p())return document[f.exitFn]();var t=".Fullscreen_exitFullscreen";return new Promise(function(r,n){jQuery(document).off(t).one(""+f.errorEvent+t+" "+f.changeEvent+t,function(a){jQuery(e).off(t),a.type===f.errorEvent?n(new Error("unknown fullscreen exit error")):r()}),document[f.exitFn]()})}function s(e,t){return a()?o():i(e,t)}function u(t,r){if(f){var n=e(r);$(n).on(f.changeEvent,t)}}function l(t,r){if(f){var n=e(r);t?$(n).off(f.changeEvent,t):$(n).off(f.changeEvent)}}function c(t,r){if(f){var n=e(r);$(n).on(f.errorEvent,t)}}function d(t,r){if(f){var n=e(r);t?$(n).off(f.errorEvent,t):$(n).off(f.errorEvent)}}var f=function(){try{return Object.freeze([{isEnabled:"fullscreenEnabled",element:"fullscreenElement",requestFn:"requestFullscreen",exitFn:"exitFullscreen",changeEvent:"fullscreenchange",errorEvent:"fullscreenerror"},{isEnabled:"webkitFullscreenEnabled",element:"webkitFullscreenElement",requestFn:"webkitRequestFullscreen",exitFn:"webkitExitFullscreen",changeEvent:"webkitfullscreenchange",errorEvent:"webkitfullscreenerror"},{isEnabled:"mozFullScreenEnabled",element:"mozFullScreenElement",requestFn:"mozRequestFullScreen",exitFn:"mozCancelFullScreen",changeEvent:"mozfullscreenchange",errorEvent:"mozfullscreenerror"},{isEnabled:"msFullscreenEnabled",element:"msFullscreenElement",requestFn:"msRequestFullscreen",exitFn:"msExitFullscreen",changeEvent:"MSFullscreenChange",errorEvent:"MSFullscreenError"}].find(function(e){return e.isEnabled in document}))}catch(e){}return undefined}(),p=function(){function e(){if(null!==t)return t;if(t=!1,f)try{var e=document.exitFullscreen();e.catch(function(){}),t=e instanceof Promise}catch(e){}return t}var t=null;return e}();return Object.freeze(Object.defineProperties({},{vendor:{get:t},element:{get:r},isEnabled:{value:n},isFullscreen:{value:a},request:{value:i},exit:{value:o},toggle:{value:s},onChange:{value:u},offChange:{value:l},onError:{value:c},offError:{value:d}}))}(),_ref3=function(){function e(e){for(var t=e.cloneNode(!0),r=document.createDocumentFragment(),n=void 0;null!==(n=t.firstChild);){if(n.nodeType===Node.ELEMENT_NODE)switch(n.nodeName.toUpperCase()){case"BR":case"DIV":case"P":r.appendChild(document.createTextNode(" "))}r.appendChild(n)}return r.textContent}function t(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)return e;if(e instanceof String)return String(e);if(e instanceof Number)return Number(e);if(e instanceof Boolean)return Boolean(e)
